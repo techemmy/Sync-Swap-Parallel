@@ -5,9 +5,7 @@ export default function App() {
   return (
     <>
       <NavBars />
-      <div className="pt-20" >
-        <Outlet />
-      </div>
+      <Outlet />
     </>
   )
 }
