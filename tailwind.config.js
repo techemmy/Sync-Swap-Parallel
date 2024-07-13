@@ -17,10 +17,16 @@ export default {
       },
     },
     extend: {
+      backgroundImage: {
+        zKTextGradient: "linear-gradient(var(--zKTextGradient))",
+      },
+      fontFamily: {
+        Public: "Poppins, sans-serif",
+      },
       colors: {
-        border: "hsl(var(--border))",
+        border: "rgba(var(--border))",
         input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
+        ring: "rgb(var(--ring))",
         background: "rgb(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
@@ -40,8 +46,8 @@ export default {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "rgba(var(--accent))",
+          foreground: "rgb(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
