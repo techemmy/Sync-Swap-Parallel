@@ -1,8 +1,8 @@
-import Header from '@/pages/intro/components/Header';
-import MissionSection from '@/pages/intro/components/MissionSection';
-import TradeWithSuperpowerSection from '@/pages/intro/components/TradeWithSuperpowerSection';
-import CommunityOwnershipSection from '@/pages/intro/components/CommunityOwnershipSection';
-import BuiltWithTheBestSection from "@/pages/intro/components/BuiltWithTheBestSection";
+import Header from '@/pages/Intro/components/Header';
+import MissionSection from '@/pages/Intro/components/MissionSection';
+import TradeWithSuperpowerSection from '@/pages/Intro/components/TradeWithSuperpowerSection';
+import CommunityOwnershipSection from '@/pages/Intro/components/CommunityOwnershipSection';
+import BuiltWithTheBestSection from "@/pages/Intro/components/BuiltWithTheBestSection";
 import Footer from "@/components/Footer";
 
 export default function Intro() {

@@ -1,4 +1,4 @@
-import FeatureArticle from "@/pages/intro/components/FeatureArticle";
+import FeatureArticle from "@/pages/Intro/components/FeatureArticle";
 
 export default function TradeWithSuperpowerSection() {
     return (
