@@ -2,7 +2,7 @@ import FeatureArticle from "@/pages/intro/components/FeatureArticle";
 
 export default function TradeWithSuperpowerSection() {
     return (
-        <section className="text-center py-10">
+        <section className="mb-10 md:mb-40 text-center py-10">
             <p className="text-lg font-medium leading-[1.2]"> Your DeFi Hub on Ethereum zk Rollups </p>
             <h2 className="text-[40px] font-medium font-Public my-2"> Trade with Superpowers </h2>
 

@@ -23,6 +23,9 @@ export default {
       fontFamily: {
         Public: "Poppins, sans-serif",
       },
+      boxShadow: {
+        light: "0px 0px 48px -50px",
+      },
       colors: {
         border: "rgba(var(--border))",
         input: "hsl(var(--input))",
