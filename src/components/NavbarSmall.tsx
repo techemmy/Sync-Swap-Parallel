@@ -8,10 +8,10 @@ import { TbMenu2 } from "react-icons/tb"
 export default function NavbarMin() {
     return (
         <nav className="lg:hidden">
-            <Link to='/intro' className="absolute m-3">
+            <Link to='/intro' className="fixed m-3">
                 <Logo className="w-8 h-8" />
             </Link>
-            <TbMenu2 className="absolute text-primary cursor-pointer right-0 mr-3 mt-3.5" size={28} />
+            <TbMenu2 className="fixed text-primary cursor-pointer right-0 mr-3 mt-3.5" size={28} />
 
             <section className="fixed bottom-0 left-0 right-0 py-1.5 px-2.5 flex justify-between bg-white/85 shadow-2xl">
                 <NavigationMenu>

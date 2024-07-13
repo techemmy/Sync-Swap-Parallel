@@ -6,11 +6,11 @@ import { BsThreeDots } from "react-icons/bs"
 
 export default function Navbar() {
   return (
-    <nav className="hidden lg:flex justify-between mx-5 my-2 bg-white/85 px-4 rounded-3xl shadow-md">
+    <nav className="hidden lg:flex fixed left-0 right-0 justify-between mx-12 my-2 bg-white/85 px-4 rounded-3xl shadow-md">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuLink href="/">
+            <NavigationMenuLink href="/intro">
               <Logo />
             </NavigationMenuLink>
           </NavigationMenuItem>
