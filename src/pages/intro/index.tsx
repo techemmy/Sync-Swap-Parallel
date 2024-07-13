@@ -9,7 +9,7 @@ export default function Intro() {
     return (
         <>
             <Header />
-            <main className="md:mt-10 mx-3 md:px-5 md:px-0">
+            <main className="md:mt-10 mx-10 md:px-5 md:px-0">
 
                 <MissionSection />
                 <TradeWithSuperpowerSection />

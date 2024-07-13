@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="logo_dark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 117 32.1" style="enable-background:new 0 0 117 32.1;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#Path_4038_1_);}
+	.st1{fill:url(#Path_4039_1_);}
+	.st2{fill:#264FA1;}
+</style>
+<g id="Group_6112" transform="translate(0 0.148)">
+	<g id="Group_6110">
+		
+			<linearGradient id="Path_4038_1_" gradientUnits="userSpaceOnUse" x1="-859.0692" y1="538.6233" x2="-859.0692" y2="537.8143" gradientTransform="matrix(21.7471 0 0 -28.87 18698.7754 15553.3145)">
+			<stop  offset="0.1" style="stop-color:#264FA1"/>
+			<stop  offset="0.484" style="stop-color:#288EC3"/>
+			<stop  offset="0.8" style="stop-color:#2BBEDE"/>
+		</linearGradient>
+		<path id="Path_4038" class="st0" d="M7.6,28.9c-1.1,0-1.9-0.9-1.9-1.9v-4l12.3-8L5.7,7V0.8C5.7,0.4,6.1,0,6.5,0C6.7,0,6.8,0,7,0.1
+			l19.6,13.2c0.9,0.6,1.1,1.8,0.5,2.7c-0.1,0.2-0.3,0.4-0.5,0.5l-17.9,12C8.3,28.7,8,28.9,7.6,28.9L7.6,28.9z"/>
+		
+			<linearGradient id="Path_4039_1_" gradientUnits="userSpaceOnUse" x1="-859.0712" y1="537.7866" x2="-859.0712" y2="538.5446" gradientTransform="matrix(21.7482 0 0 -28.864 18694.0977 15553.0674)">
+			<stop  offset="0.1" style="stop-color:#264FA1"/>
+			<stop  offset="0.484" style="stop-color:#288EC3"/>
+			<stop  offset="0.8" style="stop-color:#2BBEDE"/>
+		</linearGradient>
+		<path id="Path_4039" class="st1" d="M19.7,31.9c-0.4,0-0.8-0.1-1.1-0.3l-17.8-12C0,19-0.3,17.8,0.3,16.9c0.1-0.2,0.3-0.4,0.5-0.5
+			L20.5,3.2c0.1-0.1,0.3-0.1,0.4-0.1c0.4,0,0.8,0.4,0.8,0.8V10L9.5,18L21.7,26V30c0,0.5-0.2,1-0.6,1.4
+			C20.7,31.7,20.2,31.9,19.7,31.9L19.7,31.9z"/>
+	</g>
+	<g id="Group_6111" transform="translate(5.708 6.24)">
+		<path id="Path_4040" class="st2" d="M5.6,13l5.7,3.7l-5.6,3.8L0,16.7L5.6,13z"/>
+		<path id="Path_4041" class="st2" d="M10.3,7.5L4.7,3.8L10.3,0L16,3.8L10.3,7.5z"/>
+	</g>
+</g>
+<g>
+	<g id="Group_6199" transform="translate(33.851)">
+		<path id="Path_4093" d="M14.9,31.2C6.4,31.2,0,24.5,0,15.6S6.4,0,14.9,0C19-0.1,23,1.6,25.8,4.6l0.1,0.2l-2.8,2.7l-0.2-0.2
+			c-0.6-0.7-1.3-1.2-2-1.7c-1.8-1.1-3.8-1.7-5.9-1.7C8.3,3.9,4.3,9.8,4.3,15.6s4,11.7,10.6,11.7c3.2-0.1,6.2-1.5,8.4-3.8l0.2-0.2
+			l2.8,2.8l-0.1,0.2C23.2,29.3,19.2,31.1,14.9,31.2"/>
+		<path id="Path_4094" d="M41.9,32.1L28.9,0H33l9,22.9L51.1,0H55L41.9,32.1z"/>
+		<path id="Path_4095" d="M59.1,0h4.4v30.8H59L59.1,0z"/>
+	</g>
+</g>
+</svg>
