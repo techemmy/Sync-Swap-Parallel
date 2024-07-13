@@ -2,7 +2,7 @@ import LogoView from "./LogoView";
 
 export default function BuiltWithTheBestSection() {
     return (
-        <section className="mb-10 md:mb-64 mt-10 grid gap-y-20">
+        <section className="mb-64 mt-10 grid gap-y-20">
 
             <article className="text-center">
                 <h2 className="text-[40px] font-Public font-medium">Built with the Best</h2>

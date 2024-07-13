@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function MissionSection() {
     return (
-        <section className="mb-10 md:mb-80 text-center flex flex-col gap-y-6 relative">
+        <section className="mb-40 md:mb-80 text-center flex flex-col gap-y-6 relative">
             <h2 className="text-[40px] font-Public font-medium">An Aligned Mission </h2>
             <p className="mx-auto text-lg text-gray-500 max-w-[750px]">SyncSwap aligns with the mission of zkSync
                 to accelerate the mass adoption of crypto for
@@ -19,7 +19,7 @@ export default function MissionSection() {
                 <MdArrowOutward />
             </Link>
 
-            <img className="absolute top-44 md:top-24 max-w-[85%] left-0 right-0 md:mx-auto z-[-1]" src="/images/curve.png" alt="Curve" />
+            <img className="absolute top-40 left-[-30%] md:left-0 max-w-[150%] md:max-w-full md:top-24 z-[-1]" src="/images/curve.png" alt="Curve" />
         </section>
     )
 }
