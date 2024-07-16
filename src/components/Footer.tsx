@@ -3,7 +3,7 @@ import Logo from "@/components/Logo";
 export default function Footer() {
     return (
         <footer className="md:px-20 pt-10 mb-28 md:mb-32 grid grid-cols-2 md:grid-cols-5 gap-6 text-center md:text-left font-[15px]">
-            <Logo className="w-12 h-12 hidden md:block" />
+            <Logo className="w-14 h-14 hidden md:block" />
 
             <article className="grid gap-y-4">
                 <p className="text-gray-500 font-medium">Community</p>
