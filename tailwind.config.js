@@ -19,6 +19,18 @@ export default {
     extend: {
       backgroundImage: {
         zKTextGradient: "linear-gradient(var(--zKTextGradient))",
+        homePage: "linear-gradient(62deg,#c7c1ff,#ddc8ff)",
+      },
+      keyframes: {
+        "portfolio-gradient": {
+          // not working yet
+          "0%": { "background-position": "0 50%" },
+          "50%": { "background-position": "100% 50%" },
+          "100%": { "background-position": "0 50%" },
+        },
+      },
+      animation: {
+        "portfolio-gradient": "portfolio-gradient 15s ease infinite",
       },
       fontFamily: {
         Public: "Poppins, sans-serif",
@@ -27,6 +39,10 @@ export default {
         light: "0px 0px 48px -50px",
       },
       colors: {
+        navIcon: {
+          DEFAULT: "rgba(78, 81, 183, 0.1)",
+          foreground: "rgb(81, 85, 166)",
+        },
         border: "rgba(var(--border))",
         input: "hsl(var(--input))",
         ring: "rgb(var(--ring))",
