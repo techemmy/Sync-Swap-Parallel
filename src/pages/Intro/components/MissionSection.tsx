@@ -19,7 +19,7 @@ export default function MissionSection() {
                 <MdArrowOutward />
             </Link>
 
-            <img className="absolute top-40 left-[-30%] md:left-0 max-w-[150%] md:max-w-full md:top-24 z-[-1]" src="/images/curve.png" alt="Curve" />
+            <img className="absolute top-40 left-0 md:max-w-full md:top-24 z-[-1]" src="/images/curve.png" alt="Curve" />
         </section>
     )
 }

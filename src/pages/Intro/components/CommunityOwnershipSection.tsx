@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function CommunityOwnershipSection() {
     return (
-        <section className="mb-40  mt-10 flex flex-wrap md:flex-nowrap gap-x-6 gap-y-10 md:mx-5">
+        <section className="mb-40 mt-10 flex flex-wrap md:flex-nowrap gap-x-6 gap-y-10 md:mx-2">
 
             <article className="mx-auto text-center md:text-left flex flex-col gap-y-6 justify-center">
                 <h2 className="text-[40px] font-Public font-medium leading-[1.2] md:max-w-[300px]">Community Ownership</h2>
