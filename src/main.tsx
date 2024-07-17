@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-import Intro from '@/pages/Intro'
-import Home from '@/pages/Home'
+import Intro from '@/pages/intro'
+import Home from '@/pages/home'
 
 
 const router = createBrowserRouter(
