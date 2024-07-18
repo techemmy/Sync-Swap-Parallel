@@ -2,10 +2,10 @@
 export default {
   darkMode: ["class"],
   content: [
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -49,7 +49,7 @@ export default {
         background: "rgb(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "rgb(var(--primary))",
+          DEFAULT: "rgba(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
