@@ -1,6 +1,6 @@
 export default function Header() {
     return (
-        <header className="h-[80vh] lg:h-screen pt-20 md:pt-44 flex flex-col-reverse justify-end items-center md:block">
+        <header className="h-screen lg:h-screen pt-20 md:pt-44 flex flex-col-reverse justify-end items-center md:block">
             <article className='md:ml-[12.50%] flex flex-col gap-y-8 font-semibold text-left px-5 md:px-0'>
                 <h1 className='mx-auto md:mx-0 text-center md:text-left text-[40px] max-w-[500px] xl:w-[700px] leading-[1.2] font-Public'>Seamless and Efficient Trading on
                     <span className="bg-zKTextGradient text-transparent bg-clip-text"> zk Rollups</span>
