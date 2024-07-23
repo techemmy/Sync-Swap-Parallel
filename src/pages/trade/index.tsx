@@ -8,7 +8,7 @@ import GettingStartedCard from "./components/GettingStartedCard";
 import ClaimZkTokenAirdropCard from "./components/ClaimZkTokenAirdropCard";
 import Top4Tokens from "./components/Top4Tokens";
 import ActionButtons from "./components/ActionButtons";
-import SelectTokenDialog from "./components/SelectTokenDialog";
+import SelectTokenDialog from "@/components/SelectTokenDialog";
 
 export default function Trade() {
     return (
