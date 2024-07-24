@@ -3,6 +3,9 @@ import Logo from "@/components/Logo"
 import { CgArrowsExchangeAlt } from "react-icons/cg"
 import { IoWalletOutline } from "react-icons/io5"
 import { BsThreeDots } from "react-icons/bs"
+import { TiHome } from "react-icons/ti";
+import { NavLink } from "react-router-dom"
+import { MdDataUsage, MdLayers, MdRocketLaunch, MdSwapCalls, MdWaves } from "react-icons/md"
 
 export default function Navbar() {
   return (
@@ -16,51 +19,65 @@ export default function Navbar() {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuLink href="/home" className="group inline-flex items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full">
-              Home
-            </NavigationMenuLink>
+            <NavLink to="/home" className={({ isActive }) => {
+              const base = "group inline-flex gap-x-1 items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full";
+              return (isActive ? 'text-primary ' : '').concat(base)
+            }}>
+              <TiHome size={25} className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md" />
+              <span>Home</span>
+            </NavLink>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuLink href="/swap" className="group inline-flex items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full">
-              Trade
-            </NavigationMenuLink>
+            <NavLink to="/swap" className={({ isActive }) => {
+              const base = "group inline-flex gap-x-1 items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full";
+              return (isActive ? 'text-primary ' : '').concat(base)
+            }}>
+              <MdSwapCalls size={25} className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md" />
+              <span>Trade</span>
+            </NavLink>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuLink href="/pool">
+            <NavLink to="/pool" className={({ isActive }) => {
+              return (isActive ? 'text-primary ' : '').concat('group')
+            }}>
               <NavigationMenuTrigger className="mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full">
+                <MdWaves size={25} className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md" />
                 Pool
               </NavigationMenuTrigger>
-            </NavigationMenuLink>
+            </NavLink>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuLink href="/explore">
-              <NavigationMenuTrigger className="mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full">
-                Explore
-              </NavigationMenuTrigger>
-            </NavigationMenuLink>
+            <NavLink to="/launch" className={({ isActive }) => {
+              const base = "group inline-flex gap-x-1 items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full";
+              return (isActive ? 'text-primary ' : '').concat(base)
+            }}>
+              <MdRocketLaunch size={25} className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md" />
+              <span>Launch</span>
+            </NavLink>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuLink href="/launch" className="group inline-flex items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full">
-              Launch
-            </NavigationMenuLink>
+            <NavLink to="/dashboard" className={({ isActive }) => {
+              const base = "group inline-flex gap-x-1 items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full";
+              return (isActive ? 'text-primary ' : '').concat(base)
+            }}>
+              <MdDataUsage size={25} className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md" />
+              <span>Portfolio</span>
+            </NavLink>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuLink href="/portfolio" className="group inline-flex items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full">
-              Portfolio
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink href="/bridge">
+            <NavLink to="/bridge" className={({ isActive }) => {
+              return (isActive ? 'text-primary ' : '').concat('group')
+            }}>
               <NavigationMenuTrigger className="w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full">
+                <MdLayers size={25} className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md" />
                 Bridge
               </NavigationMenuTrigger>
-            </NavigationMenuLink>
+            </NavLink>
           </NavigationMenuItem>
 
         </NavigationMenuList>
@@ -73,7 +90,7 @@ export default function Navbar() {
             <NavigationMenuTrigger> <CgArrowsExchangeAlt size={30} /> </NavigationMenuTrigger>
           </NavigationMenuItem>
 
-          <NavigationMenuItem className="cursor-pointer inline-flex items-center justify-center bg-background py-2 transition-all hover:border-primary hover:border-1.5 hover:shadow-primary hover:shadow-md focus:bg-accent focus:text-accent-foreground focus:outline-none data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-primary px-3 text-sm font-medium rounded-full">
+          <NavigationMenuItem className="cursor-pointer inline-flex items-center justify-center bg-background py-2 transition-all hover:border-primary hover:border-1.5 hover:shadow-primary hover:shadow-md focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-primary px-3 text-sm font-medium rounded-full">
             <NavigationMenuLink className="flex">
               <IoWalletOutline className="mr-1" size={20} />
               Connect
@@ -81,7 +98,7 @@ export default function Navbar() {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuLink className="cursor-pointer inline-flex items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-2 text-sm font-medium rounded-full">
+            <NavigationMenuLink className="cursor-pointer inline-flex items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-2 text-sm font-medium rounded-full">
               <BsThreeDots size={20} />
             </NavigationMenuLink>
           </NavigationMenuItem>
@@ -89,6 +106,6 @@ export default function Navbar() {
         </NavigationMenuList>
       </NavigationMenu>
 
-    </nav>
+    </nav >
   )
 }
