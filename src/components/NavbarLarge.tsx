@@ -56,17 +56,18 @@ export default function Navbar({ selectedNetwork, setSelectedNetwork }: AppConte
             </NavLink>
           </NavigationMenuItem>
 
-          <NavigationMenuItem>
-            <NavLink to="/explore" className={({ isActive }) => {
-              return (isActive ? 'text-primary ' : '').concat('group')
-            }}>
-              <NavigationMenuTrigger className="mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full">
-                <HiSparkles size={25} className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md" />
-                Explore
-              </NavigationMenuTrigger>
-            </NavLink>
-          </NavigationMenuItem>
-
+          {selectedNetwork === AVAILABLE_NETWORKS.zkSync &&
+            <NavigationMenuItem>
+              <NavLink to="/explore" className={({ isActive }) => {
+                return (isActive ? 'text-primary ' : '').concat('group')
+              }}>
+                <NavigationMenuTrigger className="mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full">
+                  <HiSparkles size={25} className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md" />
+                  Explore
+                </NavigationMenuTrigger>
+              </NavLink>
+            </NavigationMenuItem>
+          }
 
           <NavigationMenuItem>
             <NavLink to="/launch" className={({ isActive }) => {
