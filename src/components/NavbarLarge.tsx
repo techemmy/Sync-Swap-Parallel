@@ -9,8 +9,12 @@ import { HiSparkles } from "react-icons/hi"
 import { AVAILABLE_NETWORKS } from "@/constants";
 import type { AppContextType } from "@/types/index";
 import SelectNetworkNavContent from "./SelectNetworkNavContent"
+import NavbarSettings from "./NavbarSettings";
+import { useState } from "react";
 
 export default function Navbar({ selectedNetwork, setSelectedNetwork }: AppContextType) {
+  const [settingsIsVisible, setSettingsIsVisible] = useState(false);
+
   return (
     <nav className="hidden lg:flex fixed left-0 right-0 justify-between mx-12 my-2 bg-white/85 px-4 rounded-3xl shadow-md">
       <NavigationMenu>
@@ -118,10 +122,15 @@ export default function Navbar({ selectedNetwork, setSelectedNetwork }: AppConte
             </NavigationMenuLink>
           </NavigationMenuItem>
 
-          <NavigationMenuItem>
-            <NavigationMenuLink className="cursor-pointer inline-flex items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-2 text-sm font-medium rounded-full">
+          <NavigationMenuItem className="relative">
+            <NavigationMenuLink
+              className="cursor-pointer inline-flex items-center justify-center bg-background py-2 transition-all active:scale-90 hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-2 text-sm font-medium rounded-full"
+              onClick={() => setSettingsIsVisible(!settingsIsVisible)}
+            >
               <BsThreeDots size={20} />
             </NavigationMenuLink>
+
+            {settingsIsVisible && <NavbarSettings className="animate-fade-in absolute top-14 right-0" />}
           </NavigationMenuItem>
 
         </NavigationMenuList>
