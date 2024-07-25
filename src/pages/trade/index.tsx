@@ -9,8 +9,10 @@ import ClaimZkTokenAirdropCard from "./components/ClaimZkTokenAirdropCard";
 import Top4Tokens from "./components/Top4Tokens";
 import ActionButtons from "./components/ActionButtons";
 import SelectTokenDialog from "@/components/SelectTokenDialog";
+import { useApp } from "@/App";
 
 export default function Trade() {
+    const { selectedNetwork } = useApp()
     return (
         <>
             <main className="pt-32">
