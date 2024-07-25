@@ -10,6 +10,8 @@ import Top4Tokens from "./components/Top4Tokens";
 import ActionButtons from "./components/ActionButtons";
 import SelectTokenDialog from "@/components/SelectTokenDialog";
 import { useApp } from "@/App";
+import { AVAILABLE_NETWORKS } from "@/constants";
+import LineaVoyageSurgeCard from "./components/LineaVoyageSurgeCard";
 
 export default function Trade() {
     const { selectedNetwork } = useApp()
@@ -84,7 +86,9 @@ export default function Trade() {
                     </section>
 
                     <GettingStartedCard />
-                    <ClaimZkTokenAirdropCard />
+
+                    {selectedNetwork === AVAILABLE_NETWORKS.zkSync && <ClaimZkTokenAirdropCard />}
+                    {selectedNetwork === AVAILABLE_NETWORKS.Linea && <LineaVoyageSurgeCard />}
 
                 </section>
             </main>
