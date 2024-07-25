@@ -5,27 +5,39 @@ import LanguageView from "./SettingsMainOptions/LanguageView";
 import DefaultSettingsView from "./DefaultSettingsView";
 import type { ISetSettingsView } from "@/types/Navbar";
 
-const SETTINGS_VIEW_OPTIONS = {
-    theme: "theme",
-    langugage: "language",
-    advanced: "advanced",
-};
 
-function settingsOptionsReducer(state, action) {
+interface ISettingsOptionsState {
+    component: typeof DefaultSettingsView
+    | typeof ThemeView
+    | typeof LanguageView
+    | typeof AdvancedView;
+}
+
+enum SettingsOptionsEnum {
+    theme = "theme",
+    langugage = "language",
+    advanced = "advanced"
+}
+
+interface ISettingsOptionsAction {
+    type?: SettingsOptionsEnum
+}
+
+function settingsOptionsReducer(state: ISettingsOptionsState, action: ISettingsOptionsAction) {
     switch (action.type) {
-        case SETTINGS_VIEW_OPTIONS.theme:
+        case SettingsOptionsEnum.theme:
             return {
                 ...state,
                 component: ThemeView
             }
 
-        case SETTINGS_VIEW_OPTIONS.langugage:
+        case SettingsOptionsEnum.langugage:
             return {
                 ...state,
                 component: LanguageView
             }
 
-        case SETTINGS_VIEW_OPTIONS.advanced:
+        case SettingsOptionsEnum.advanced:
             return {
                 ...state,
                 component: AdvancedView
@@ -49,9 +61,9 @@ export default function NavbarSettings({ className = '' }: { className?: string 
 
     const setSettingsView: ISetSettingsView = {
         setDefault: () => dispatch({}),
-        setThemeAsView: () => dispatch({ type: SETTINGS_VIEW_OPTIONS.theme }),
-        setLanguageAsView: () => dispatch({ type: SETTINGS_VIEW_OPTIONS.langugage }),
-        setAdvancedAsView: () => dispatch({ type: SETTINGS_VIEW_OPTIONS.advanced }),
+        setThemeAsView: () => dispatch({ type: SettingsOptionsEnum.theme }),
+        setLanguageAsView: () => dispatch({ type: SettingsOptionsEnum.langugage }),
+        setAdvancedAsView: () => dispatch({ type: SettingsOptionsEnum.advanced }),
     }
 
     return (
