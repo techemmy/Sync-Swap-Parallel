@@ -26,14 +26,14 @@ export default function LanguageView({ setSettingsView }: { setSettingsView: ISe
             <article className="flex justify-between mt-2 items-center">
                 <MdOutlineArrowBack
                     onClick={setSettingsView.setDefault}
-                    fontSize={33}
-                    className="p-2 bg-accent cursor-pointer rounded-full active:scale-75 transition-transform"
+                    fontSize={40}
+                    className="p-3 bg-accent cursor-pointer rounded-full active:scale-75 transition-transform"
                 />
                 <h3 className="font-medium text-sm mr-2">Language</h3>
             </article>
             <ul className="grid w-full gap-3 grid-cols-2 mt-4">
                 {languages.map(lang => (
-                    <li key={lang} className={`${lang === activeLang && "text-black shadow-md border-black"} text-gray-500 font-medium active:scale-90 transition-transform text-sm p-2 border border-transparent hover:bg-accent rounded-lg cursor-pointer`}>{lang}</li>
+                    <li key={lang} className={`${lang === activeLang && "text-black shadow-md border border-black"} text-gray-500 font-medium active:scale-90 transition-transform text-sm p-2 hover:bg-accent rounded-lg cursor-pointer`}>{lang}</li>
                 ))}
             </ul>
         </>
