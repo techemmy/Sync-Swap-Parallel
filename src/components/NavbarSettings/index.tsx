@@ -1,8 +1,8 @@
 import { useState } from "react";
-import AdvancedView from "./SettingsMainOptions/AdvancedView";
-import ThemeView from "./SettingsMainOptions/ThemeView";
-import LanguageView from "./SettingsMainOptions/LanguageView";
-import DefaultSettingsView from "./DefaultSettingsView";
+import AdvancedView from "./SettingsViews/AdvancedView";
+import ThemeView from "./SettingsViews/ThemeView";
+import LanguageView from "./SettingsViews/LanguageView";
+import DefaultSettingsView from "./SettingsViews/DefaultSettingsView";
 import type { ISetSettingsView } from "@/types/Navbar";
 
 enum SettingsOptionsEnum {
