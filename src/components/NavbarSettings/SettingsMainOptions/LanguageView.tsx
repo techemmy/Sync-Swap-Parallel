@@ -33,7 +33,7 @@ export default function LanguageView({ setSettingsView }: { setSettingsView: ISe
             </article>
             <ul className="grid w-full gap-3 grid-cols-2 mt-4">
                 {languages.map(lang => (
-                    <li key={lang} className={`${lang === activeLang && "text-black shadow-md border border-black"} text-gray-500 font-medium active:scale-90 transition-transform text-sm p-2 hover:bg-accent rounded-lg cursor-pointer`}>{lang}</li>
+                    <li key={lang} className={`${lang === activeLang && "text-primary-foreground shadow-md border border-primary-foreground"} text-card-foreground font-medium active:scale-90 transition-transform text-sm p-2 hover:bg-accent rounded-lg cursor-pointer`}>{lang}</li>
                 ))}
             </ul>
         </>

@@ -11,32 +11,32 @@ export default function SettingsMainOptions({ setSettingsView }: { setSettingsVi
 
             <section
                 onClick={setSettingsView.setThemeAsView}
-                className="active:scale-95 transition-all bg-accent px-4 py-3 h-20 w-40 flex flex-col rounded-lg justify-between cursor-pointer border-[.5px] border-transparent hover:border-primary">
+                className="active:scale-95 transition-all bg-accent px-4 py-3 h-20 w-40 flex flex-col rounded-lg justify-between cursor-pointer border-[.5px] border-card hover:border-primary">
                 <div className="flex justify-between text-primary">
                     <FaMoon fontSize={18} />
                     <MdKeyboardArrowRight fontSize={18} />
                 </div>
-                <h3 className="font-medium text-sm">Light</h3>
+                <h3 className="font-medium text-sm text-primary-foreground">Light</h3>
             </section>
 
             <section
                 onClick={setSettingsView.setLanguageAsView}
-                className="active:scale-95 transition-all bg-accent px-4 py-3 h-20 w-40 flex flex-col rounded-lg justify-between cursor-pointer border-[.5px]  border-transparent hover:border-primary">
+                className="active:scale-95 transition-all bg-accent px-4 py-3 h-20 w-40 flex flex-col rounded-lg justify-between cursor-pointer border-[.5px] border-card hover:border-primary">
                 <div className="flex justify-between text-primary">
                     <MdLanguage fontSize={22} />
                     <MdKeyboardArrowRight fontSize={18} />
                 </div>
-                <h3 className="font-medium text-sm">English</h3>
+                <h3 className="font-medium text-sm text-primary-foreground">English</h3>
             </section>
 
             <section
                 onClick={setSettingsView.setAdvancedAsView}
-                className="active:scale-95 transition-all  bg-accent px-4 py-3 h-20 w-40 flex flex-col rounded-lg justify-between cursor-pointer border-[.5px]  border-transparent hover:border-primary">
+                className="active:scale-95 transition-all  bg-accent px-4 py-3 h-20 w-40 flex flex-col rounded-lg justify-between cursor-pointer border-[.5px] border-card hover:border-primary">
                 <div className="flex justify-between text-primary">
                     <IoMdSettings fontSize={22} />
                     <MdKeyboardArrowRight fontSize={18} />
                 </div>
-                <h3 className="font-medium text-sm">Advanced</h3>
+                <h3 className="font-medium text-sm text-primary-foreground">Advanced</h3>
             </section>
 
         </div>

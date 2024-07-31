@@ -16,8 +16,12 @@ export default {
         "2xl": "1400px",
       },
     },
+    colors: {
+      white: "rgba(var(--white))",
+    },
     extend: {
       backgroundImage: {
+        page: "var(--background)",
         zKTextGradient: "linear-gradient(var(--zKTextGradient))",
         homePage: "linear-gradient(62deg,#c7c1ff,#ddc8ff)",
       },
@@ -26,22 +30,22 @@ export default {
       },
       boxShadow: {
         DEFAULT: "var(--box-shadow)",
-        light: "0px 0px 48px -50px",
+        light: "rgba(0, 0, 0, 0.1) 0px 0px 48px -50px",
         hover: "var(--box-shadow-hover)",
       },
       colors: {
         navIcon: {
-          DEFAULT: "rgba(78, 81, 183, 0.1)",
+          DEFAULT: "rgba(78, 81, 183)",
           foreground: "rgb(81, 85, 166)",
         },
         border: "rgba(var(--border))",
         input: "hsl(var(--input))",
         ring: "rgb(var(--ring))",
-        background: "rgb(var(--background))",
+        background: "var(--background)",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "rgba(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          foreground: "rgba(var(--primary-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -57,15 +61,15 @@ export default {
         },
         accent: {
           DEFAULT: "rgba(var(--accent))",
-          foreground: "rgb(var(--accent-foreground))",
+          foreground: "rgba(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "rgba(var(--card))",
+          foreground: "rgba(var(--card-foreground))",
         },
       },
       borderRadius: {

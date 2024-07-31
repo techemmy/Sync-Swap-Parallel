@@ -11,10 +11,12 @@ export default function App() {
   const outletContext = { selectedNetwork, setSelectedNetwork }
   return (
     <>
-      <TooltipProvider>
-        <NavBars selectedNetwork={selectedNetwork} setSelectedNetwork={setSelectedNetwork} />
-        <Outlet context={outletContext satisfies AppContextType} />
-      </TooltipProvider>
+      <div className="bg-page">
+        <TooltipProvider>
+          <NavBars selectedNetwork={selectedNetwork} setSelectedNetwork={setSelectedNetwork} />
+          <Outlet context={outletContext satisfies AppContextType} />
+        </TooltipProvider>
+      </div>
     </>
   )
 }

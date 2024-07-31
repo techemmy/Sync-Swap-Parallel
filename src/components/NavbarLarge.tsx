@@ -16,7 +16,7 @@ export default function Navbar({ selectedNetwork, setSelectedNetwork }: AppConte
   const [settingsIsVisible, setSettingsIsVisible] = useState(false);
 
   return (
-    <nav className="hidden lg:flex fixed left-0 right-0 justify-between mx-12 my-2 bg-white/85 px-4 rounded-3xl shadow-md">
+    <nav className="hidden lg:flex fixed left-0 right-0 justify-between mx-12 my-2 bg-card/85 px-4 rounded-3xl shadow-md">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -27,7 +27,7 @@ export default function Navbar({ selectedNetwork, setSelectedNetwork }: AppConte
 
           <NavigationMenuItem>
             <NavLink to="/home" className={({ isActive }) => {
-              const base = "group inline-flex gap-x-1 items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full";
+              const base = "group inline-flex gap-x-1 items-center justify-center py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-card-foreground hover:text-primary px-3 text-sm font-medium rounded-full";
               return (isActive ? 'text-primary ' : '').concat(base)
             }}>
               <TiHome size={25} className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md" />
@@ -37,7 +37,7 @@ export default function Navbar({ selectedNetwork, setSelectedNetwork }: AppConte
 
           <NavigationMenuItem>
             <NavLink to="/swap" className={({ isActive }) => {
-              const base = "group inline-flex gap-x-1 items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full";
+              const base = "group inline-flex gap-x-1 items-center justify-center py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-card-foreground hover:text-primary px-3 text-sm font-medium rounded-full";
               return (isActive ? 'text-primary ' : '').concat(base)
             }}>
               <MdSwapCalls size={25} className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md" />
@@ -49,7 +49,7 @@ export default function Navbar({ selectedNetwork, setSelectedNetwork }: AppConte
             <NavLink to="/pool" className={({ isActive }) => {
               return (isActive ? 'text-primary ' : '').concat('group')
             }}>
-              <NavigationMenuTrigger className="mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full">
+              <NavigationMenuTrigger className="bg-transparent hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent data-[state=open]:bg-accent mx-1 w-max h-10 text-card-foreground hover:text-primary px-3 text-sm font-medium rounded-full">
                 <MdWaves size={25} className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md" />
                 Pool
               </NavigationMenuTrigger>
@@ -61,7 +61,7 @@ export default function Navbar({ selectedNetwork, setSelectedNetwork }: AppConte
               <NavLink to="/explore" className={({ isActive }) => {
                 return (isActive ? 'text-primary ' : '').concat('group')
               }}>
-                <NavigationMenuTrigger className="mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full">
+                <NavigationMenuTrigger className="bg-transparent hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent data-[state=open]:bg-accent mx-1 w-max h-10 text-card-foreground hover:text-primary px-3 text-sm font-medium rounded-full">
                   <HiSparkles size={25} className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md" />
                   Explore
                 </NavigationMenuTrigger>
@@ -71,7 +71,7 @@ export default function Navbar({ selectedNetwork, setSelectedNetwork }: AppConte
 
           <NavigationMenuItem>
             <NavLink to="/launch" className={({ isActive }) => {
-              const base = "group inline-flex gap-x-1 items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full";
+              const base = "group inline-flex gap-x-1 items-center justify-center py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-card-foreground hover:text-primary px-3 text-sm font-medium rounded-full";
               return (isActive ? 'text-primary ' : '').concat(base)
             }}>
               <MdRocketLaunch size={25} className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md" />
@@ -81,7 +81,7 @@ export default function Navbar({ selectedNetwork, setSelectedNetwork }: AppConte
 
           <NavigationMenuItem>
             <NavLink to="/dashboard" className={({ isActive }) => {
-              const base = "group inline-flex gap-x-1 items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full";
+              const base = "group inline-flex gap-x-1 items-center justify-center py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-card-foreground hover:text-primary px-3 text-sm font-medium rounded-full";
               return (isActive ? 'text-primary ' : '').concat(base)
             }}>
               <MdDataUsage size={25} className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md" />
@@ -93,7 +93,7 @@ export default function Navbar({ selectedNetwork, setSelectedNetwork }: AppConte
             <NavLink to="/bridge" className={({ isActive }) => {
               return (isActive ? 'text-primary ' : '').concat('group')
             }}>
-              <NavigationMenuTrigger className="w-max h-10 text-gray-500 hover:text-primary px-3 text-sm font-medium rounded-full">
+              <NavigationMenuTrigger className="bg-transparent hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent data-[state=open]:bg-accent mx-1 w-max h-10 text-card-foreground hover:text-primary px-3 text-sm font-medium rounded-full">
                 <MdLayers size={25} className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md" />
                 Bridge
               </NavigationMenuTrigger>
@@ -107,7 +107,7 @@ export default function Navbar({ selectedNetwork, setSelectedNetwork }: AppConte
         <NavigationMenuList>
 
           <NavigationMenuItem>
-            <NavigationMenuTrigger>
+            <NavigationMenuTrigger className="bg-transparent">
               <img className="w-5" src={selectedNetwork.logoUrl} alt={`${selectedNetwork.name} logo`} />
             </NavigationMenuTrigger>
             <NavigationMenuContent className="backdrop-blur">
@@ -115,7 +115,7 @@ export default function Navbar({ selectedNetwork, setSelectedNetwork }: AppConte
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          <NavigationMenuItem className="cursor-pointer inline-flex items-center justify-center bg-background py-2 transition-all hover:border-primary hover:border-1.5 hover:shadow-primary hover:shadow-md focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-primary px-3 text-sm font-medium rounded-full">
+          <NavigationMenuItem className="cursor-pointer inline-flex items-center justify-center py-2 transition-all hover:border-primary hover:border-1.5 hover:shadow-primary hover:shadow-md focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-primary px-3 text-sm font-medium rounded-full">
             <NavigationMenuLink className="flex">
               <IoWalletOutline className="mr-1" size={20} />
               Connect
@@ -124,7 +124,7 @@ export default function Navbar({ selectedNetwork, setSelectedNetwork }: AppConte
 
           <NavigationMenuItem className="relative">
             <NavigationMenuLink
-              className="cursor-pointer inline-flex items-center justify-center bg-background py-2 transition-all active:scale-90 hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-gray-500 hover:text-primary px-2 text-sm font-medium rounded-full"
+              className="cursor-pointer inline-flex items-center justify-center py-2 transition-all active:scale-90 hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-card-foreground hover:text-primary px-2 text-sm font-medium rounded-full"
               onClick={() => setSettingsIsVisible(!settingsIsVisible)}
             >
               <BsThreeDots size={20} />

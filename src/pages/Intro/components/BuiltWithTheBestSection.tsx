@@ -6,7 +6,7 @@ export default function BuiltWithTheBestSection() {
 
             <article className="text-center">
                 <h2 className="text-[40px] font-Public font-medium">Built with the Best</h2>
-                <p className="text-gray-500 mt-2">
+                <p className="text-card-foreground mt-2">
                     Thanks to our partners and the best builders in Web3 industry
                 </p>
             </article>

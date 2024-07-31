@@ -9,7 +9,7 @@ import { MdKeyboardArrowRight } from "react-icons/md"
 
 export default function GettingStartedCard() {
     return (
-        <Card className="mt-3 shadow-md rounded-3xl border-0 cursor-pointer hover:opacity-75 bg-white/45">
+        <Card className="mt-3 shadow-md rounded-3xl border-0 cursor-pointer hover:opacity-75 bg-card/45">
             <CardContent className="flex justify-between items-center p-5 px-5 gap-x-1 text-primary">
                 <IoWalletOutline size={25} />
                 <article>

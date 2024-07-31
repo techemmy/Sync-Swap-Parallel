@@ -23,7 +23,7 @@ export default function NavbarSettings({ className = '' }: { className?: string 
     }
 
     return (
-        <section className={`min-w-[370px] rounded-3xl shadow-md bg-white p-4 pl-5 ${className}`}>
+        <section className={`min-w-[370px] rounded-3xl shadow-md bg-card p-4 pl-5 ${className}`}>
             {settingsView === SettingsOptionsEnum.default && <DefaultSettingsView setSettingsView={setSettingsViewDispatch} />}
             {settingsView === SettingsOptionsEnum.theme && <ThemeView setSettingsView={setSettingsViewDispatch} />}
             {settingsView === SettingsOptionsEnum.langugage && <LanguageView setSettingsView={setSettingsViewDispatch} />}
