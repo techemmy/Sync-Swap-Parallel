@@ -29,7 +29,7 @@ export default function Trade() {
 
                             <CardContent className="p-0">
                                 <div className="flex flex-row justify-between">
-                                    <input type="text" placeholder="0.0" className="w-0 flex-grow text-3xl outline-none placeholder:text-slate-400/65" />
+                                    <input type="text" placeholder="0.0" className="bg-transparent w-0 flex-grow text-3xl outline-none placeholder:text-slate-400/65" />
                                     <Dialog>
                                         <DialogTrigger asChild>
                                             <Button variant="outline" className="transition-transform active:scale-90 border-card hover:border-border shadow hover:shadow-hover p-2 min-w-[110px] rounded-3xl flex flex-row justify-between">
@@ -66,7 +66,7 @@ export default function Trade() {
 
                             <CardContent className="p-0">
                                 <div className="flex flex-row justify-between">
-                                    <input type="text" placeholder="0.0" className="w-0 flex-grow text-3xl outline-none placeholder:text-slate-400/65 bg-transparent" />
+                                    <input type="text" placeholder="0.0" className="bg-transparent w-0 flex-grow text-3xl outline-none placeholder:text-slate-400/65" />
                                     <Dialog>
                                         <DialogTrigger asChild>
                                             <Button variant="outline" className="transition-transform active:scale-90 border-card hover:border-border shadow hover:shadow-hover p-2 mi[110px] rounded-3xl flex flex-row justify-between gap-x-2">

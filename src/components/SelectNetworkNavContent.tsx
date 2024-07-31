@@ -10,7 +10,7 @@ import { AppContextType } from '@/types'
 
 export default function SelectNetworkNavContent({ selectedNetwork, setSelectedNetwork }: AppContextType) {
     return (
-        <ul className="grid w-[230px] p-3">
+        <ul className="bg-card grid w-[230px] p-3">
             <p className="text-gray-500 font-medium text-sm mb-2">Select a network</p>
 
             {Object.values(AVAILABLE_NETWORKS).map(network => {
