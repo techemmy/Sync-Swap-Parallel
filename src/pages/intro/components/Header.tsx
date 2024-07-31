@@ -7,7 +7,7 @@ export default function Header() {
                 </h1>
                 <p className='text-center md:text-left md:w-1/2 text-card-foreground font-medium'>SyncSwap brings more people easy-to-use and low-cost DeFi with complete Ethereum security powered by zero-knowledge technology.</p>
             </article>
-            <img className='md:absolute md:top-32 lg:top-14 z-[-1]' src='/images/syncswap-cover-art-min.png' alt='Sync Swap Cover art' />
+            <img className='md:absolute md:top-32 lg:top-14' src='/images/syncswap-cover-art-min.png' alt='Sync Swap Cover art' />
         </header>
     )
 }
