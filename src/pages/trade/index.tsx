@@ -18,7 +18,7 @@ export default function Trade() {
     return (
         <>
             <main className="pt-32 bg-background">
-                <section className="mx-auto w-[470px] min-w-[355px] grid gap-y-1">
+                <section className="relative z-[1] mx-auto w-[470px] min-w-[355px] grid gap-y-1">
                     <ActionButtons />
                     <section className="grid gap-y-1 relative">
                         <Card className="grid gap-y-4 mt-2 border-0 shadow rounded-3xl bg-card/70 px-5 py-4">
@@ -83,6 +83,10 @@ export default function Trade() {
 
                             <CardFooter className="p-0 mt-4"></CardFooter>
                         </Card>
+
+                        <div className="absolute z-[-1] opacity-60 -top-[70px] -left-[200px] h-[517px] w-[517px] animate-fade-in-out-15" style={{ background: "radial-gradient(285px, rgba(255, 201, 0, 0.25) 0%, rgba(0, 0, 0, 0) 95%)" }}></div>
+                        <div className="absolute z-[-1] opacity-60 -top-[100px] left-[130px] h-[591px] w-[591px] animate-fade-in-out-20" style={{ background: "radial-gradient(295px, rgba(0, 255, 137, 0.25) 0%, rgba(0, 0, 0, 0) 95%)" }}></div>
+                        <div className="absolute z-[-1] opacity-60 -top-[20px] left-0 h-[611px] w-[611px] animate-fade-in-out-10" style={{ background: "radial-gradient(305px, rgba(100, 0, 255, 0.22) 0%, rgba(0, 0, 0, 0) 95%)" }}></div>
                     </section>
 
                     <GettingStartedCard />

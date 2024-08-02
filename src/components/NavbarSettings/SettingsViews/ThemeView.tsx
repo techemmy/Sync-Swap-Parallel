@@ -9,7 +9,7 @@ enum Themes {
     Uranium = "tokemat",
     Green = "green",
     Bitcoin = "bitcoin",
-    Pink = "sakura",
+    Sakura = "sakura",
     Grey = "white",
     Black = "black",
     Punk = "punk"

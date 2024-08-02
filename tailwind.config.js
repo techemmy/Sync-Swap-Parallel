@@ -23,7 +23,6 @@ export default {
       backgroundImage: {
         page: "var(--background)",
         zKTextGradient: "linear-gradient(var(--zKTextGradient))",
-        homePage: "linear-gradient(62deg,#c7c1ff,#ddc8ff)",
       },
       fontFamily: {
         Public: "Poppins, sans-serif",
@@ -95,12 +94,20 @@ export default {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        "fade-in-out": {
+          "0%": { opacity: "0" },
+          "50%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "portfolio-gradient": "portfolio-gradient 15s ease infinite",
         "fade-in": "fade-in .25s ease-in-out",
+        "fade-in-out-10": "fade-in-out 10s linear infinite",
+        "fade-in-out-15": "fade-in-out 12s linear infinite",
+        "fade-in-out-20": "fade-in-out 14s linear infinite",
       },
     },
   },

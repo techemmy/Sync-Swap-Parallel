@@ -98,6 +98,23 @@
     --box-shadow-hover: rgba(0, 0, 0, 0) 0px 0px, rgba(0, 0, 0, 0) 0px 0px,
       rgba(78, 81, 183, 0.4) 0px 2px 16px;
     /* =========== end of default theme variables =========== */
+
+    .theme-portfolio {
+      background-image: linear-gradient(62deg, #c7c1ff, #ddc8ff);
+      animation: portfolio-gradient 20s ease infinite;
+    }
+  }
+
+  @keyframes portfolio-gradient {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
   }
 
   body[data-theme="light"] {
@@ -135,6 +152,11 @@
     --box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 18px;
     --box-shadow-hover: rgba(0, 0, 0, 0) 0px 0px, rgba(0, 0, 0, 0) 0px 0px,
       rgba(78, 81, 183, 0.4) 0px 2px 16px;
+
+    .theme-portfolio {
+      background-image: linear-gradient(62deg, #c7c1ff, #ddc8ff);
+      animation: portfolio-gradient 20s ease infinite;
+    }
   }
 
   body[data-theme="dark"] {
@@ -166,38 +188,119 @@
     --border: 170, 179, 255, 0.5;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
+    .theme-portfolio {
+      background-image: linear-gradient(
+        -45deg,
+        #0c1038,
+        #1d0b3f,
+        #0d2d46,
+        #0f132e
+      );
+      animation: portfolio-gradient 20s ease infinite;
+    }
   }
 
   body[data-theme="link"] {
     --background: var(--theme-background-link);
+
+    .theme-portfolio {
+      background-image: linear-gradient(
+        -45deg,
+        #e6ecff,
+        #bed6ec,
+        #a8c6ff,
+        #d6e1ff
+      );
+      animation: portfolio-gradient 16s ease infinite;
+    }
   }
 
   body[data-theme="tokemat"] {
     --background: var(--theme-background-tokemat);
+
+    .theme-portfolio {
+      background-image: linear-gradient(-45deg, #071d04, #192709, #011409);
+      animation: portfolio-gradient 18s ease infinite;
+    }
   }
 
   body[data-theme="green"] {
     --background: var(--theme-background-green);
+
+    .theme-portfolio {
+      background-image: linear-gradient(-45deg, #daecd3, #92d38c, #c7e9c7);
+      animation: portfolio-gradient 10s ease infinite;
+    }
   }
 
   body[data-theme="bitcoin"] {
     --background: var(--theme-background-bitcoin);
+
+    .theme-portfolio {
+      background-image: linear-gradient(
+        -45deg,
+        #fff1c5,
+        #ffe1a1,
+        #ffecd4,
+        #f7e4af
+      );
+      animation: portfolio-gradient 20s ease infinite;
+    }
   }
 
   body[data-theme="sakura"] {
     --background: var(--theme-background-sakura);
+
+    .theme-portfolio {
+      background-image: linear-gradient(
+        -45deg,
+        #fef2ff,
+        #ffd3fd,
+        #fad3ea,
+        #ebcff3
+      );
+      animation: portfolio-gradient 12s ease infinite;
+    }
   }
 
   body[data-theme="white"] {
     --background: var(--theme-background-white);
+
+    .theme-portfolio {
+      background-image: linear-gradient(-45deg, #ddd, silver, #cacaca, #727272);
+      animation: portfolio-gradient 20s ease infinite;
+    }
   }
 
   body[data-theme="black"] {
     --background: var(--theme-background-black);
+
+    .theme-portfolio {
+      background-image: linear-gradient(
+        -45deg,
+        #181818,
+        #353535,
+        #222,
+        #0e0e0e
+      );
+      animation: portfolio-gradient 20s ease infinite;
+    }
   }
 
   body[data-theme="punk"] {
     --background: var(--theme-background-punk);
+
+    .theme-portfolio {
+      background-image: linear-gradient(
+        -45deg,
+        #41003e,
+        #200049,
+        #0b002e,
+        #0a002b
+      );
+      animation: portfolio-gradient 12s ease infinite;
+    }
   }
 }
 
