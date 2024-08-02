@@ -1,12 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-  ],
+  content: {
+    relative: true,
+    files: [
+      "./src/**/*.{js,ts,jsx,tsx,mdx}",
+      "./pages/**/*.{ts,tsx}",
+      "./components/**/*.{ts,tsx}",
+      "./app/**/*.{ts,tsx}",
+      "./index.html",
+    ],
+  },
   prefix: "",
   theme: {
     container: {
@@ -15,9 +19,6 @@ export default {
       screens: {
         "2xl": "1400px",
       },
-    },
-    colors: {
-      white: "rgba(var(--white))",
     },
     extend: {
       backgroundImage: {
