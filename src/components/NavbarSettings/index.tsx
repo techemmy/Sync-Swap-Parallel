@@ -11,7 +11,12 @@ enum SettingsOptionsEnum {
     langugage = "language",
     advanced = "advanced"
 }
-export default function NavbarSettings({ className = '' }: { className?: string }) {
+
+interface Props {
+    className?: string;
+}
+
+export default function NavbarSettings({ className = '' }: Props) {
     const [settingsView, setSettingsView] = useState<SettingsOptionsEnum>(SettingsOptionsEnum.default);
 
 

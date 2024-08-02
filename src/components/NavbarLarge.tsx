@@ -122,10 +122,9 @@ export default function Navbar({ selectedNetwork, setSelectedNetwork }: AppConte
             </NavigationMenuLink>
           </NavigationMenuItem>
 
-          <NavigationMenuItem className="relative">
+          <NavigationMenuItem onClick={() => setSettingsIsVisible(!settingsIsVisible)} className="relative">
             <NavigationMenuLink
               className="cursor-pointer inline-flex items-center justify-center py-2 transition-all active:scale-90 hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-card-foreground hover:text-primary px-2 text-sm font-medium rounded-full"
-              onClick={() => setSettingsIsVisible(!settingsIsVisible)}
             >
               <BsThreeDots size={20} />
             </NavigationMenuLink>
