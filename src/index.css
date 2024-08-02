@@ -162,7 +162,6 @@
   body[data-theme="dark"] {
     --background: var(--theme-background-dark);
     --foreground: 210 40% 98%;
-    --white: 47 48 87;
 
     --card: 47, 48, 87;
     --card-foreground: 188, 190, 213;
@@ -310,12 +309,6 @@
   }
   body {
     @apply text-foreground;
-  }
-  .bg-transparent {
-    background-color: transparent;
-  }
-  .border-transparent {
-    border-color: transparent;
   }
 }
 

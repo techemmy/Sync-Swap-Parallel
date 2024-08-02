@@ -7,7 +7,7 @@ import { MdDataUsage, MdLayers, MdRocketLaunch, MdToll, MdWaves } from "react-ic
 
 export default function NavbarSidebar({ visible }: { visible: boolean }) {
     return (
-        <section className={`lg:hidden w-56 bg-white flex flex-col h-screen fixed shadow-xl z-50 -translate-x-60 duration-300 transition-transform ${visible && "translate-x-0"}`}>
+        <section className={`lg:hidden w-56 bg-card flex flex-col h-screen fixed shadow-xl z-50 -translate-x-60 duration-300 transition-transform ${visible && "translate-x-0"}`}>
             <NavigationMenu orientation="vertical">
                 <NavigationMenuList className="w-full mt-12 flex flex-col gap-y-4 fixed top-0">
 
