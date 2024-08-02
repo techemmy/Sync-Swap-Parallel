@@ -37,7 +37,7 @@ export default function ThemeView({ setSettingsView }: { setSettingsView: ISetSe
             </article>
             <ul className="grid w-full gap-3 grid-cols-2 mt-4">
                 {(Object.keys(Themes) as Array<keyof typeof Themes>).map(theme => (
-                    <li onClick={() => handleSetTheme(Themes[theme])} key={theme} className={`${Themes[theme] === activeTheme && "text-primary shadow-md border-primary"} border border-transparent text-card-foreground font-medium active:scale-90 transition-transform text-sm p-2 text-center hover:bg-accent rounded-lg cursor-pointer`}>{theme}</li>
+                    <li onClick={() => handleSetTheme(Themes[theme])} key={theme} className={`${Themes[theme] === activeTheme ? "text-primary shadow-md border-primary" : "text-card-foreground border-transparent"} border font-medium active:scale-90 transition-transform text-sm p-2 text-center hover:bg-accent rounded-lg cursor-pointer`}>{theme}</li>
                 ))}
             </ul>
         </>
