@@ -22,7 +22,7 @@ export default function Trade() {
   const { selectedNetwork } = useApp();
   return (
     <>
-      <main className="pt-32 bg-black/80">
+      <main className="pt-32">
         <section className="relative z-[1] mx-auto w-[470px] min-w-[355px] grid gap-y-1">
           <ActionButtons />
           <section className="grid gap-y-1 relative">
