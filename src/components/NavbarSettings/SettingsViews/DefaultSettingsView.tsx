@@ -4,12 +4,20 @@ import Socials from "@/components/NavbarSettings/Socials";
 import { FaMoon } from "react-icons/fa";
 import { MdKeyboardArrowRight, MdLanguage } from "react-icons/md";
 import { IoMdSettings } from "react-icons/io";
+import { ThemesEnum } from "@/enums";
+
+interface Props {
+  setSettingsView: ISetSettingsView;
+  activeTheme: ThemesEnum;
+}
 
 export default function DefaultSettingsView({
   setSettingsView,
-}: {
-  setSettingsView: ISetSettingsView;
-}) {
+  activeTheme,
+}: Props) {
+  const theme = Object.entries(ThemesEnum).find(
+    (theme) => theme[1] === activeTheme,
+  );
   return (
     <>
       <h2 className="font-medium">Settings</h2>
@@ -22,7 +30,9 @@ export default function DefaultSettingsView({
             <FaMoon fontSize={18} />
             <MdKeyboardArrowRight fontSize={18} />
           </div>
-          <h3 className="font-medium text-sm text-primary-foreground">Light</h3>
+          <h3 className="font-medium text-sm text-primary-foreground">
+            {(theme && theme[0]) || activeTheme}
+          </h3>
         </section>
 
         <section

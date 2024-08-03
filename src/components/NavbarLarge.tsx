@@ -20,15 +20,18 @@ import {
 } from "react-icons/md";
 import { HiSparkles } from "react-icons/hi";
 import { AVAILABLE_NETWORKS } from "@/constants";
-import type { AppContextType } from "@/types/index";
+import type { AppContextType, IThemeManager } from "@/types/index";
 import SelectNetworkNavContent from "./SelectNetworkNavContent";
 import NavbarSettings from "./NavbarSettings";
 import { useState } from "react";
 
-export default function Navbar({
-  selectedNetwork,
-  setSelectedNetwork,
-}: AppContextType) {
+interface Props {
+  appContext: AppContextType;
+  themeManager: IThemeManager;
+}
+
+export default function Navbar({ appContext, ...props }: Props) {
+  const { selectedNetwork, setSelectedNetwork } = appContext;
   const [settingsIsVisible, setSettingsIsVisible] = useState(false);
 
   return (
@@ -198,7 +201,10 @@ export default function Navbar({
             </NavigationMenuLink>
 
             {settingsIsVisible && (
-              <NavbarSettings className="animate-fade-in absolute top-14 right-0" />
+              <NavbarSettings
+                {...props}
+                className="animate-fade-in absolute top-14 right-0"
+              />
             )}
           </NavigationMenuItem>
         </NavigationMenuList>

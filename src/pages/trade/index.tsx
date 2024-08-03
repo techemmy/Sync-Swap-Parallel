@@ -37,7 +37,7 @@ export default function Trade() {
                   <input
                     type="text"
                     placeholder="0.0"
-                    className="bg-transparent w-0 flex-grow text-3xl outline-none placeholder:text-slate-400/65"
+                    className="text-primary-foreground bg-transparent w-0 flex-grow text-3xl outline-none"
                   />
                   <Dialog>
                     <DialogTrigger asChild>
@@ -104,7 +104,7 @@ export default function Trade() {
                   <input
                     type="text"
                     placeholder="0.0"
-                    className="bg-transparent w-0 flex-grow text-3xl outline-none placeholder:text-slate-400/65"
+                    className="text-primary-foreground bg-transparent w-0 flex-grow text-3xl outline-none"
                   />
                   <Dialog>
                     <DialogTrigger asChild>

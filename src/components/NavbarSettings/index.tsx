@@ -4,19 +4,18 @@ import ThemeView from "@/components/NavbarSettings/SettingsViews/ThemeView";
 import LanguageView from "@/components/NavbarSettings/SettingsViews/LanguageView";
 import DefaultSettingsView from "@/components/NavbarSettings/SettingsViews/DefaultSettingsView";
 import type { ISetSettingsView } from "@/types/Navbar";
-
-enum SettingsOptionsEnum {
-  default = "default",
-  theme = "theme",
-  langugage = "language",
-  advanced = "advanced",
-}
+import { SettingsOptionsEnum } from "@/enums";
+import type { IThemeManager } from "@/types";
 
 interface Props {
   className?: string;
+  themeManager: IThemeManager;
 }
 
-export default function NavbarSettings({ className = "" }: Props) {
+export default function NavbarSettings({
+  className = "",
+  themeManager,
+}: Props) {
   const [settingsView, setSettingsView] = useState<SettingsOptionsEnum>(
     SettingsOptionsEnum.default,
   );
@@ -33,10 +32,16 @@ export default function NavbarSettings({ className = "" }: Props) {
       className={`min-w-[370px] rounded-3xl shadow-md bg-card p-4 pl-5 ${className}`}
     >
       {settingsView === SettingsOptionsEnum.default && (
-        <DefaultSettingsView setSettingsView={setSettingsViewDispatch} />
+        <DefaultSettingsView
+          activeTheme={themeManager.activeTheme}
+          setSettingsView={setSettingsViewDispatch}
+        />
       )}
       {settingsView === SettingsOptionsEnum.theme && (
-        <ThemeView setSettingsView={setSettingsViewDispatch} />
+        <ThemeView
+          themeManager={themeManager}
+          setSettingsView={setSettingsViewDispatch}
+        />
       )}
       {settingsView === SettingsOptionsEnum.langugage && (
         <LanguageView setSettingsView={setSettingsViewDispatch} />
