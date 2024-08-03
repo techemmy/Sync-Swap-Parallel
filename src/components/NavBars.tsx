@@ -1,23 +1,13 @@
 import NavbarLarge from "@/components/NavbarLarge";
 import NavbarSmall from "@/components/NavbarSmall";
 import NavbarSidebar from "@/components/NavbarSidebar";
-import { useRef, useState } from "react";
-import { ThemesEnum } from "@/enums";
+import { useState } from "react";
+import useDataTheme from "@/hooks/useDataTheme";
 
 export default function NavBars(props: any) {
   const [toggledSidebar, setToggledSidebar] = useState(false);
-  const bodyRef = useRef(document?.querySelector("body"));
-  const [activeTheme, setActiveTheme] = useState((): ThemesEnum => {
-    return (
-      (bodyRef?.current?.getAttribute("data-theme") as ThemesEnum) ||
-      ThemesEnum.Light
-    );
-  });
+  const [activeTheme, handleSetTheme] = useDataTheme();
 
-  function handleSetTheme(theme: ThemesEnum) {
-    bodyRef?.current?.setAttribute("data-theme", theme);
-    setActiveTheme(theme);
-  }
   return (
     <>
       <div className="z-30 fixed">
