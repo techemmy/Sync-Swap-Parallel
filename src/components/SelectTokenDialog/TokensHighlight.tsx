@@ -5,5 +5,5 @@ export default function TokensHighlight({
 }: {
   children: ReactElement[];
 }) {
-  return <ul className="flex flex-wrap justify-between">{children}</ul>;
+  return <ul className="flex flex-wrap justify-between mb-1">{children}</ul>;
 }

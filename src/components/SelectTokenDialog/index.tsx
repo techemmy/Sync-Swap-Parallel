@@ -5,7 +5,8 @@ import TokenHighlight from "./TokenHighlight";
 import TokensHighlight from "./TokensHighlight";
 import TokenItems from "./TokenItems";
 import { useEffect, useState } from "react";
-import { MdSearch } from "react-icons/md";
+import { MdSearch, MdToll } from "react-icons/md";
+import TokenItem from "./TokenItem";
 
 export default function SelectTokenDialog() {
   const tokens = Object.values(Tokens.data).map(({ name, symbol, logo }) => ({
@@ -38,8 +39,7 @@ export default function SelectTokenDialog() {
     <DialogContent className="flex flex-col bg-card p-0 sm:max-w-md border-0 h-[90vh] gap-2">
       <DialogHeader className="bg-primary/[0.16] px-5 pt-5 border-0 text-primary-foreground">
         <DialogTitle className="font-medium flex items-center">
-          {" "}
-          Select a Token{" "}
+          Select a token
         </DialogTitle>
         <DialogDescription className="text-sm">
           Select a token for transaction
@@ -65,7 +65,23 @@ export default function SelectTokenDialog() {
         </div>
       </DialogHeader>
 
-      <TokenItems tokens={filteredTokens} />
+      <TokenItems>
+        {filteredTokens.map((token) => (
+          <TokenItem
+            key={token.symbol + token.name}
+            name={token.name}
+            symbol={token.symbol}
+            logo={token.logo}
+          />
+        ))}
+
+        {filteredTokens.length <= 0 && (
+          <>
+            <MdToll className="text-primary mt-8" size={30} />
+            <p className="text-primary font-medium">No tokens found</p>
+          </>
+        )}
+      </TokenItems>
     </DialogContent>
   );
 }
