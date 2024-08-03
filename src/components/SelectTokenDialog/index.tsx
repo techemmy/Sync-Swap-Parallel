@@ -5,6 +5,7 @@ import TokenHighlight from "./TokenHighlight";
 import TokensHighlight from "./TokensHighlight";
 import TokenItems from "./TokenItems";
 import { useEffect, useState } from "react";
+import { MdSearch } from "react-icons/md";
 
 export default function SelectTokenDialog() {
   const tokens = Object.values(Tokens.data).map(({ name, symbol, logo }) => ({
@@ -44,13 +45,16 @@ export default function SelectTokenDialog() {
           Select a token for transaction
         </DialogDescription>
         <div className="py-3 grid gap-4 w-full">
-          <input
-            className="transition-colors p-2 w-full rounded-lg h-9 border border-transparent outline-0 focus:border-primary hover:border-primary text-sm"
-            type="text"
-            placeholder="Search name or paste address"
-            value={searchTokenInput}
-            onChange={(e) => setSearchTokenInput(e.target.value)}
-          />
+          <div className="group flex items-center border border-transparent bg-accent transition-colors p-2 rounded-xl h-9 has-[:focus]:border-primary/75 has-[:hover]:border-primary/75">
+            <MdSearch className="text-primary" size={20} />
+            <input
+              className="bg-transparent ml-2 h-full w-full outline-0 text-sm"
+              type="text"
+              placeholder="Search name or paste address"
+              value={searchTokenInput}
+              onChange={(e) => setSearchTokenInput(e.target.value)}
+            />
+          </div>
           <TokensHighlight>
             <TokenHighlight name="ETH" logoSrc={Tokens.data[1027].logo} />
             <TokenHighlight name="ZK" logoSrc={Tokens.data[24091].logo} />
