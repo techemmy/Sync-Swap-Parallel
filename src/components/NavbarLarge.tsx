@@ -185,7 +185,7 @@ export default function Navbar({ appContext, ...props }: Props) {
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          <NavigationMenuItem className="cursor-pointer inline-flex items-center justify-center py-2 transition-all hover:border-primary hover:border-1.5 hover:shadow-primary hover:shadow-md focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-primary px-3 text-sm font-medium rounded-full">
+          <NavigationMenuItem className="cursor-pointer inline-flex items-center justify-center py-2 transition-all border border-transparent hover:border-border hover:shadow-hover hover:bg-primary/[0.04] active:scale-90 transition-transform mx-1 h-10 text-primary px-5 text-sm font-medium rounded-full">
             <NavigationMenuLink className="flex">
               <IoWalletOutline className="mr-1" size={20} />
               Connect
