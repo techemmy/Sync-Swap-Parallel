@@ -21,6 +21,9 @@ export default {
       },
     },
     extend: {
+      gridTemplateColumns: {
+        "wallet-options": "repeat(auto-fill, minmax(195px, 1fr))",
+      },
       backgroundImage: {
         page: "var(--background)",
         zKTextGradient: "linear-gradient(var(--zKTextGradient))",

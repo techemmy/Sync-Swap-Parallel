@@ -24,8 +24,14 @@ import type { AppContextType, IThemeManager } from "@/types/index";
 import SelectNetworkNavContent from "./SelectNetworkNavContent";
 import NavbarSettings from "./NavbarSettings";
 import { useState } from "react";
-import { Dialog, DialogTrigger } from "@/components/ui/dialog";
-import ConnectWalletDialog from "@/components/ConnectWalletDialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog";
+import ConnectWalletDialog from "./ConnectWalletDialog";
 
 interface Props {
   appContext: AppContextType;
