@@ -103,6 +103,28 @@ export default {
           "50%": { opacity: "1" },
           "100%": { opacity: "0" },
         },
+        typewriter: {
+          to: {
+            left: "100%",
+          },
+        },
+        blink: {
+          "0%": {
+            opacity: "0",
+          },
+          "0.1%": {
+            opacity: "1",
+          },
+          "50%": {
+            opacity: "1",
+          },
+          "50.1%": {
+            opacity: "0",
+          },
+          "100%": {
+            opacity: "0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -112,6 +134,9 @@ export default {
         "fade-in-out-10": "fade-in-out 10s linear infinite",
         "fade-in-out-15": "fade-in-out 12s linear infinite",
         "fade-in-out-20": "fade-in-out 14s linear infinite",
+        typewriter: "typewriter 2s steps(11) forwards",
+        caret:
+          "typewriter 2s steps(11) forwards, blink 1s steps(11) infinite 2s",
       },
     },
   },
