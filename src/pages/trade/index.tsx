@@ -23,7 +23,7 @@ export default function Trade() {
   return (
     <>
       <main className="pt-32">
-        <section className="relative z-[1] mx-auto w-[470px] min-w-[355px] grid gap-y-1">
+        <section className="relative z-[1] mx-auto max-w-[470px] grid gap-y-1 p-2">
           <ActionButtons />
           <section className="grid gap-y-1 relative">
             <Card className="grid gap-y-4 mt-2 border-0 shadow rounded-3xl bg-card/70 px-5 py-4">
