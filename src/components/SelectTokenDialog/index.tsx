@@ -71,7 +71,7 @@ export default function SelectTokenDialog() {
             key={token.symbol + token.name}
             name={token.name}
             symbol={token.symbol}
-            logo={token.logo}
+            logoSrc={token.logo}
           />
         ))}
 
