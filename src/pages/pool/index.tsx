@@ -14,6 +14,7 @@ import {
 import { FiPlusCircle } from "react-icons/fi";
 import { RiGraduationCapFill } from "react-icons/ri";
 import ImportPositionDialog from "./ImportPositionDialog";
+import { Link } from "react-router-dom";
 
 export default function Pool() {
   return (
@@ -50,9 +51,11 @@ export default function Pool() {
                 </DialogTrigger>
 
                 <DropdownMenuItem className="cursor-pointer text-card-foreground hover:bg-primary/[0.04] active:scale-90 transition-transform">
-                  <p className="w-full flex gap-x-6 justify-between items-center px-2 py-px">
-                    Learn <RiGraduationCapFill />
-                  </p>
+                  <Link to="#" className="w-full">
+                    <p className="w-full flex gap-x-6 justify-between items-center px-2 py-px">
+                      Learn <RiGraduationCapFill />
+                    </p>
+                  </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
