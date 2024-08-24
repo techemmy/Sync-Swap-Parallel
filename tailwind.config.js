@@ -44,6 +44,7 @@ export default {
         border: "rgba(var(--border))",
         input: "hsl(var(--input))",
         ring: "rgb(var(--ring))",
+        buttonHover: "rgba(var(--button-hover))",
         background: "var(--background)",
         foreground: "hsl(var(--foreground))",
         primary: {
