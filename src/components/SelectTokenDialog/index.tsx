@@ -36,7 +36,7 @@ export default function SelectTokenDialog() {
   }, [searchTokenInput]);
 
   return (
-    <DialogContent className="flex flex-col bg-card p-0 sm:max-w-md border-0 h-[90vh] gap-2 sm:rounded-3xl">
+    <DialogContent className="flex flex-col bg-card p-0 sm:max-w-md border-0 h-[90vh] gap-2 sm:rounded-3xl overflow-y-scroll">
       <DialogHeader className="bg-primary/[0.16] px-5 pt-5 border-0 text-primary-foreground">
         <DialogTitle className="font-medium flex items-center">
           Select a token
@@ -48,7 +48,7 @@ export default function SelectTokenDialog() {
           <div className="group flex items-center border border-transparent bg-accent transition-colors p-2 rounded-xl h-9 has-[:focus]:border-primary/75 has-[:hover]:border-primary/75">
             <MdSearch className="text-primary" size={20} />
             <input
-              className="bg-transparent ml-2 h-full w-full outline-0 text-sm"
+              className="bg-transparent ml-2 h-full w-full outline-none text-sm"
               type="text"
               placeholder="Search name or paste address"
               value={searchTokenInput}
