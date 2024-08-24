@@ -5,6 +5,15 @@ import { GoInbox } from "react-icons/go";
 import { IoWalletOutline } from "react-icons/io5";
 import { MdAdd } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { FiPlusCircle } from "react-icons/fi";
+import { RiGraduationCapFill } from "react-icons/ri";
+import ImportPositionDialog from "./ImportPositionDialog";
 
 export default function Pool() {
   return (
@@ -20,14 +29,37 @@ export default function Pool() {
         </section>
 
         <div className="flex gap-x-2">
-          <Button
-            variant="outline"
-            className="active:scale-90 transition-transform"
-          >
-            More
-            <MdKeyboardArrowDown fontSize={20} />
-          </Button>
-          <Button className="rounded-xl boxShadow active:scale-90 transition-transform">
+          <Dialog>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="h-fit outline-none">
+                <Button
+                  variant="outline"
+                  className="active:scale-90 transition-transform"
+                >
+                  More
+                  <MdKeyboardArrowDown fontSize={20} />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="p-0 border-transparent">
+                <DialogTrigger asChild>
+                  <DropdownMenuItem className="cursor-pointer text-card-foreground hover:bg-primary/[0.04] active:scale-90 transition-transform">
+                    <p className="w-full flex gap-x-6 justify-between items-center px-2 py-px">
+                      Import position <FiPlusCircle />
+                    </p>
+                  </DropdownMenuItem>
+                </DialogTrigger>
+
+                <DropdownMenuItem className="cursor-pointer text-card-foreground hover:bg-primary/[0.04] active:scale-90 transition-transform">
+                  <p className="w-full flex gap-x-6 justify-between items-center px-2 py-px">
+                    Learn <RiGraduationCapFill />
+                  </p>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <ImportPositionDialog />
+          </Dialog>
+          <Button className="rounded-xl boxShadow active:scale-90 transition-all">
             <MdAdd fontSize={20} />
             New Position
           </Button>
