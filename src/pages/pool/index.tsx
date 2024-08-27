@@ -32,7 +32,7 @@ export default function Pool() {
         <div className="flex gap-x-2">
           <Dialog>
             <DropdownMenu>
-              <DropdownMenuTrigger className="h-fit outline-none">
+              <DropdownMenuTrigger className="h-fit outline-none" asChild>
                 <Button
                   variant="outline"
                   className="active:scale-90 transition-transform"
