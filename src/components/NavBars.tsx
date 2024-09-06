@@ -14,6 +14,7 @@ export default function NavBars(props: any) {
         <NavbarSmall
           hamburgerToggled={toggledSidebar}
           handleHamburgerClicked={setToggledSidebar}
+          {...props}
         />
         <NavbarLarge
           {...props}

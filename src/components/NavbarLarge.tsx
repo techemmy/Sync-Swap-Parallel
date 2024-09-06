@@ -21,7 +21,7 @@ import {
 import { HiSparkles } from "react-icons/hi";
 import { AVAILABLE_NETWORKS } from "@/constants";
 import type { AppContextType, IThemeManager } from "@/types/index";
-import SelectNetworkNavContent from "./SelectNetworkNavContent";
+import SelectNetworkNavContent from "@/components/SelectNetwork/SelectNetworkNavContent";
 import NavbarSettings from "./NavbarSettings";
 import { useState } from "react";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
@@ -179,7 +179,7 @@ export default function NavbarLarge({ appContext, ...props }: Props) {
                 alt={`${selectedNetwork.name} logo`}
               />
             </NavigationMenuTrigger>
-            <NavigationMenuContent className="backdrop-blur sm:rounded-2xl">
+            <NavigationMenuContent className="mt-4 top-full">
               <SelectNetworkNavContent
                 selectedNetwork={selectedNetwork}
                 setSelectedNetwork={setSelectedNetwork}
