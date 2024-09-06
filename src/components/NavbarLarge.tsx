@@ -32,7 +32,7 @@ interface Props {
   themeManager: IThemeManager;
 }
 
-export default function Navbar({ appContext, ...props }: Props) {
+export default function NavbarLarge({ appContext, ...props }: Props) {
   const { selectedNetwork, setSelectedNetwork } = appContext;
   const [settingsIsVisible, setSettingsIsVisible] = useState(false);
 
@@ -179,7 +179,7 @@ export default function Navbar({ appContext, ...props }: Props) {
                 alt={`${selectedNetwork.name} logo`}
               />
             </NavigationMenuTrigger>
-            <NavigationMenuContent className="backdrop-blur">
+            <NavigationMenuContent className="backdrop-blur sm:rounded-2xl">
               <SelectNetworkNavContent
                 selectedNetwork={selectedNetwork}
                 setSelectedNetwork={setSelectedNetwork}
