@@ -12,12 +12,17 @@ import {
 } from "react-icons/md";
 import { AppContextType } from "@/types";
 
+interface Props extends AppContextType {
+  className?: string;
+}
+
 export default function SelectNetworkNavContent({
   selectedNetwork,
   setSelectedNetwork,
-}: AppContextType) {
+  className,
+}: Props) {
   return (
-    <ul className="bg-card grid w-[230px] p-3">
+    <ul className={`bg-card grid w-[230px] p-3 ${className}`}>
       <p className="text-gray-500 font-medium text-sm mb-2">Select a network</p>
 
       {Object.values(AVAILABLE_NETWORKS).map((network) => {
