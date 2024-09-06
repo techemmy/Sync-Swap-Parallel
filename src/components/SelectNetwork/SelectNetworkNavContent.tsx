@@ -3,14 +3,11 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { AVAILABLE_NETWORKS } from "../constants";
+import { AVAILABLE_NETWORKS } from "@/constants";
 import { Link } from "react-router-dom";
-import {
-  MdArrowOutward,
-  MdCheckCircleOutline,
-  MdKeyboardArrowDown,
-} from "react-icons/md";
-import { AppContextType } from "@/types";
+import { MdArrowOutward, MdKeyboardArrowDown } from "react-icons/md";
+import { AppContextType, NetworkType } from "@/types";
+import NetworkItem from "./NetworkItem";
 
 interface Props extends AppContextType {
   className?: string;
@@ -22,28 +19,19 @@ export default function SelectNetworkNavContent({
   className,
 }: Props) {
   return (
-    <ul className={`bg-card grid w-[230px] p-3 ${className}`}>
+    <ul
+      className={`bg-card grid w-[230px] p-3 px-4 ${className} rounded-2xl shadow`}
+    >
       <p className="text-gray-500 font-medium text-sm mb-2">Select a network</p>
 
-      {Object.values(AVAILABLE_NETWORKS).map((network) => {
+      {Object.values(AVAILABLE_NETWORKS).map((network: NetworkType) => {
         return (
-          <li
+          <NetworkItem
             key={network.name}
-            onClick={() => setSelectedNetwork(network)}
-            className="h-9 transition-transform active:scale-90 duration-300 cursor-pointer flex items-center justify-between w-full block select-none rounded-lg p-2 leading-none transition-colors hover:bg-accent focus:bg-accent"
-          >
-            <div className="flex gap-x-2 items-center">
-              <img
-                className="w-5"
-                src={network.logoUrl}
-                alt={`${network.name} logo`}
-              />
-              <p className="text-medium">{network.name}</p>
-            </div>
-            {selectedNetwork.name === network.name && (
-              <MdCheckCircleOutline size={20} className="text-primary" />
-            )}
-          </li>
+            network={network}
+            selectedNetwork={selectedNetwork}
+            setSelectedNetwork={setSelectedNetwork}
+          />
         );
       })}
 
