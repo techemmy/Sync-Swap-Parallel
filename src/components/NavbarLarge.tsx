@@ -179,7 +179,7 @@ export default function NavbarLarge({ appContext, ...props }: Props) {
                 alt={`${selectedNetwork.name} logo`}
               />
             </NavigationMenuTrigger>
-            <NavigationMenuContent className="mt-4 top-full">
+            <NavigationMenuContent>
               <SelectNetworkNavContent
                 selectedNetwork={selectedNetwork}
                 setSelectedNetwork={setSelectedNetwork}
