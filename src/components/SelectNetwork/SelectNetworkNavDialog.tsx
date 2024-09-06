@@ -22,12 +22,12 @@ export default function SelectNetworkNavDialog({
   return (
     <DialogContent
       className={`flex flex-col bg-card p-0 sm:max-w-md border-0 gap-2 rounded-2xl ${className}`}
+      aria-describedby={undefined}
     >
       <DialogHeader className="text-gray-500 font-medium mb-20 px-5 pt-5 border-0">
         <DialogTitle className="font-medium flex items-center text-sm">
           Select a network
         </DialogTitle>
-        <DialogDescription className="text-sm" asChild></DialogDescription>
 
         <ul>
           {Object.values(AVAILABLE_NETWORKS).map((network: NetworkType) => {
@@ -37,6 +37,7 @@ export default function SelectNetworkNavDialog({
                 network={network}
                 selectedNetwork={selectedNetwork}
                 setSelectedNetwork={setSelectedNetwork}
+                className="my-2"
               />
             );
           })}
@@ -61,7 +62,7 @@ export default function SelectNetworkNavDialog({
                   fill="#E81899"
                 ></path>
               </svg>
-              <p className="text-[14px] text-primary-foreground">Taiko</p>
+              <p className="text-[14px] text-primary-foregroun">Taiko</p>
             </div>
             <MdArrowOutward className="text-primary" />
           </Link>

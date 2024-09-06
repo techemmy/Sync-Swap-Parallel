@@ -20,7 +20,7 @@ export default function SelectNetworkNavContent({
 }: Props) {
   return (
     <ul
-      className={`bg-card grid w-[230px] p-3 px-4 ${className} rounded-2xl shadow`}
+      className={`bg-card grid w-[230px] p-3 px-4 rounded-2xl shadow ${className} `}
     >
       <p className="text-gray-500 font-medium text-sm mb-2">Select a network</p>
 
