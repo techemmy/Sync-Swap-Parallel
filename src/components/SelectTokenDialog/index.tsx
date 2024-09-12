@@ -36,7 +36,7 @@ export default function SelectTokenDialog() {
   }, [searchTokenInput]);
 
   return (
-    <DialogContent className="flex flex-col bg-card p-0 sm:max-w-md border-0 h-[90vh] gap-2 sm:rounded-3xl overflow-y-scroll">
+    <DialogContent className="flex flex-col bg-card p-0 sm:max-w-md border-0 h-[90vh] gap-2 sm:rounded-3xl overflow-y-hidden">
       <DialogHeader className="bg-primary/[0.16] px-5 pt-5 border-0 text-primary-foreground">
         <DialogTitle className="font-medium flex items-center">
           Select a token

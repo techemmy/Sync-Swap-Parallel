@@ -5,7 +5,7 @@ interface TokenItemsProps {
 }
 export default function TokenItems({ children }: TokenItemsProps) {
   return (
-    <div className="flex flex-col items-center space-y-2 px-3 pb-3">
+    <div className="flex flex-col items-center space-y-2 px-3 pb-3 overflow-y-scroll">
       {children}
     </div>
   );
