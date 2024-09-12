@@ -6,9 +6,14 @@ import type { IThemeManager } from "@/types";
 interface Props {
   themeManager: IThemeManager;
   setSettingsView: ISetSettingsView;
+  gridColumns: number;
 }
 
-export default function ThemeView({ setSettingsView, themeManager }: Props) {
+export default function ThemeView({
+  setSettingsView,
+  themeManager,
+  gridColumns = 2,
+}: Props) {
   const { activeTheme, handleSetTheme } = themeManager;
   return (
     <>
@@ -20,7 +25,7 @@ export default function ThemeView({ setSettingsView, themeManager }: Props) {
         />
         <h3 className="font-medium text-sm mr-2">Theme</h3>
       </article>
-      <ul className="grid w-full gap-3 grid-cols-2 mt-4">
+      <ul className={`grid w-full gap-3 grid-cols-${gridColumns} mt-4`}>
         {(Object.keys(ThemesEnum) as Array<keyof typeof ThemesEnum>).map(
           (theme) => (
             <li

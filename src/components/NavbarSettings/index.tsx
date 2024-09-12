@@ -10,11 +10,13 @@ import type { IThemeManager } from "@/types";
 interface Props {
   className?: string;
   themeManager: IThemeManager;
+  gridColumns: number;
 }
 
 export default function NavbarSettings({
   className = "",
   themeManager,
+  gridColumns,
 }: Props) {
   const [settingsView, setSettingsView] = useState<SettingsOptionsEnum>(
     SettingsOptionsEnum.default,
@@ -41,10 +43,14 @@ export default function NavbarSettings({
         <ThemeView
           themeManager={themeManager}
           setSettingsView={setSettingsViewDispatch}
+          gridColumns={gridColumns}
         />
       )}
       {settingsView === SettingsOptionsEnum.langugage && (
-        <LanguageView setSettingsView={setSettingsViewDispatch} />
+        <LanguageView
+          gridColumns={gridColumns}
+          setSettingsView={setSettingsViewDispatch}
+        />
       )}
       {settingsView === SettingsOptionsEnum.advanced && (
         <AdvancedView setSettingsView={setSettingsViewDispatch} />
