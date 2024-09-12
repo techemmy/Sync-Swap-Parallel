@@ -62,10 +62,12 @@ export default function Pool() {
 
             <ImportPositionDialog />
           </Dialog>
-          <Button className="rounded-xl boxShadow active:scale-90 transition-all">
-            <MdAdd fontSize={20} />
-            New Position
-          </Button>
+          <Link to="wizard">
+            <Button className="rounded-xl boxShadow active:scale-90 transition-all">
+              <MdAdd fontSize={20} />
+              New Position
+            </Button>
+          </Link>
         </div>
       </article>
 
