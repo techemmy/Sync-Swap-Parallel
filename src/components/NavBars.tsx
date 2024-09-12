@@ -12,9 +12,10 @@ export default function NavBars(props: any) {
     <>
       <div className="z-30 fixed">
         <NavbarSmall
+          {...props}
           hamburgerToggled={toggledSidebar}
           handleHamburgerClicked={setToggledSidebar}
-          {...props}
+          themeManager={{ activeTheme, handleSetTheme }}
         />
         <NavbarLarge
           {...props}

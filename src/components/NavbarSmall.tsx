@@ -7,35 +7,28 @@ import {
 } from "@/components/ui/navigation-menu";
 import Logo from "@/components/Logo";
 import { Link } from "react-router-dom";
-import { CgArrowsExchangeAlt } from "react-icons/cg";
 import { PiCaretUpBold } from "react-icons/pi";
 import { TbMenu2 } from "react-icons/tb";
 import ConnectWalletDialog from "@/components/ConnectWalletDialog";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
-import { useState } from "react";
-import { AppContextType } from "@/types";
-import { NavigationMenuContent } from "@radix-ui/react-navigation-menu";
-import SelectNetworkNavContent from "./SelectNetworkNavContent";
-import {
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-} from "@radix-ui/react-dialog";
+import { AppContextType, IThemeManager } from "@/types";
 import SelectNetworkNavDialog from "@/components/SelectNetwork/SelectNetworkNavDialog";
+import NavbarSettingsDialog from "./NavbarSettings/NavbarSettingsDialog";
 
 interface NavbarSmall {
   hamburgerToggled: boolean;
   handleHamburgerClicked: (value: boolean) => void;
   appContext: AppContextType;
+  themeManager: IThemeManager;
 }
 
 export default function NavbarSmall({
   hamburgerToggled,
   handleHamburgerClicked,
   appContext,
+  themeManager,
 }: NavbarSmall) {
   const { selectedNetwork, setSelectedNetwork } = appContext;
-  const [settingsIsVisible, setSettingsIsVisible] = useState(false);
   return (
     <nav className="lg:hidden">
       <Link to="/intro" className="fixed m-3">
@@ -144,11 +137,19 @@ export default function NavbarSmall({
               />
             </Dialog>
 
-            <NavigationMenuItem>
-              <NavigationMenuLink className="cursor-pointer inline-flex items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 w-max h-10 text-gray-500 hover:text-primary px-2 text-sm font-medium rounded-full">
-                <PiCaretUpBold size={17} />
-              </NavigationMenuLink>
-            </NavigationMenuItem>
+            <Dialog>
+              <DialogTrigger asChild>
+                <NavigationMenuItem>
+                  <NavigationMenuLink className="cursor-pointer inline-flex items-center justify-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 w-max h-10 text-gray-500 hover:text-primary px-2 text-sm font-medium rounded-full">
+                    <PiCaretUpBold size={17} />
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              </DialogTrigger>
+              <NavbarSettingsDialog
+                className="max-w-md p-0"
+                themeManager={themeManager}
+              />
+            </Dialog>
           </NavigationMenuList>
         </NavigationMenu>
       </section>
