@@ -10,11 +10,13 @@ import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 import { MdOutlineContentCopy } from "react-icons/md";
 
-export default function TokenDetailsDialog({
-  name,
-  symbol,
-  logoSrc,
-}: Record<string, string>) {
+interface Props {
+  name: string;
+  symbol: string;
+  logoSrc: string;
+}
+
+export default function TokenDetailsDialog({ name, symbol, logoSrc }: Props) {
   return (
     <DialogContent className="max-w-md px-6 sm:rounded-3xl">
       <header>
