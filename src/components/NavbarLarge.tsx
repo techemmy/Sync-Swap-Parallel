@@ -12,10 +12,16 @@ import { BsThreeDots } from "react-icons/bs";
 import { TiHome } from "react-icons/ti";
 import { NavLink } from "react-router-dom";
 import {
+  MdCardGiftcard,
+  MdCurrencyExchange,
   MdDataUsage,
+  MdElectricBolt,
   MdLayers,
   MdRocketLaunch,
+  MdScience,
+  MdStream,
   MdSwapCalls,
+  MdToll,
   MdWaves,
 } from "react-icons/md";
 import { HiSparkles } from "react-icons/hi";
@@ -26,6 +32,9 @@ import NavbarSettings from "./NavbarSettings";
 import { useState } from "react";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import ConnectWalletDialog from "@/components/ConnectWalletDialog";
+import { ListItem, ListItemsContainer } from "@/components/NavDropdown";
+import { PiCodesandboxLogoBold } from "react-icons/pi";
+import { FaEthereum } from "react-icons/fa";
 
 interface Props {
   appContext: AppContextType;
@@ -95,6 +104,26 @@ export default function NavbarLarge({ appContext, ...props }: Props) {
                 Pool
               </NavigationMenuTrigger>
             </NavLink>
+            <NavigationMenuContent>
+              <ListItemsContainer>
+                <ListItem href="/pools" title="Pools" logo={MdToll}>
+                  Explore all pools on SyncSwap
+                </ListItem>
+                <ListItem href="/pool" title="Position" logo={MdWaves}>
+                  View and manage your liquidity positions
+                </ListItem>
+                <ListItem
+                  href="/pools/earnings"
+                  title="Earnings"
+                  logo={MdStream}
+                >
+                  View your earnings and manage rewards
+                </ListItem>
+                <ListItem href="/pools/wizard" title="Wizard" logo={MdScience}>
+                  Find the best pools in a few clicks
+                </ListItem>
+              </ListItemsContainer>
+            </NavigationMenuContent>
           </NavigationMenuItem>
 
           {selectedNetwork === AVAILABLE_NETWORKS.zkSync && (
@@ -113,6 +142,35 @@ export default function NavbarLarge({ appContext, ...props }: Props) {
                   Explore
                 </NavigationMenuTrigger>
               </NavLink>
+
+              <NavigationMenuContent>
+                <ListItemsContainer>
+                  <ListItem
+                    href="/rewards"
+                    title="Loyalty Program"
+                    logo={MdCardGiftcard}
+                  >
+                    Trade to earn loyalty rewards
+                  </ListItem>
+                  <ListItem
+                    href="/rewards"
+                    title="404 Wrapper"
+                    logo={PiCodesandboxLogoBold}
+                  >
+                    Wrap LIBERTAS OMNIBUS NFTs
+                  </ListItem>
+                  <ListItem
+                    href="/rewards"
+                    title="USDC Conversion"
+                    logo={MdCurrencyExchange}
+                  >
+                    Convert USDC.e to native USDC
+                  </ListItem>
+                  <ListItem href="/rewards" title="Staking" logo={FaEthereum}>
+                    Stake and earn rewards on your tokens
+                  </ListItem>
+                </ListItemsContainer>
+              </NavigationMenuContent>
             </NavigationMenuItem>
           )}
 
@@ -165,6 +223,18 @@ export default function NavbarLarge({ appContext, ...props }: Props) {
                 Bridge
               </NavigationMenuTrigger>
             </NavLink>
+
+            <NavigationMenuContent>
+              <ListItemsContainer>
+                <ListItem href="/move" title="Move" logo={MdElectricBolt}>
+                  Securely and easily move assets to zkSync
+                </ListItem>
+
+                <ListItem href="/bridge" title="Bridges" logo={MdLayers}>
+                  Explore the best bridges across blockchain
+                </ListItem>
+              </ListItemsContainer>
+            </NavigationMenuContent>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
