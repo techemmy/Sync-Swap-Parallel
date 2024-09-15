@@ -182,7 +182,7 @@ function LPRewardsCard() {
       <section className="flex justify-between items-center mb-2">
         <CardTitle className="text-base font-medium flex gap-x-2 items-center">
           <BsLightningChargeFill fontSize={20} className="text-primary" />
-          <h2 className="text-primary-foreground text-[18px]">LP Rewards</h2>
+          <span className="text-primary-foreground text-[18px]">LP Rewards</span>
         </CardTitle>
 
         <FaPlus
@@ -223,7 +223,7 @@ function LPRewardsCard() {
             </span>
 
             <article className="grid rounded-2xl p-1">
-              <p className="text-sm flex items-center gap-x-1">
+              <div className="text-sm flex items-center gap-x-1">
                 Swap Fee
                 <Tooltip>
                   <TooltipTrigger>
@@ -233,7 +233,7 @@ function LPRewardsCard() {
                     The swap fee for every trade through pool
                   </TooltipContent>
                 </Tooltip>
-              </p>
+              </div>
               <p className="text-[18px] text-primary-foreground">0.30%</p>
             </article>
           </article>
@@ -244,7 +244,7 @@ function LPRewardsCard() {
             </span>
 
             <article className="grid rounded-2xl p-1">
-              <p className="text-sm flex items-center gap-x-1">
+              <div className="text-sm flex items-center gap-x-1">
                 LP Fee Share
                 <Tooltip>
                   <TooltipTrigger>
@@ -255,7 +255,7 @@ function LPRewardsCard() {
                     total sweep fees.
                   </TooltipContent>
                 </Tooltip>
-              </p>
+              </div>
               <p className="text-[18px] text-primary-foreground">71.0%</p>
             </article>
           </article>
