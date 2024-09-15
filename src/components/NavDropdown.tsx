@@ -21,7 +21,7 @@ export const ListItem = React.forwardRef<React.ElementRef<"a">, ListItemProps>(
             className={({ isActive }) => {
               const groupItem = isActive ? "" : "group/item";
               return cn(
-                `${groupItem} flex items-center gap-x-3 select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground`,
+                `${groupItem} flex items-center gap-x-3 select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-all hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground active:scale-90`,
                 className,
               );
             }}
