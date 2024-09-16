@@ -119,7 +119,7 @@ export default function NavbarLarge({ appContext, ...props }: Props) {
                 >
                   View your earnings and manage rewards
                 </ListItem>
-                <ListItem href="/pools/wizard" title="Wizard" logo={MdScience}>
+                <ListItem href="/pool/wizard" title="Wizard" logo={MdScience}>
                   Find the best pools in a few clicks
                 </ListItem>
               </ListItemsContainer>
