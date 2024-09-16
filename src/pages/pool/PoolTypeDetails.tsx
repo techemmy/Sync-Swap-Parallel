@@ -20,6 +20,7 @@ import { FaPercent, FaPlus } from "react-icons/fa";
 import { HiOutlineTag } from "react-icons/hi";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import TokenDetailsDialog from "@/components/SelectTokenDialog/TokenDetailsDialog";
+import AnimatedGradientCircles from "@/components/AnimatedGradientCircles";
 
 const TOKENS = [
   {
@@ -182,7 +183,9 @@ function LPRewardsCard() {
       <section className="flex justify-between items-center mb-2">
         <CardTitle className="text-base font-medium flex gap-x-2 items-center">
           <BsLightningChargeFill fontSize={20} className="text-primary" />
-          <span className="text-primary-foreground text-[18px]">LP Rewards</span>
+          <span className="text-primary-foreground text-[18px]">
+            LP Rewards
+          </span>
         </CardTitle>
 
         <FaPlus
@@ -271,36 +274,41 @@ export default function PoolTypeDetails({ poolType }: { poolType: string }) {
   }
 
   return (
-    <section className="w-full transition-all animate-fade-in pt-3 px-6 space-y-4 max-w-[520px]">
-      <DetailsHeader poolType={poolType} />
+    <div className="relative">
+      <section className="w-full transition-all animate-fade-in pt-3 px-6 space-y-4 max-w-[520px]">
+        <DetailsHeader poolType={poolType} />
 
-      <ConversionRateCard />
+        <ConversionRateCard />
 
-      <AssetsInPoolCard />
+        <AssetsInPoolCard />
 
-      <Card className="grid grid-cols-2 gap-x-3 gap-y-5 font-medium border-0 shadow rounded-2xl bg-card/70 px-6 py-5 w-full cursor-pointer">
-        <article>
-          <p className="text-sm">TVL</p>
-          <p className="text-primary-foreground text-[18px]"> $8,404,187.86 </p>
-        </article>
+        <Card className="grid grid-cols-2 gap-x-3 gap-y-5 font-medium border-0 shadow rounded-2xl bg-card/70 px-6 py-5 w-full cursor-pointer">
+          <article>
+            <p className="text-sm">TVL</p>
+            <p className="text-primary-foreground text-[18px]">$8,404,187.86</p>
+          </article>
 
-        <article>
-          <p className="text-sm">Total APR</p>
-          <p className="text-primary-foreground text-[18px]">1.79%</p>
-        </article>
+          <article>
+            <p className="text-sm">Total APR</p>
+            <p className="text-primary-foreground text-[18px]">1.79%</p>
+          </article>
 
-        <article>
-          <p className="text-sm"> Volume (24h) </p>
-          <p className="text-[18px]"> $194,215.3 </p>
-        </article>
+          <article>
+            <p className="text-sm"> Volume (24h) </p>
+            <p className="text-[18px]"> $194,215.3 </p>
+          </article>
 
-        <article>
-          <p className="text-sm"> Fees (24h) </p>
-          <p className="text-[18px]"> $582.6 </p>
-        </article>
-      </Card>
+          <article>
+            <p className="text-sm"> Fees (24h) </p>
+            <p className="text-[18px]"> $582.6 </p>
+          </article>
+        </Card>
 
-      <LPRewardsCard />
-    </section>
+        <LPRewardsCard />
+      </section>
+      <div className="absolute top-14">
+        <AnimatedGradientCircles />
+      </div>
+    </div>
   );
 }

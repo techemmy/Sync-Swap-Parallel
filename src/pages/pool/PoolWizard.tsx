@@ -33,7 +33,7 @@ export default function PoolWizard() {
 
   return (
     <>
-      <main className="flex flex-col items-center pt-24 max-w-screen-lg mx-auto p-4 mb-20">
+      <main className="relative z-10 flex flex-col items-center pt-24 max-w-screen-lg mx-auto p-4 mb-20">
         <article>
           <Link to="/pool">
             <section className="flex gap-x-2 text-primary items-center cursor-pointer mb-5">
