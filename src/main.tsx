@@ -15,8 +15,9 @@ import Pool from "@/pages/pool";
 import Launch from "@/pages/launch";
 import Bridge from "@/pages/bridge";
 import Portfolio from "@/pages/portfolio";
-import Explore from "./pages/explore";
-import PoolWizard from "./pages/pool/PoolWizard";
+import Explore from "@/pages/explore";
+import PoolWizard from "@/pages/pool/PoolWizard";
+import Pools from "@/pages/pools";
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
       <Route path="/home" element={<Home />} />
       <Route index path="/swap" element={<Trade />} />
       <Route path="/pool" element={<Pool />} />
+      <Route path="/pools" element={<Pools />} />
       <Route path="/pool/wizard" element={<PoolWizard />} />
       <Route path="/explore" element={<Explore />} />
       <Route path="/launch" element={<Launch />} />
