@@ -1,9 +1,15 @@
 import TrendingCarousel from "./TrendingCarousel";
+import PoolDataView from "./PoolDataView";
+import Footer from "@/components/Footer";
 
 export default function Pools() {
   return (
-    <main className="relative overflow-hidden pt-28 max-w-screen-xl mx-auto h-screen space-y-14 p-4">
-      <TrendingCarousel />
-    </main>
+    <>
+      <main className="relative overflow-hidden pt-28 pb-20 max-w-screen-xl mx-auto space-y-14 p-4">
+        <TrendingCarousel />
+        <PoolDataView />
+      </main>
+      <Footer />
+    </>
   );
 }
