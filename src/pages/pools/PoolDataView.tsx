@@ -67,8 +67,8 @@ export default function PoolsDisplay() {
   }, [searchTerm]);
   return (
     <Tabs defaultValue="prime-pools">
-      <section className="flex justify-between items-center">
-        <section className="flex gap-x-4">
+      <section className="flex justify-between items-center flex-wrap md:flex-nowrap gap-y-2">
+        <section className="flex flex-col gap-y-2 md:flex-row gap-x-4">
           <TabsList className="rounded-3xl bg-card text-primary shadow-sm">
             <TabsTrigger className="flex gap-x-2 px-5 py-2" value="prime-pools">
               <GiGroundbreaker fontSize={20} />
@@ -89,11 +89,11 @@ export default function PoolsDisplay() {
               name="search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value.trim())}
-              className="ml-2 bg-transparent outline-none text-primary-foreground"
+              className="ml-2 bg-transparent outline-none text-primary-foreground py-1"
             />
           </div>
         </section>
-        <section className="text-sm font-medium flex gap-x-2 items-center bg-card rounded-3xl py-2 px-4 cursor-pointer transition-all active:scale-90 hover:bg-accent">
+        <section className="self-start text-sm font-medium flex gap-x-2 items-center bg-card rounded-3xl py-2 px-4 cursor-pointer transition-all active:scale-90 hover:bg-accent">
           <img src="/images/zksync_black.png" className="w-7 h-4" />
           <h3 className="text-card-foreground">TVL</h3>
           <span className="text-primary ml-2">$23.65M</span>
