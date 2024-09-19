@@ -115,7 +115,7 @@ export default function PoolTableDisplay({ pools }: { pools: IPoolData[] }) {
 
   useEffect(() => {
     setPoolsData(pools.slice(pageStart, pageStart + pageSize));
-  }, [page, pageSize]);
+  }, [page, pageSize, pools]);
 
   const totalPages = Math.ceil(pools.length / pageSize);
 

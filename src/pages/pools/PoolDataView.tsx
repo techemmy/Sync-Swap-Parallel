@@ -10,6 +10,7 @@ import Tokens from "@/assets/tokens.json";
 import { BsTriangleHalf } from "react-icons/bs";
 import { TbAlignBoxRightBottom } from "react-icons/tb";
 import { IPoolData, IPoolType } from "@/types";
+import { useEffect, useState } from "react";
 
 const TOKENS = Object.values(Tokens.data).map(
   ({ symbol, logo }: { symbol: string; logo: string }) => ({
@@ -47,6 +48,23 @@ for (let i = 0; i < TOKENS.length; i += 2) {
 }
 
 export default function PoolsDisplay() {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredPools, setFilteredPools] = useState(pools);
+
+  useEffect(() => {
+    const filtered = pools.filter((pool) => {
+      const lowerFirstToken = pool.firstToken.symbol.toLowerCase();
+      const lowerSecondToken = pool.secondToken.symbol.toLowerCase();
+      const lowerPoolType = pool.poolType.title.toLowerCase();
+      const lowerSearchTerm = searchTerm.toLowerCase();
+      return (
+        lowerFirstToken.includes(lowerSearchTerm) ||
+        lowerSecondToken.includes(lowerSearchTerm) ||
+        lowerPoolType.includes(lowerSearchTerm)
+      );
+    });
+    setFilteredPools(filtered);
+  }, [searchTerm]);
   return (
     <Tabs defaultValue="prime-pools">
       <section className="flex justify-between items-center">
@@ -62,11 +80,15 @@ export default function PoolsDisplay() {
             </TabsTrigger>
           </TabsList>
 
-          <div className="flex gap-x-1 hover:bg-card px-2 rounded-3xl">
+          <div
+            className={`flex gap-x-1 ${searchTerm.length > 0 && "bg-card shadow-light"} hover:bg-card px-2 rounded-3xl`}
+          >
             <IoMdSearch fontSize={20} className="self-center text-primary" />
             <input
               type="text"
               name="search"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value.trim())}
               className="ml-2 bg-transparent outline-none text-primary-foreground"
             />
           </div>
@@ -103,10 +125,10 @@ export default function PoolsDisplay() {
       </article>
 
       <TabsContent value="prime-pools">
-        <PoolGridDisplay pools={pools} />
+        <PoolGridDisplay pools={filteredPools} />
       </TabsContent>
       <TabsContent value="all-pools">
-        <PoolTableDisplay pools={pools} />
+        <PoolTableDisplay pools={filteredPools} />
       </TabsContent>
     </Tabs>
   );
