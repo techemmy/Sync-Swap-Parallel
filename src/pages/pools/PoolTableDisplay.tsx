@@ -21,7 +21,7 @@ function PoolCard({ pool }: { pool: IPoolData }) {
       onClick={() => setIsOpen(!isOpen)}
       className="rounded-2xl animate-fade-in border-transparent cursor-pointer bg-white/70 hover:bg-white transition-all active:bg-primary/[0.04]"
     >
-      <CardContent className="px-4 py-2 grid grid grid-cols-[1.65fr_1.15fr_0.9fr_0.7fr_1.1fr] items-center  text-sm font-medium text-primary-foreground">
+      <CardContent className="hidden px-4 py-3 md:grid grid-cols-[1.65fr_1.15fr_0.9fr_0.7fr_1.1fr] items-center text-sm font-medium text-primary-foreground">
         <section className="flex gap-x-1">
           <div className="flex gap-x-2 items-center border border-primary/30 rounded-3xl px-2 py-1">
             <img
@@ -54,6 +54,37 @@ function PoolCard({ pool }: { pool: IPoolData }) {
         >
           <FiArrowRight fontSize={15} />
         </div>
+      </CardContent>
+
+      <CardContent className="grid px-4 py-3 md:hidden items-center text-sm font-medium text-primary-foreground">
+        <section className="flex gap-x-1">
+          <div className="flex gap-x-2 items-center border border-primary/30 rounded-3xl px-2 py-1">
+            <img
+              className="w-7 h-7 rounded-full"
+              src={firstToken.logo}
+              alt={`${firstToken.symbol} logoSrc`}
+            />
+            {firstToken.symbol}
+          </div>
+          <div className="flex gap-x-2 items-center border border-primary/30 rounded-3xl px-2 py-1">
+            <img
+              className="w-7 h-7 rounded-full"
+              src={secondToken.logo}
+              alt={`${secondToken.symbol} logoSrc`}
+            />
+            {secondToken.symbol}
+          </div>
+        </section>
+        <section className="mt-2 flex justify-between items-center gap-x-3">
+          <p className="text-primary flex gap-x-2 items-center">
+            {poolType.icon}
+            {poolType.title}
+          </p>
+          <p>${liquidity}</p>
+          <p className="flex gap-x-2 items-center">
+            <MdElectricBolt /> <span>{APR} %</span>
+          </p>
+        </section>
       </CardContent>
       {isOpen && (
         <>
