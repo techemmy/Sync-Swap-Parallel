@@ -9,7 +9,7 @@ import PoolTableDisplay from "./PoolTableDisplay";
 
 export default function PoolsDisplay() {
   return (
-    <Tabs defaultValue="all-pools">
+    <Tabs defaultValue="prime-pools">
       <section className="flex justify-between items-center">
         <section className="flex gap-x-4">
           <TabsList className="rounded-3xl bg-card text-primary shadow-sm">
