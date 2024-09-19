@@ -103,7 +103,7 @@ export default function PoolsDisplay() {
       </article>
 
       <TabsContent value="prime-pools">
-        <PoolGridDisplay />
+        <PoolGridDisplay pools={pools} />
       </TabsContent>
       <TabsContent value="all-pools">
         <PoolTableDisplay pools={pools} />
