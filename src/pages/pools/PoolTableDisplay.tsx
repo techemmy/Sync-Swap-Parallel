@@ -89,10 +89,7 @@ function PoolCard({ pool }: { pool: IPoolData }) {
           <MdElectricBolt /> <span>{APR} %</span>
         </p>
         <div
-          onClick={(e) => {
-            e.stopPropagation();
-            console.log("clicked");
-          }}
+          onClick={(e) => e.stopPropagation()}
           className="ml-auto w-max p-2 border border-primary text-primary rounded-lg transition-colors active:bg-primary/20"
         >
           <FiArrowRight fontSize={15} />
@@ -121,7 +118,11 @@ function PoolCard({ pool }: { pool: IPoolData }) {
                   <p className="text-primary-foreground text-[18px]">-</p>
                 </article>
               </Card>
-              <Button variant="outline" className="rounded-lg">
+              <Button
+                onClick={(e) => e.stopPropagation()}
+                variant="outline"
+                className="rounded-lg"
+              >
                 Enter <FiArrowRight fontSize={20} />
               </Button>
             </div>
