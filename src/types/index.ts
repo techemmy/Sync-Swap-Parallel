@@ -1,5 +1,5 @@
 import { ThemesEnum } from "@/enums";
-import { SetStateAction } from "react";
+import React, { SetStateAction } from "react";
 
 export interface IThemeManager {
   activeTheme: ThemesEnum;
@@ -13,4 +13,23 @@ export interface NetworkType {
 export interface AppContextType {
   selectedNetwork: NetworkType;
   setSelectedNetwork: React.Dispatch<SetStateAction<NetworkType>>;
+}
+
+export interface IPoolType {
+  icon: React.ReactNode;
+  title: string;
+}
+
+export interface IPoolData {
+  firstToken: {
+    symbol: string;
+    logo: string;
+  };
+  secondToken: {
+    symbol: string;
+    logo: string;
+  };
+  poolType: IPoolType;
+  liquidity: string;
+  APR: string;
 }

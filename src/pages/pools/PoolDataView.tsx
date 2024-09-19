@@ -6,6 +6,45 @@ import { FaFilter } from "react-icons/fa";
 import { IoArrowDown, IoArrowUp } from "react-icons/io5";
 import PoolGridDisplay from "./PoolGridDisplay";
 import PoolTableDisplay from "./PoolTableDisplay";
+import Tokens from "@/assets/tokens.json";
+import { BsTriangleHalf } from "react-icons/bs";
+import { TbAlignBoxRightBottom } from "react-icons/tb";
+import { IPoolData, IPoolType } from "@/types";
+
+const TOKENS = Object.values(Tokens.data).map(
+  ({ symbol, logo }: { symbol: string; logo: string }) => ({
+    symbol,
+    logo,
+  }),
+);
+
+const poolTypes: IPoolType[] = [
+  {
+    icon: <MdOutlineWaterDrop fontSize={23} />,
+    title: "Aqua",
+  },
+  {
+    icon: <TbAlignBoxRightBottom fontSize={23} />,
+    title: "Classic",
+  },
+  {
+    icon: <BsTriangleHalf fontSize={20} />,
+    title: "Stable",
+  },
+];
+
+let pools = [] as Array<IPoolData>;
+for (let i = 0; i < TOKENS.length; i += 2) {
+  const from = TOKENS[i++];
+  const to = TOKENS[i++];
+
+  const type = Math.floor(Math.random() * 10) % 3;
+  const poolType = poolTypes[type];
+
+  const liquidity = (Math.random() * 10000000).toLocaleString();
+  const APR = (Math.random() * 10).toFixed(2);
+  pools.push({ firstToken: from, secondToken: to, poolType, liquidity, APR });
+}
 
 export default function PoolsDisplay() {
   return (
@@ -67,7 +106,7 @@ export default function PoolsDisplay() {
         <PoolGridDisplay />
       </TabsContent>
       <TabsContent value="all-pools">
-        <PoolTableDisplay />
+        <PoolTableDisplay pools={pools} />
       </TabsContent>
     </Tabs>
   );

@@ -5,7 +5,6 @@ import {
   CardHeader,
 } from "@/components/ui/card";
 import { MdOutlineWaterDrop } from "react-icons/md";
-import LogoView from "../intro/components/LogoView";
 import Tokens from "@/assets/tokens.json";
 import { Button } from "@/components/ui/button";
 

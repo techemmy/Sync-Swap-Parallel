@@ -5,53 +5,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Tokens from "@/assets/tokens.json";
 import { Card, CardContent } from "@/components/ui/card";
-import React, { useEffect, useState } from "react";
-import { BsTriangleHalf } from "react-icons/bs";
+import { useEffect, useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
-import {
-  MdElectricBolt,
-  MdOutlineInfo,
-  MdOutlineWaterDrop,
-} from "react-icons/md";
-import { TbAlignBoxRightBottom } from "react-icons/tb";
+import { MdElectricBolt, MdOutlineInfo } from "react-icons/md";
 import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi";
 import { Button } from "@/components/ui/button";
-
-interface IPoolType {
-  icon: React.ReactNode;
-  title: string;
-}
-
-interface IPoolData {
-  firstToken: {
-    symbol: string;
-    logo: string;
-  };
-  secondToken: {
-    symbol: string;
-    logo: string;
-  };
-  poolType: IPoolType;
-  liquidity: string;
-  APR: string;
-}
-
-const poolTypes: IPoolType[] = [
-  {
-    icon: <MdOutlineWaterDrop fontSize={23} />,
-    title: "Aqua",
-  },
-  {
-    icon: <TbAlignBoxRightBottom fontSize={23} />,
-    title: "Classic",
-  },
-  {
-    icon: <BsTriangleHalf fontSize={20} />,
-    title: "Stable",
-  },
-];
+import { IPoolData } from "@/types";
 
 function PoolCard({ pool }: { pool: IPoolData }) {
   const { firstToken, secondToken, poolType, liquidity, APR } = pool;
@@ -145,27 +105,7 @@ function PoolCard({ pool }: { pool: IPoolData }) {
   );
 }
 
-const TOKENS = Object.values(Tokens.data).map(
-  ({ symbol, logo }: { symbol: string; logo: string }) => ({
-    symbol,
-    logo,
-  }),
-);
-
-let pools = [] as Array<IPoolData>;
-for (let i = 0; i < TOKENS.length; i += 2) {
-  const from = TOKENS[i++];
-  const to = TOKENS[i++];
-
-  const type = Math.floor(Math.random() * 10) % 3;
-  const poolType = poolTypes[type];
-
-  const liquidity = (Math.random() * 10000000).toLocaleString();
-  const APR = (Math.random() * 10).toFixed(2);
-  pools.push({ firstToken: from, secondToken: to, poolType, liquidity, APR });
-}
-
-export default function PoolTableDisplay() {
+export default function PoolTableDisplay({ pools }: { pools: IPoolData[] }) {
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const pageStart = (page - 1) * pageSize;
