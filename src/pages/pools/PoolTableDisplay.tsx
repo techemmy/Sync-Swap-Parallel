@@ -148,7 +148,8 @@ export default function PoolTableDisplay({ pools }: { pools: IPoolData[] }) {
 
       <div className="mt-5 flex justify-between">
         <p className="text-sm text-card-foreground font-medium">
-          {pageStart + 1} - {pageStart + pageSize} of {pools.length}
+          {pageStart + 1} - {pageStart + pageSize} of {pools.length}{" "}
+          {pools.length > 0 ? "Pools" : "Pool"}
         </p>
 
         <article className="flex gap-x-2 items-center">
