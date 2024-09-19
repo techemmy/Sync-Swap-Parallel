@@ -24,7 +24,10 @@ export default function TrendingCard({
   return (
     <CarouselItem className="md:basis-1/2 lg:basis-1/3">
       <Card
-        className={cn("rounded-2xl border-transparent shadow-md", className)}
+        className={cn(
+          "rounded-2xl border-transparent shadow-md transition-all animate-fade-in",
+          className,
+        )}
       >
         <CardContent className="relative px-5 pb-3 space-y-1 pt-5">
           <div className="ml-2 flex absolute top-[-20%]">

@@ -65,7 +65,7 @@ export default function TrendingCarousel() {
         </h2>
 
         <div className="flex gap-x-2">
-          <CarouselPrevious className="static h-2 w-8 bg-primary rounded-lg cursor-pointer" />
+          <CarouselPrevious className="static h-2 w-8 bg-primary rounded-lg cursor-pointer shadow" />
           <CarouselNext className="static h-2 w-8 bg-primary rounded-lg cursor-pointer" />
         </div>
       </section>
