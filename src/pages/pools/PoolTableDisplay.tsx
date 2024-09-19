@@ -10,9 +10,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import React, { useEffect, useState } from "react";
 import { BsTriangleHalf } from "react-icons/bs";
 import { FiArrowRight } from "react-icons/fi";
-import { MdElectricBolt, MdOutlineWaterDrop } from "react-icons/md";
+import {
+  MdElectricBolt,
+  MdOutlineInfo,
+  MdOutlineWaterDrop,
+} from "react-icons/md";
 import { TbAlignBoxRightBottom } from "react-icons/tb";
 import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi";
+import { Button } from "@/components/ui/button";
 
 interface IPoolType {
   icon: React.ReactNode;
@@ -52,11 +57,11 @@ function PoolCard({ pool }: { pool: IPoolData }) {
   const { firstToken, secondToken, poolType, liquidity, APR } = pool;
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <Card className="animate-fade-in border-transparent cursor-pointer bg-white/70 hover:bg-white">
-      <CardContent
-        onClick={() => setIsOpen(!isOpen)}
-        className="px-4 py-2 grid grid grid-cols-[1.65fr_1.15fr_0.9fr_0.7fr_1.1fr] items-center  text-sm font-medium text-primary-foreground"
-      >
+    <Card
+      onClick={() => setIsOpen(!isOpen)}
+      className="rounded-2xl animate-fade-in border-transparent cursor-pointer bg-white/70 hover:bg-white transition-all active:bg-primary/[0.04]"
+    >
+      <CardContent className="px-4 py-2 grid grid grid-cols-[1.65fr_1.15fr_0.9fr_0.7fr_1.1fr] items-center  text-sm font-medium text-primary-foreground">
         <section className="flex gap-x-1">
           <div className="flex gap-x-2 items-center border border-primary/30 rounded-3xl px-2 py-1">
             <img
@@ -83,11 +88,58 @@ function PoolCard({ pool }: { pool: IPoolData }) {
         <p className="ml-auto flex gap-x-2 items-center">
           <MdElectricBolt /> <span>{APR} %</span>
         </p>
-        <div className="ml-auto w-max p-2 border border-primary text-primary rounded-lg transition-colors active:bg-accent">
-          <FiArrowRight fontSize={20} />
+        <div
+          onClick={(e) => {
+            e.stopPropagation();
+            console.log("clicked");
+          }}
+          className="ml-auto w-max p-2 border border-primary text-primary rounded-lg transition-colors active:bg-primary/20"
+        >
+          <FiArrowRight fontSize={15} />
         </div>
       </CardContent>
-      {isOpen && <div>open</div>}
+      {isOpen && (
+        <>
+          <div className="w-full h-[2px] bg-gradient-to-r from-[rgb(33,113,202)] to-[rgb(100,124,236)]" />
+          <article className="px-4">
+            <div className="flex justify-between items-center">
+              <Card className="w-[80%] grid grid-cols-[repeat(auto-fill,minmax(170px,1fr))] gap-x-3 gap-y-2 py-4 px-3 font-medium border-0 shadow-none rounded-2xl bg-transparent w-full cursor-pointer">
+                <article>
+                  <p className="text-sm">Total APR</p>
+                  <p className="text-primary-foreground text-[18px]">{APR}%</p>
+                </article>
+
+                <article>
+                  <p className="text-sm flex items-center gap-x-1">
+                    Fee APR <MdOutlineInfo className="text-primary" />
+                  </p>
+                  <p className="text-primary-foreground text-[18px]">3.25%</p>
+                </article>
+
+                <article>
+                  <p className="text-sm"> Rewards APR </p>
+                  <p className="text-primary-foreground text-[18px]">-</p>
+                </article>
+              </Card>
+              <Button variant="outline" className="rounded-lg">
+                Enter <FiArrowRight fontSize={20} />
+              </Button>
+            </div>
+
+            <Card className="w-[80%] grid grid-cols-[repeat(auto-fill,minmax(170px,1fr))] gap-x-3 gap-y-2 py-4 px-3 font-medium border-0 shadow-none rounded-2xl bg-transparent w-full cursor-pointer">
+              <article>
+                <p className="text-sm">My Position</p>
+                <p className="text-primary-foreground text-[18px]">-</p>
+              </article>
+
+              <article>
+                <p className="text-sm">My Staked</p>
+                <p className="text-primary-foreground text-[18px]">-</p>
+              </article>
+            </Card>
+          </article>
+        </>
+      )}
     </Card>
   );
 }
