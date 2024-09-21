@@ -1,8 +1,14 @@
 import Logo from "@/components/Logo";
+import { cn } from "@/lib/utils";
 
-export default function Footer() {
+export default function Footer({ className = "" }: { className?: string }) {
   return (
-    <footer className="md:px-32 pt-10 py-28 md:pb-32 grid grid-cols-2 md:grid-cols-5 gap-6 text-center md:text-left">
+    <footer
+      className={cn(
+        "md:px-32 pt-10 py-28 md:pb-32 grid grid-cols-2 md:grid-cols-5 gap-6 text-center md:text-left",
+        className,
+      )}
+    >
       <Logo className="w-[48px] h-[48px] hidden md:block" />
 
       <article className="grid gap-y-5">
