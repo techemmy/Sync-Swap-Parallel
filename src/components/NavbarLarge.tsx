@@ -113,7 +113,7 @@ export default function NavbarLarge({ appContext, ...props }: Props) {
                   View and manage your liquidity positions
                 </ListItem>
                 <ListItem
-                  href="/pools/earnings"
+                  href="/pool/earnings"
                   title="Earnings"
                   logo={MdStream}
                 >

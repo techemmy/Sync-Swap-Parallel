@@ -18,6 +18,7 @@ import Portfolio from "@/pages/portfolio";
 import Explore from "@/pages/explore";
 import PoolWizard from "@/pages/pool-wizard";
 import Pools from "@/pages/pools";
+import PoolEarnings from "@/pages/pool-earnings";
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -29,6 +30,7 @@ const router = createBrowserRouter(
       <Route path="/pool" element={<Pool />} />
       <Route path="/pools" element={<Pools />} />
       <Route path="/pool/wizard" element={<PoolWizard />} />
+      <Route path="/pool/earnings" element={<PoolEarnings />} />
       <Route path="/explore" element={<Explore />} />
       <Route path="/launch" element={<Launch />} />
       <Route path="/dashboard" element={<Portfolio />} />
