@@ -16,7 +16,7 @@ import Launch from "@/pages/launch";
 import Bridge from "@/pages/bridge";
 import Portfolio from "@/pages/portfolio";
 import Explore from "@/pages/explore";
-import PoolWizard from "@/pages/pool/PoolWizard";
+import PoolWizard from "@/pages/pool-wizard";
 import Pools from "@/pages/pools";
 
 const router = createBrowserRouter(
