@@ -15,6 +15,7 @@ import { FiPlusCircle } from "react-icons/fi";
 import { RiGraduationCapFill } from "react-icons/ri";
 import ImportPositionDialog from "./ImportPositionDialog";
 import { Link } from "react-router-dom";
+import ConnectWallet from "@/components/ConnectWallet";
 
 export default function Pool() {
   return (
@@ -71,24 +72,7 @@ export default function Pool() {
         </div>
       </article>
 
-      <section className="py-10 grid place-items-center">
-        <GoInbox size={45} className="text-primary" />
-        <p className="text-card-foreground mt-2 mb-4">
-          Connect wallet to see your positions
-        </p>
-
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button
-              variant="outline"
-              className="rounded-xl min-w-16 w-[260px] md:w-[300px] flex gap-x-2"
-            >
-              <IoWalletOutline size={20} /> Connect
-            </Button>
-          </DialogTrigger>
-          <ConnectWalletDialog />
-        </Dialog>
-      </section>
+      <ConnectWallet />
     </main>
   );
 }
