@@ -44,7 +44,7 @@ export default {
         border: "rgba(var(--border))",
         input: "hsl(var(--input))",
         ring: "rgb(var(--ring))",
-        buttonHover: "rgba(var(--button-hover))",
+        button: "rgba(var(--button-hover))",
         background: "var(--background)",
         foreground: "hsl(var(--foreground))",
         primary: {
@@ -141,5 +141,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [import("tailwindcss-animate")],
 };
