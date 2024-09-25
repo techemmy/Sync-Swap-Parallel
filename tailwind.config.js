@@ -135,6 +135,7 @@ export default {
         "fade-in-out-10": "fade-in-out 10s linear infinite",
         "fade-in-out-15": "fade-in-out 12s linear infinite",
         "fade-in-out-20": "fade-in-out 14s linear infinite",
+        spin: "spin 8s linear infinite",
         typewriter: "typewriter 2s steps(11) forwards",
         caret:
           "typewriter 2s steps(11) forwards, blink 1s steps(11) infinite 2s",
