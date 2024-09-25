@@ -81,7 +81,7 @@ export default function PoolsDisplay() {
           </TabsList>
 
           <div
-            className={`flex gap-x-1 ${searchTerm.length > 0 && "bg-card shadow-light"} hover:bg-card px-2 rounded-3xl`}
+            className={`flex gap-x-1 ${searchTerm.length > 0 && "bg-card shadow-thin"} hover:bg-card px-2 rounded-3xl`}
           >
             <IoMdSearch fontSize={20} className="self-center text-primary" />
             <input

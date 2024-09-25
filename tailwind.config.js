@@ -34,6 +34,7 @@ export default {
       boxShadow: {
         DEFAULT: "var(--box-shadow)",
         light: "rgba(0, 0, 0, 0.1) 0px 0px 48px -50px",
+        thin: "var(--box-shadow-thin)",
         hover: "var(--box-shadow-hover)",
       },
       colors: {
