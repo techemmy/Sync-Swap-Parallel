@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -14,9 +15,7 @@ export default function HowItWorksCard({
         </h3>
 
         <article className="space-y-2">
-          <p className="w-max text-primary border border-primary rounded-2xl py-px px-6 text-xs">
-            Fees
-          </p>
+          <Badge variant="outline">Fees</Badge>
           <p className="text-card-foreground text-sm">
             Your positions earn from trading fees and auto compounded. Saving
             gas and hassle to claim manually.
@@ -24,9 +23,7 @@ export default function HowItWorksCard({
         </article>
 
         <article className="space-y-2">
-          <p className="w-max text-primary border border-primary rounded-2xl py-px px-6 text-xs">
-            Rewards
-          </p>
+          <Badge variant="outline">Rewards</Badge>
           <p className="text-card-foreground text-sm">
             Any additional rewards, such as staking rewards can be claimed here
             if available.
