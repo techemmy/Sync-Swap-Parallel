@@ -88,7 +88,7 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 81, 85, 166, 0.5;
+    --border: 229, 229, 229;
     --input: 81, 85, 166;
     --ring: 81, 85, 166, 0.5;
 
@@ -120,45 +120,7 @@
   }
 
   body[data-theme="light"] {
-    --background: var(--theme-background-light);
-    --foreground: 222.2 84% 4.9%;
-    --white: 255, 255, 255;
-
-    --card: 255, 255, 255;
-    --card-foreground: 111, 113, 131;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 81, 85, 166;
-    --primary-foreground: 6, 8, 40;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 246, 245, 250;
-    --accent-foreground: var(--primary);
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 81, 85, 166, 0.5;
-    --input: 81, 85, 166;
-    --ring: 81, 85, 166, 0.5;
-
-    --radius: 0.5rem;
-
-    --box-shadow: rgba(0, 0, 0, 0.1) 0px 6px 18px;
-    --box-shadow-hover: rgba(0, 0, 0, 0) 0px 0px, rgba(0, 0, 0, 0) 0px 0px,
-      rgba(78, 81, 183, 0.4) 0px 2px 16px;
-
-    .theme-portfolio {
-      background-image: linear-gradient(62deg, #c7c1ff, #ddc8ff);
-      animation: portfolio-gradient 20s ease infinite;
-    }
+    /* extends :root  */
   }
 
   body[data-theme="dark"] {
