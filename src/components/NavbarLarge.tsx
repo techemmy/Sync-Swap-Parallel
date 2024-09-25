@@ -129,7 +129,7 @@ export default function NavbarLarge({ appContext, ...props }: Props) {
           {selectedNetwork === AVAILABLE_NETWORKS.zkSync && (
             <NavigationMenuItem>
               <NavLink
-                to="/explore"
+                to="/rewards"
                 className={({ isActive }) => {
                   return (isActive ? "text-primary " : "").concat("group");
                 }}
@@ -153,20 +153,20 @@ export default function NavbarLarge({ appContext, ...props }: Props) {
                     Trade to earn loyalty rewards
                   </ListItem>
                   <ListItem
-                    href="/rewards"
+                    href="/wrapper"
                     title="404 Wrapper"
                     logo={PiCodesandboxLogoBold}
                   >
                     Wrap LIBERTAS OMNIBUS NFTs
                   </ListItem>
                   <ListItem
-                    href="/rewards"
+                    href="/usdc-conversion"
                     title="USDC Conversion"
                     logo={MdCurrencyExchange}
                   >
                     Convert USDC.e to native USDC
                   </ListItem>
-                  <ListItem href="/rewards" title="Staking" logo={FaEthereum}>
+                  <ListItem href="/staking" title="Staking" logo={FaEthereum}>
                     Stake and earn rewards on your tokens
                   </ListItem>
                 </ListItemsContainer>
