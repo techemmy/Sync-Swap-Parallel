@@ -20,56 +20,60 @@ export default function FeaturedCollection() {
     }
     return () => clearTimeout(timeoutId);
   }, [isRefreshingBalance]);
+
   return (
-    <section className="px-7">
-      <h2 className="text-primary-foreground flex gap-x-5 text-2xl items-center">
+    <section className="px-6">
+      <h2 className="text-primary-foreground flex gap-x-5 text-[26px] font-medium items-center">
         LIBERTAS OMNIBUS ∎
-        <span className="text-card-foreground text-sm Featured Collection">
+        <span className="text-card-foreground text-sm hidden md:inline">
           Featured Collection
         </span>
       </h2>
 
-      <div className="flex gap-10 mt-6 flex-wrap sm:flex-nowrap">
-        <div className="group cursor-pointer relative shadow-thin flex items-center rounded-3xl h-[200px] w-[200px] md:h-[300px] md:w-[300px] lg:h-[455px] lg:w-[445px] overflow-hidden border-4 border-primary/[0.7]">
-          <div className="opacity-[0.98] mt-1">
-            <img
-              src="/images/omnibus2_original.jpg"
-              className="h-[200px] w-[200px] md:h-[300px] md:w-[300px] lg:h-[455px] lg:w-[445px]"
-            />
+      <div className="flex gap-8 mt-6 flex-wrap sm:flex-nowrap">
+        <article className="w-full grid justify-center">
+          <div className="group cursor-pointer relative shadow-thin flex items-center rounded-[40px] h-[200px] w-[200px] md:h-[300px] md:w-[300px] lg:h-[455px] lg:w-[445px] overflow-hidden border-4 border-primary/[0.7] theme-portfolio">
+            <div className="opacity-[0.98] mt-1">
+              <img
+                src="/images/omnibus2_original.jpg"
+                className="h-[200px] w-[200px] md:h-[300px] md:w-[300px] lg:h-[455px] lg:w-[445px]"
+              />
+            </div>
+            <div className="absolute z-20">
+              <img
+                className="hidden group-hover:block h-[200px] w-[200px] md:h-[300px] md:w-[300px] lg:h-[455px] lg:w-[445px]"
+                src="https://inventory-assets.summon.xyz/zksync/zksync-capsule.gif"
+              />
+            </div>
+            <div className="absolute z-10">
+              <img
+                className="hidden group-hover:block h-[200px] w-[200px] md:h-[300px] md:w-[300px] lg:h-[455px] lg:w-[445px]"
+                src="/images/omnibus2.jpg"
+              />
+            </div>
           </div>
-          <div className="absolute z-20">
-            <img
-              className="hidden group-hover:block h-[200px] w-[200px] md:h-[300px] md:w-[300px] lg:h-[455px] lg:w-[445px]"
-              src="https://inventory-assets.summon.xyz/zksync/zksync-capsule.gif"
-            />
-          </div>
-          <div className="absolute z-10">
-            <img
-              className="hidden group-hover:block h-[200px] w-[200px] md:h-[300px] md:w-[300px] lg:h-[455px] lg:w-[445px]"
-              src="/images/omnibus2.jpg"
-            />
-          </div>
-        </div>
+        </article>
 
-        <section>
-          <h3 className="text-3xl text-primary-foreground">
-            Join the ZK Revolution
-          </h3>
-          <p className="text-primary-foreground text-sm mt-3 tracking-wide font-medium mb-1">
-            Our collective mission is to advance personal freedom for all.
-          </p>
-          <p className="text-primary-foreground text-sm mb-3 tracking-wide font-medium">
-            LIBERTAS OMNIBUS is an experimental NFT project by zkSync.
-          </p>
+        <section className="w-full">
+          <article className="py-2">
+            <h3 className="pl-2 text-[26px] text-primary-foreground">
+              Join the ZK Revolution
+            </h3>
+            <p className="pl-2 text-primary-foreground text-sm mt-3 tracking-wide font-medium mb-1">
+              Our collective mission is to advance personal freedom for all.
+            </p>
+            <p className="pl-2 text-primary-foreground text-sm mb-3 tracking-wide font-medium">
+              LIBERTAS OMNIBUS is an experimental NFT project by zkSync.
+            </p>
 
-          <Link
-            className="flex gap-x-2 item-center text-card-foreground text-sm p-2 mb-10 hover:bg-primary/[0.04] w-max rounded-md"
-            to="https://twitter.com/zksync/status/1691808445224087555?lang=en"
-          >
-            Learn more about LIBERTAS OMNIBUS
-            <MdOutlineArrowOutward />
-          </Link>
-
+            <Link
+              className="w-auto flex gap-x-2 item-center text-card-foreground text-sm p-2 mb-10 hover:bg-primary/[0.04] w-max rounded-md"
+              to="https://twitter.com/zksync/status/1691808445224087555?lang=en"
+            >
+              Learn more about LIBERTAS OMNIBUS
+              <MdOutlineArrowOutward />
+            </Link>
+          </article>
           <Card className="mb-5 shadow">
             <CardContent className="space-y-5">
               <article className="flex items-center justify-between">

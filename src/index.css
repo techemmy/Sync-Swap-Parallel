@@ -124,6 +124,11 @@
 
   body[data-theme="light"] {
     /* extends :root  */
+    .theme-portfolio {
+      background-image: linear-gradient(62deg, #bbafff, #d1b4ff);
+      animation: portfolio-gradient 10s ease infinite;
+      background-size: 400% 400%;
+    }
   }
 
   body[data-theme="dark"] {
