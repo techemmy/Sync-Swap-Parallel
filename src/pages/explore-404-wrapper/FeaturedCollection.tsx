@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { IoMdWallet } from "react-icons/io";
 import { MdOutlineArrowOutward, MdOutlineRestartAlt } from "react-icons/md";
-import { PiPulse } from "react-icons/pi";
+import { PiPulseBold } from "react-icons/pi";
 import { Link } from "react-router-dom";
 
 export default function FeaturedCollection() {
@@ -110,7 +110,7 @@ export default function FeaturedCollection() {
               <Card className="cursor-pointer transition-all rounded-3xl shadow active:scale-90 active:bg-primary/[.50]">
                 <CardContent className="flex text-primary justify-between py-5 px-7">
                   <div className="flex gap-x-3">
-                    <PiPulse fontSize={20} fontWeight={60} />
+                    <PiPulseBold fontSize={20} fontWeight={60} />
                     Connect Wallet
                   </div>
                   <FaArrowRightLong />
