@@ -67,7 +67,7 @@ export default function FeaturedCollection() {
             </p>
 
             <Link
-              className="w-auto flex gap-x-2 item-center text-card-foreground text-sm p-2 mb-10 hover:bg-primary/[0.04] w-max rounded-md"
+              className="w-max flex gap-x-2 item-center text-card-foreground text-sm p-2 mb-10 hover:bg-primary/[0.04] w-max rounded-md"
               to="https://twitter.com/zksync/status/1691808445224087555?lang=en"
             >
               Learn more about LIBERTAS OMNIBUS
