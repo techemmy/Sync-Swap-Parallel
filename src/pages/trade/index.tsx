@@ -64,25 +64,25 @@ export default function Trade() {
                 <section className="flex flex-row justify-between w-full gap-x-2">
                   <Button
                     variant="outline"
-                    className="rounded-3xl text-primary border-border w-full py-1 h-auto font-normal"
+                    className="transition-all active:bg-primary/[0.2] rounded-3xl text-primary border-border border-primary/[0.5] hover:border-primary hover:bg-primary/[0.04] w-full py-1 h-auto font-normal"
                   >
                     25%
                   </Button>
                   <Button
                     variant="outline"
-                    className="rounded-3xl text-primary border-border w-full py-1 h-auto font-normal"
+                    className="transition-all active:bg-primary/[0.2] rounded-3xl text-primary border-border border-primary/[0.5] hover:border-primary hover:bg-primary/[0.04] w-full py-1 h-auto font-normal"
                   >
                     50%
                   </Button>
                   <Button
                     variant="outline"
-                    className="rounded-3xl text-primary border-border w-full py-1 h-auto font-normal"
+                    className="transition-all active:bg-primary/[0.2] rounded-3xl text-primary border-border border-primary/[0.5] hover:border-primary hover:bg-primary/[0.04] w-full py-1 h-auto font-normal"
                   >
                     75%
                   </Button>
                   <Button
                     variant="outline"
-                    className="rounded-3xl text-primary border-border w-full py-1 h-auto font-normal"
+                    className="transition-all active:bg-primary/[0.2] rounded-3xl text-primary border-border border-primary/[0.5] hover:border-primary hover:bg-primary/[0.04] w-full py-1 h-auto font-normal"
                   >
                     100%
                   </Button>
