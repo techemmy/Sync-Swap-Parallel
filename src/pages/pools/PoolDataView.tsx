@@ -69,12 +69,12 @@ export default function PoolsDisplay() {
     <Tabs defaultValue="prime-pools">
       <section className="flex justify-between items-center flex-wrap md:flex-nowrap gap-y-2">
         <section className="flex flex-col gap-y-2 md:flex-row gap-x-4">
-          <TabsList className="rounded-3xl bg-card text-primary shadow-sm">
-            <TabsTrigger className="flex gap-x-2 px-5 py-2" value="prime-pools">
+          <TabsList>
+            <TabsTrigger value="prime-pools">
               <GiGroundbreaker fontSize={20} />
               <h2>Prime Pools</h2>
             </TabsTrigger>
-            <TabsTrigger className="flex gap-x-2 px-5 py-2" value="all-pools">
+            <TabsTrigger value="all-pools">
               <MdOutlineWaterDrop fontSize={20} />
               <h2>All Pools</h2>
             </TabsTrigger>
