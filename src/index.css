@@ -79,7 +79,7 @@
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 219, 219, 219;
     --muted-foreground: 215.4 16.3% 46.9%;
 
     --accent: 246, 245, 250;
@@ -96,12 +96,15 @@
 
     --radius: 0.5rem;
 
+    --carousel-btn: 151, 152, 212;
+
     --box-shadow: 0 0 4px rgba(0, 0, 0, 1%), 0 14px 20px rgb(0, 0, 0, 2%),
       0 20px 28px rgb(0, 0, 0, 1%);
     --box-shadow-thin: 0 6px rgb(0, 0, 0, 5%), 0 6px 10px rgb(0, 0, 0, 4%),
       0 4px 10px rgb(0, 0, 0, 1%);
     --box-shadow-hover: rgba(0, 0, 0, 0) 0px 0px, rgba(0, 0, 0, 0) 0px 0px,
       rgba(78, 81, 183, 0.4) 0px 2px 16px;
+    --box-shadow-carousel-btn: rgb(var(--carousel-btn)) 0px 0px 20px 0px;
     /* =========== end of default theme variables =========== */
 
     .theme-portfolio {
