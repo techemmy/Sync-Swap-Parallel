@@ -20,7 +20,9 @@ function BalanceCard({ children, title, icon: Icon }: Props) {
       <p className="text-sm text-card-foreground flex gap-x-1 items-center">
         <span className="font-medium">{title}</span>
       </p>
-      <p className="text-primary-foreground text-xl font-medium">{children}</p>
+      <div className="text-primary-foreground text-xl font-medium">
+        {children}
+      </div>
       {Icon}
     </Card>
   );
@@ -38,12 +40,12 @@ export default function StatsCards() {
           />
         }
       >
-        <p className="flex items-center gap-x-2">
-          <span>10%</span>
+        <div className="flex items-center gap-x-2">
+          <p>10%</p>
           <Badge variant="outline" className="border-primary rounded-lg">
             Fixed
           </Badge>
-        </p>
+        </div>
       </BalanceCard>
 
       <BalanceCard
