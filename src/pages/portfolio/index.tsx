@@ -1,4 +1,5 @@
 import ConnectWalletDialog from "@/components/ConnectWalletDialog";
+import ConnectWalletDialogButton from "@/components/ConnectWalletDialogButton";
 import Footer from "@/components/Footer";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
@@ -27,18 +28,10 @@ export default function Portfolio() {
               Connect your wallet to explore the DeFi world with SyncSwap
             </CardDescription>
 
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button
-                  variant="outline"
-                  className="w-[220px] md:mx-0 flex gap-x-2 text-primary bg-transparent text-sm rounded-2xl mt-2"
-                >
-                  <IoWalletOutline size={20} />
-                  Connect
-                </Button>
-              </DialogTrigger>
-              <ConnectWalletDialog />
-            </Dialog>
+            <ConnectWalletDialogButton
+              variant="outline"
+              className="w-[220px] md:mx-0 rounded-2xl mt-2 text-sm"
+            />
           </CardContent>
         </Card>
       </main>
