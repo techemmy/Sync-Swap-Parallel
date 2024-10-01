@@ -76,7 +76,7 @@ export default function CarouselCard({
           </CarouselItem>
         ))}
       </CarouselContent>
-      <div className="flex gap-x-4 justify-between mt-6">
+      <div className="w-full flex gap-x-4 justify-between mt-6">
         {Array.from({ length: count }).map((_, index) => {
           const isActive = index + 1 === current;
           const className = isActive

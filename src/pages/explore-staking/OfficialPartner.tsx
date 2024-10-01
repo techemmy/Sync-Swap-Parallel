@@ -1,10 +1,51 @@
 import { Badge } from "@/components/ui/badge";
 import StatsCards from "./StatsCards";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { GiGroundbreaker } from "react-icons/gi";
-import { MdOutlineWaterDrop } from "react-icons/md";
+import StakeManagement from "./StakeManagement";
+import FAQs from "@/components/FAQs";
 
 export default function OfficialPartner() {
+  const faqs = [
+    {
+      question: "What is Trala",
+      answer:
+        "Trala is the Web 3.0 all-in-one gaming platform. $TRALA is the governance token of the Trala platform.",
+    },
+    {
+      question: "What is TRALA staking?",
+      answer:
+        "Trala is collaborating with SyncSwap to launch the staking service for $TRALA the governance token of Trala platform. You can stake TRALA tokens on ZKsync network to earn staking rewards.",
+    },
+    {
+      question: "What are the staking rewards?",
+      answer:
+        "Staking rewards are provided by Trala to offer a 10% fixed APR in 3 months for $TRALA token stakers on ZKsync network.",
+    },
+    {
+      question: "How to claim my earned rewards?",
+      answer:
+        "You can claim your earned rewards in $TRALA at anytime. See the Claimable Rewards section for your earned rewards.",
+    },
+    {
+      question: "Is there any fees to stake my TRALA?",
+      answer:
+        "There is no fees in the staking service. You can stake, unstake or claim your rewards at anytime without fees.",
+    },
+    {
+      question: "Can I stake on Ethereum mainnet?",
+      answer:
+        "TRALA staking service is only available on ZKsync network, you need to bridge your TRALA token from Ethereum to ZKsync first.",
+    },
+    {
+      question: "How to bridge my TRALA token?",
+      answer:
+        "You can go to the official bridge of ZKsync at bridge.zksync.io or use the SyncSwap Move interface to bridge your TRALA token.",
+    },
+    {
+      question: "What is the TRALA token address?",
+      answer:
+        "The address of the bridged TRALA token on ZKsync is 0x145e082E384A9fC86E95eEA805Dc9012f1B76cB7.",
+    },
+  ];
   return (
     <section className="flex flex-col gap-5">
       <h2 className="flex gap-x-3 items-center">
@@ -43,25 +84,9 @@ export default function OfficialPartner() {
 
       <StatsCards />
 
-      <Tabs defaultValue="prime-pools">
-        <section className="flex justify-between items-center flex-wrap md:flex-nowrap gap-y-2">
-          <section className="flex flex-col gap-y-2 md:flex-row gap-x-4">
-            <TabsList className="rounded-3xl bg-card text-primary shadow-sm">
-              <TabsTrigger value="prime-pools">
-                <GiGroundbreaker fontSize={20} />
-                <h2>Prime Pools</h2>
-              </TabsTrigger>
-              <TabsTrigger value="all-pools">
-                <MdOutlineWaterDrop fontSize={20} />
-                <h2>All Pools</h2>
-              </TabsTrigger>
-            </TabsList>
-          </section>
-        </section>
+      <StakeManagement />
 
-        <TabsContent value="prime-pools">hello</TabsContent>
-        <TabsContent value="all-pools">there</TabsContent>
-      </Tabs>
+      <FAQs faqs={faqs} />
     </section>
   );
 }

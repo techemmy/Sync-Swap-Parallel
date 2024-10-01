@@ -18,7 +18,7 @@ function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function ExploreStaking() {
-  const [showOfficialPartner, setShowOfficialPartner] = useState(true);
+  const [showOfficialPartner, setShowOfficialPartner] = useState(false);
   function changeViewToOfficialPartner() {
     setShowOfficialPartner(true);
   }
@@ -34,12 +34,12 @@ export default function ExploreStaking() {
   return (
     <Layout>
       <section className="flex flex-col gap-4">
-        <h2 className="flex gap-x-3 items-center">
+        <div className="flex gap-x-3 items-center">
           <FaEthereum fontSize={40} className="text-primary" />
-          <span className="font-medium text-3xl text-primary-foreground">
+          <h3 className="font-medium text-3xl text-primary-foreground">
             Staking
-          </span>
-        </h2>
+          </h3>
+        </div>
 
         <p className="text-card-foreground">
           Start staking to earn rewards on your ETH and token holdings
