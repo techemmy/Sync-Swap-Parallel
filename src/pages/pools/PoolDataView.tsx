@@ -34,7 +34,7 @@ const poolTypes: IPoolType[] = [
   },
 ];
 
-let pools = [] as Array<IPoolData>;
+const pools = [] as Array<IPoolData>;
 for (let i = 0; i < TOKENS.length; i += 2) {
   const from = TOKENS[i++];
   const to = TOKENS[i++];
