@@ -1,16 +1,12 @@
-import ConnectWalletDialog from "@/components/ConnectWalletDialog";
 import ConnectWalletDialogButton from "@/components/ConnectWalletDialogButton";
 import Footer from "@/components/Footer";
 import Logo from "@/components/Logo";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardTitle,
 } from "@/components/ui/card";
-import { Dialog, DialogTrigger } from "@/components/ui/dialog";
-import { IoWalletOutline } from "react-icons/io5";
 
 export default function Portfolio() {
   return (
