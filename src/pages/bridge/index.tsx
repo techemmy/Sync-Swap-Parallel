@@ -6,7 +6,7 @@ import Bridges from "./Bridges";
 export default function Bridge() {
   return (
     <>
-      <main className="relative overflow-hidden pt-28 max-w-screen-lg mx-auto min-h-screen p-4">
+      <main className="relative overflow-hidden pt-28 max-w-screen-xl mx-auto min-h-screen p-4">
         <img
           className="absolute w-full opacity-[0.1] z-0 -left-2 top-1"
           src="/images/tracks_light.png"

@@ -21,7 +21,7 @@ function BridgeCard({
 }: BridgeCardProps) {
   return (
     // TODO: add bg-colorOverflow as border on hover
-    <Card className="transition-all hover:shadow-hover">
+    <Card className="transition-all shadow hover:shadow-hover">
       <CardContent className="flex flex-col justify-between gap-y-10 min-h-[205px] min-w-[200px]">
         <section className="grid gap-2">
           {Logo}
