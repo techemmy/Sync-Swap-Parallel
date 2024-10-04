@@ -23,10 +23,13 @@ export default {
     extend: {
       gridTemplateColumns: {
         "wallet-options": "repeat(auto-fill, minmax(195px, 1fr))",
+        bridges: "repeat(auto-fill,minmax(290px,1fr))",
       },
       backgroundImage: {
         page: "var(--background)",
         zKTextGradient: "linear-gradient(var(--zKTextGradient))",
+        colorOverflow:
+          "radial-gradient(19.49% 58.52% at 50% 0,rgba(249,196,60,.3) 0,rgba(231,166,1,0) 100%),radial-gradient(50% 50% at 100% 100%,#520aeb 10.27%,rgba(159,115,255,0) 100%),radial-gradient(77.86% 77.86% at 100% 0,#00a7ff 0,rgba(0,166,254,.12) 100%),radial-gradient(50% 50% at 0 0,#ff8d6c 0,rgba(255,92,0,.6) 100%),radial-gradient(70.24% 70.24% at 0 100%,#e81d72 0,rgba(255,0,0,0) 100%)",
       },
       fontFamily: {
         Public: "Poppins, sans-serif",
