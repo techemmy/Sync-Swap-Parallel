@@ -16,7 +16,7 @@ export default function LearnMoreCard() {
           <br />
 
           <Link
-            className="w-max flex gap-x-2 item-center text-card-foreground text-sm p-2 hover:bg-primary/[0.04] rounded-md"
+            className="w-max flex gap-x-2 items-center text-card-foreground text-sm p-2 hover:bg-primary/[0.04] rounded-md"
             to="https://twitter.com/zksync/status/1691808445224087555?lang=en"
           >
             Learn about more USDC conversion
