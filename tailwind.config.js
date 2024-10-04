@@ -157,6 +157,14 @@ export default {
             opacity: "0",
           },
         },
+        "slide-in-from-right": {
+          "0%": {
+            transform: "translateX(500px)",
+          },
+          "100%": {
+            transform: "translateX(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -166,6 +174,7 @@ export default {
         "fade-in-out-10": "fade-in-out 10s linear infinite",
         "fade-in-out-15": "fade-in-out 12s linear infinite",
         "fade-in-out-20": "fade-in-out 14s linear infinite",
+        "slide-in-from-right": "slide-in-from-right .25s linear",
         spin: "spin 8s linear infinite",
         typewriter: "typewriter 2s steps(11) forwards",
         caret:
