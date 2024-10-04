@@ -1,7 +1,10 @@
 import { ThemesEnum } from "@/enums";
 import { useEffect, useRef, useState } from "react";
 
-export default function useDataTheme<T extends ThemesEnum>() {
+export default function useDataTheme<T extends ThemesEnum>(): [
+  string,
+  (theme: T) => void,
+] {
   const bodyRef = useRef(document?.querySelector("body"));
   const [activeTheme, setActiveTheme] = useState((): T => {
     let theme =
