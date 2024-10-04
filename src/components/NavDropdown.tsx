@@ -1,6 +1,5 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import { NavigationMenuLink } from "./ui/navigation-menu";
 import { PiCaretRightBold } from "react-icons/pi";
 import { IconType } from "react-icons/lib";
 import { NavLink } from "react-router-dom";
@@ -13,7 +12,7 @@ interface ListItemProps extends React.ComponentPropsWithoutRef<"a"> {
 export const ListItem = React.forwardRef<React.ElementRef<"a">, ListItemProps>(
   ({ className, title, href = "#", children, logo: Logo, ...props }, ref) => {
     return (
-      <li>
+      <li className="transition-all animate-slide-in-from-right">
         <NavLink
           to={href}
           ref={ref}
@@ -51,6 +50,8 @@ export const ListItemsContainer = ({
   children: React.ReactNode;
 }) => {
   return (
-    <ul className="bg-card rounded-xl grid gap-1 p-2 w-[400px]">{children}</ul>
+    <ul className="transition-all animate-fade-in bg-card rounded-xl grid gap-1 p-2 w-[400px]">
+      {children}
+    </ul>
   );
 };
