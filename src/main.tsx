@@ -26,7 +26,7 @@ import BridgeMove from "@/pages/bridge-move";
 
 const router = createBrowserRouter(
   createRoutesFromElements([
-    <Route path="/" element={<App />}>
+    <Route key="routes" path="/" element={<App />}>
       <Route index element={<Trade />} />
       <Route path="/intro" element={<Intro />} />
       <Route path="/home" element={<Home />} />
