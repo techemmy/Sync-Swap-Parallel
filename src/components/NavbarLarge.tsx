@@ -279,8 +279,9 @@ export default function NavbarLarge({ appContext, ...props }: Props) {
 
             {settingsIsVisible && (
               <NavbarSettings
-                {...props}
                 className="animate-fade-in absolute top-14 right-0"
+                {...props}
+                handleCloseSettings={() => setSettingsIsVisible(false)}
               />
             )}
           </NavigationMenuItem>
