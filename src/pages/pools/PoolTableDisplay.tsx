@@ -12,9 +12,10 @@ import { MdElectricBolt, MdOutlineInfo } from "react-icons/md";
 import { PiCaretLeftBold, PiCaretRightBold } from "react-icons/pi";
 import { Button } from "@/components/ui/button";
 import { IPoolData } from "@/types";
+import { Link } from "react-router-dom";
 
 function PoolCard({ pool }: { pool: IPoolData }) {
-  const { firstToken, secondToken, poolType, liquidity, APR } = pool;
+  const { id, firstToken, secondToken, poolType, liquidity, APR } = pool;
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Card
@@ -52,7 +53,9 @@ function PoolCard({ pool }: { pool: IPoolData }) {
           onClick={(e) => e.stopPropagation()}
           className="ml-auto w-max p-2 border border-primary text-primary rounded-lg transition-colors active:bg-primary/20"
         >
-          <FiArrowRight fontSize={15} />
+          <Link to={`/pool/${id}`}>
+            <FiArrowRight fontSize={15} />
+          </Link>
         </div>
       </CardContent>
 
@@ -109,13 +112,16 @@ function PoolCard({ pool }: { pool: IPoolData }) {
                   <p className="text-primary-foreground text-[18px]">-</p>
                 </article>
               </Card>
-              <Button
-                onClick={(e) => e.stopPropagation()}
-                variant="outline"
-                className="rounded-lg"
-              >
-                Enter <FiArrowRight fontSize={20} />
-              </Button>
+
+              <Link to={`/pool/${id}`}>
+                <Button
+                  onClick={(e) => e.stopPropagation()}
+                  variant="outline"
+                  className="rounded-lg"
+                >
+                  Enter <FiArrowRight fontSize={20} />
+                </Button>
+              </Link>
             </div>
 
             <Card className="w-[80%] grid grid-cols-[repeat(auto-fill,minmax(170px,1fr))] gap-x-3 gap-y-2 py-4 px-3 font-medium border-0 shadow-none rounded-2xl bg-transparent w-full cursor-pointer">
@@ -146,7 +152,7 @@ export default function PoolTableDisplay({ pools }: { pools: IPoolData[] }) {
 
   useEffect(() => {
     setPoolsData(pools.slice(pageStart, pageStart + pageSize));
-  }, [page, pageSize, pools]);
+  }, [page, pageSize, pools, pageStart]);
 
   const totalPages = Math.ceil(pools.length / pageSize);
 

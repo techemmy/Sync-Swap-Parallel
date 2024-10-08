@@ -44,7 +44,14 @@ for (let i = 0; i < TOKENS.length; i += 2) {
 
   const liquidity = (Math.random() * 10000000).toLocaleString();
   const APR = (Math.random() * 10).toFixed(2);
-  pools.push({ firstToken: from, secondToken: to, poolType, liquidity, APR });
+  pools.push({
+    firstToken: from,
+    secondToken: to,
+    poolType,
+    liquidity,
+    APR,
+    id: "0x80115c708E12eDd42E504c1cD52Aea96C547c05c",
+  });
 }
 
 export default function PoolsDisplay() {

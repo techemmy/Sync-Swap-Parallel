@@ -21,6 +21,7 @@ export interface IPoolType {
 }
 
 export interface IPoolData {
+  id: string;
   firstToken: {
     symbol: string;
     logo: string;

@@ -6,9 +6,10 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { IPoolData } from "@/types";
+import { Link } from "react-router-dom";
 
 function PoolCard({ pool }: { pool: IPoolData }) {
-  const { firstToken, secondToken, poolType, APR, liquidity } = pool;
+  const { id, firstToken, secondToken, poolType, APR, liquidity } = pool;
   return (
     <Card className="font-medium border-transparent shadow rounded-2xl">
       <CardHeader className="space-y-0 relative flex flex-row items-center justify-between rounded-t-2xl items-center px-3 pb-12 bg-navIcon/[0.08]">
@@ -59,14 +60,16 @@ function PoolCard({ pool }: { pool: IPoolData }) {
         </article>
       </CardContent>
 
-      <CardFooter>
-        <Button
-          className="w-full hover:shadow-hover transition-transform active:scale-90"
-          variant="outline"
-        >
-          Enter
-        </Button>
-      </CardFooter>
+      <Link to={`/pool/${id}`}>
+        <CardFooter>
+          <Button
+            className="w-full hover:shadow-hover transition-transform active:scale-90"
+            variant="outline"
+          >
+            Enter
+          </Button>
+        </CardFooter>
+      </Link>
     </Card>
   );
 }
