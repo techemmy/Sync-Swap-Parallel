@@ -28,7 +28,7 @@ export default function PoolTypeDetails({
 
         <PoolLPRewardsCard />
       </section>
-      <div className="absolute top-14 z-0">
+      <div className="absolute z-[-1] top-14">
         <AnimatedGradientCircles />
       </div>
     </div>
