@@ -57,7 +57,7 @@ export default function PoolLPRewardsCard() {
       {showDetails && (
         <section className="transition-all animate-fade-in bg-accent px-6 py-4 rounded-xl mt-8">
           <h3 className="text-sm">Fee Policy</h3>
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,380px))] gap-4 mt-4">
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,350px))] gap-4 mt-4">
             <article className="flex gap-x-2 items-center">
               <span className="text-sm text-primary bg-accent grid place-items-center w-10 h-10 border rounded-xl">
                 <HiOutlineTag fontSize={18} />
