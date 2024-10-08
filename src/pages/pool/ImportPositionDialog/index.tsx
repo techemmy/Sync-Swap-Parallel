@@ -1,5 +1,4 @@
 import { FaDiscord } from "react-icons/fa";
-import { IoWalletOutline } from "react-icons/io5";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import SelectTokenDialog from "@/components/SelectTokenDialog";
 import { Button } from "@/components/ui/button";
@@ -10,7 +9,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import ConnectWalletDialog from "@/components/ConnectWalletDialog";
 import { Link } from "react-router-dom";
 import ConnectWalletDialogButton from "@/components/ConnectWalletDialogButton";
 

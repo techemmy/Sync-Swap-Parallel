@@ -1,8 +1,5 @@
-import ConnectWalletDialog from "@/components/ConnectWalletDialog";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogTrigger } from "@radix-ui/react-dialog";
-import { GoInbox } from "react-icons/go";
-import { IoWalletOutline } from "react-icons/io5";
 import { MdAdd } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import {
