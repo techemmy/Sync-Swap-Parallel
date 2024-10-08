@@ -100,8 +100,8 @@
 
     --box-shadow: 0 0 4px rgba(0, 0, 0, 1%), 0 14px 20px rgb(0, 0, 0, 2%),
       0 20px 28px rgb(0, 0, 0, 1%);
-    --box-shadow-thin: 0 6px rgb(0, 0, 0, 5%), 0 6px 10px rgb(0, 0, 0, 4%),
-      0 4px 10px rgb(0, 0, 0, 1%);
+    --box-shadow-thin: 0 0 6px rgb(0 0 0/5%), 0 6px 10px rgb(0 0 0/4%),
+      0 4px 10px rgb(0 0 0/1%);
     --box-shadow-hover: rgba(0, 0, 0, 0) 0px 0px, rgba(0, 0, 0, 0) 0px 0px,
       rgba(78, 81, 183, 0.4) 0px 2px 16px;
     --box-shadow-carousel-btn: rgb(var(--carousel-btn)) 0px 0px 20px 0px;
