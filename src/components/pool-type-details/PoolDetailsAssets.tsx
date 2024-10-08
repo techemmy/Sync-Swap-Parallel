@@ -50,7 +50,7 @@ export default function PoolDetailsAssets() {
         </article>
       </Card>
 
-      <Card className="grid grid-cols-2 gap-x-3 gap-y-5 font-medium border-0 shadow rounded-2xl bg-card/70 px-6 py-5 w-full cursor-pointer">
+      <Card className="grid grid-cols-[repeat(auto-fill,minmax(180px,auto))]  gap-y-5 font-medium border-0 shadow rounded-2xl bg-card/70 px-6 py-5 w-full cursor-pointer">
         <article>
           <p className="text-sm">TVL</p>
           <p className="text-primary-foreground text-[18px]">$8,404,187.86</p>
