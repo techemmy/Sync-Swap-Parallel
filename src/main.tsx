@@ -23,6 +23,7 @@ import Explore404Wrapper from "@/pages/explore-404-wrapper";
 import ExploreUSDCConversion from "@/pages/explore-usdc-conversion";
 import ExploreStaking from "@/pages/explore-staking";
 import BridgeMove from "@/pages/bridge-move";
+import PoolDetails from "./pages/pool-details";
 
 const router = createBrowserRouter(
   createRoutesFromElements([
@@ -33,6 +34,7 @@ const router = createBrowserRouter(
       <Route index path="/swap" element={<Trade />} />
 
       <Route path="/pool" element={<Pool />} />
+      <Route path="/pool/:poolId" element={<PoolDetails />} />
       <Route path="/pools" element={<Pools />} />
       <Route path="/pool/wizard" element={<PoolWizard />} />
       <Route path="/pool/earnings" element={<PoolEarnings />} />
