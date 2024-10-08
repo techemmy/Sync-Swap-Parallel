@@ -10,7 +10,7 @@ import { MdOutlineWaterDrop } from "react-icons/md";
 import { TbAlignBoxRightBottom } from "react-icons/tb";
 import { useState } from "react";
 import Footer from "@/components/Footer";
-import PoolTypeDetails from "./PoolTypeDetails";
+import PoolTypeData from "./PoolTypeData";
 
 const poolTypes = [
   {
@@ -150,9 +150,7 @@ export default function PoolWizard() {
               </section>
             </section>
 
-            {showPoolTypeDetail && (
-              <PoolTypeDetails poolType={activePoolType} />
-            )}
+            {showPoolTypeDetail && <PoolTypeData poolType={activePoolType} />}
           </div>
         </article>
       </main>

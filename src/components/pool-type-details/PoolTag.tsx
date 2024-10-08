@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { BsLightningChargeFill } from "react-icons/bs";
 
-export default function Tag({
+export default function PoolTag({
   children = "",
   className,
 }: {

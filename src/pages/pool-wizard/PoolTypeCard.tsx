@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/card";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { ReactNode } from "react";
-import Tag from "./Tag";
+import PoolTag from "@/components/pool-type-details/PoolTag";
 
 interface Props {
   icon: ReactNode;
@@ -37,7 +37,7 @@ export default function PoolTypeCard({
           <CardTitle className="font-medium text-md items-center">
             {title}
           </CardTitle>
-          {isRecommended && <Tag>Recommended</Tag>}
+          {isRecommended && <PoolTag>Recommended</PoolTag>}
         </div>
         <MdKeyboardArrowRight fontSize={20} />
       </CardHeader>
