@@ -2,10 +2,10 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { MdCardGiftcard, MdToll } from "react-icons/md";
 import StakeCard from "./StakeCard";
-import CarouselCard from "./CarouselCard";
 import { IoIosArrowForward } from "react-icons/io";
 import { Link } from "react-router-dom";
 import React from "react";
+import CarouselCard from "@/components/CarouselCard";
 
 function InfoLinkCard({
   title,
