@@ -1,14 +1,21 @@
 import Footer from "@/components/Footer";
-import { Tabs } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FaChevronLeft } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import VerticalTabsList from "./VerticalTabsList";
-import Overview from "./tab-contents/Overview";
+import OverviewTabContent from "./OverviewTabContent";
+import MyPositionTabContent from "./MyPositionTabContent";
+import { useState } from "react";
+import DepositTabContent from "./DepositTabContent";
+import WithdrawTabContent from "./WithdrawTabContent";
+import StakeTabContent from "./StakeTabContent";
 
 export default function PoolDetails() {
+  const [tab, setTab] = useState("overview");
+
+  const onTabChange = (tab: string) => setTab(tab);
   return (
     <>
-      <main className="relative overflow-auto pt-28 pb-20 min-h-screen max-w-screen-lg mx-auto py-4 px-0">
+      <main className="relative overflow-auto pt-28 pb-20 min-h-screen max-w-screen-lg mx-auto py-4 px-1">
         <Link
           to="/pools"
           className="mb-6 text-primary text-sm flex gap-x-2 items-center"
@@ -18,11 +25,50 @@ export default function PoolDetails() {
         </Link>
         <Tabs
           defaultValue="overview"
-          className="flex items-start gap-4 relative z-10"
+          value={tab}
+          onValueChange={onTabChange}
+          className="flex items-start gap-8 relative z-10"
           orientation="vertical"
         >
-          <VerticalTabsList />
-          <Overview />
+          <TabsList className="flex bg-transparent md:flex-col md:items-start space-y-2 md:w-[15%]">
+            <TabsTrigger
+              className="text-card-foreground flex justify-start rounded-xl border-none data-[state=active]:bg-card data-[state=active]:shadow-thin data-[state=active]:text-primary w-full text-left"
+              value="overview"
+            >
+              Overview
+            </TabsTrigger>
+            <TabsTrigger
+              className="text-card-foreground flex justify-start rounded-xl border-none data-[state=active]:bg-card data-[state=active]:shadow-thin data-[state=active]:text-primary w-full text-left"
+              value="my-position"
+            >
+              My Position
+            </TabsTrigger>
+            <TabsTrigger
+              className="text-card-foreground flex justify-start rounded-xl border-none data-[state=active]:bg-card data-[state=active]:shadow-thin data-[state=active]:text-primary w-full text-left"
+              value="deposit"
+            >
+              Deposit
+            </TabsTrigger>
+            <TabsTrigger
+              className="text-card-foreground flex justify-start rounded-xl border-none data-[state=active]:bg-card data-[state=active]:shadow-thin data-[state=active]:text-primary w-full text-left"
+              value="withdraw"
+            >
+              Withdraw
+            </TabsTrigger>
+            <TabsTrigger
+              className="text-card-foreground flex justify-start rounded-xl border-none data-[state=active]:bg-card data-[state=active]:shadow-thin data-[state=active]:text-primary w-full text-left"
+              value="stake"
+            >
+              Stake
+            </TabsTrigger>
+          </TabsList>
+          <OverviewTabContent />
+          <MyPositionTabContent
+            changeTabToDeposit={() => onTabChange("deposit")}
+          />
+          <DepositTabContent />
+          <WithdrawTabContent />
+          <StakeTabContent />
         </Tabs>
       </main>
       <Footer />
