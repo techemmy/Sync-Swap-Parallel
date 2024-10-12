@@ -1,20 +1,25 @@
 import CarouselCard from "@/components/CarouselCard";
 import { Card, CardContent } from "@/components/ui/card";
 import { TabsContent } from "@/components/ui/tabs";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import { TOKENS } from "@/constants";
 import { FaPercent } from "react-icons/fa";
-import { MdCurrencyBitcoin, MdOutlineInfo, MdWaves } from "react-icons/md";
-import { FiSettings } from "react-icons/fi";
+import {
+  MdCurrencyBitcoin,
+  MdDoneOutline,
+  MdOutlineInfo,
+} from "react-icons/md";
+import { Button } from "@/components/ui/button";
+import SlippagePopover from "./SlippagePopover";
+import { Switch } from "@/components/ui/switch";
+import ConnectWalletDialogButton from "@/components/ConnectWalletDialogButton";
+import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
 import {
   Tooltip,
-  TooltipTrigger,
   TooltipContent,
+  TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { IoWarningOutline } from "react-icons/io5";
 
 function RightSide() {
   const carouselContents = [
@@ -77,6 +82,7 @@ function RightSide() {
 }
 
 export default function DepositTabContent() {
+  const [isBalancedProportion, setIsBalancedProportion] = useState(false);
   return (
     <TabsContent
       value="deposit"
@@ -96,49 +102,76 @@ export default function DepositTabContent() {
           <CardContent>
             <section className="flex justify-between group">
               <h3 className="text-primary-foreground">Amount to deposit</h3>
-              <Popover>
-                <PopoverTrigger className="text-primary flex items-center gap-x-2 bg-navIcon/[0.05] py-1 pr-2 rounded-xl">
-                  <FiSettings
-                    className="font-bold group-active:transition-transform group-active:scale-90 group-hover:rotate-180 duration-500"
-                    size={20}
-                  />
-                  <p className="text-xs">Slippage 0.5%</p>
-                </PopoverTrigger>
-                <PopoverContent className="rounded-2xl min-w-[300px]">
-                  <section className="flex items-center justify-between">
-                    <div className="flex gap-x-2 items-center text-primary">
-                      <MdWaves fontSize={23} />
-                      <h3>Max Slippage</h3>
-                      <Tooltip>
-                        <TooltipTrigger>
-                          <MdOutlineInfo />
-                        </TooltipTrigger>
-                        <TooltipContent className="max-w-[300px]">
-                          <p>
-                            Your transaction will revert if price changes
-                            unfavorably by more than this percentage.
-                          </p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </div>
-                    <p className="text-card-foreground text-xs">Auto 2%</p>
-                  </section>
-
-                  <ul className={`grid w-full gap-3 grid-cols-3 mt-7`}>
-                    <li
-                      className={`${"active" ? "text-primary shadow-md border-primary" : "text-card-foreground border-transparent"} border font-medium active:scale-90 transition-transform text-sm py-2 text-center hover:bg-accent rounded-2xl cursor-pointer`}
-                    >
-                      hello
-                    </li>
-                  </ul>
-                </PopoverContent>
-              </Popover>
+              <SlippagePopover />
             </section>
+
+            <section className="space-y-7 my-7">
+              {Object.values(TOKENS).map((token) => (
+                <article key={token.name} className="space-y-2">
+                  <Button
+                    variant="outline"
+                    className="border-0 flex items-center gap-x-2 px-3"
+                  >
+                    <img src={token.logo} className="w-6 h-6" />
+                    <p className="text-primary-foreground text-lg">
+                      {token.name}
+                    </p>
+                  </Button>
+                  <div className="bg-accent p-2 pl-4 rounded-lg">
+                    <input
+                      type="text"
+                      className="bg-transparent w-full text-ellipsis outline-none border-none text-2xl"
+                      placeholder="0.0"
+                    />
+                  </div>
+                </article>
+              ))}
+              <div className="pl-2 flex items-center space-x-2 text-sm">
+                <Switch
+                  onCheckedChange={setIsBalancedProportion}
+                  checked={isBalancedProportion}
+                  id="balanced-proportion"
+                />
+                <label htmlFor="balanced-proportion">
+                  Add tokens in balanced proportion
+                </label>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <MdOutlineInfo />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    Deposit all tokens in the same proportion they currently are
+                    in the pool.
+                  </TooltipContent>
+                </Tooltip>
+              </div>
+            </section>
+
+            {!isBalancedProportion && (
+              <Badge
+                variant="outline"
+                className="border-transparent text-sm flex justify-center items-center gap-x-4 bg-primary/[0.06] rounded-lg px-4 py-2 mb-3 mt-14"
+              >
+                <MdDoneOutline fontSize={20} />
+                <p>
+                  Your deposit will be converted to a balanced proportion
+                  automatically.
+                </p>
+              </Badge>
+            )}
+
+            <ConnectWalletDialogButton variant="default" className="w-full" />
           </CardContent>
         </Card>
 
         <RightSide />
       </section>
+      <div className="flex items-center gap-x-2 mt-10">
+        <IoWarningOutline fontSize={23} className="text-yellow-500" />
+        <p className="text-sm text-card-foreground">
+          You may receive 23% less with this percentage of slippage tolerance.
+        </p>
+      </div>
     </TabsContent>
   );
 }
