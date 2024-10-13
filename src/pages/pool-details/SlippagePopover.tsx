@@ -9,19 +9,18 @@ import {
   TooltipTrigger,
   TooltipContent,
 } from "@/components/ui/tooltip";
+import { useSlippage } from "@/context/PoolSlippageContext";
 import React, { useState } from "react";
 import { FiSettings } from "react-icons/fi";
 import { MdWaves, MdOutlineInfo } from "react-icons/md";
 
 export default function SlippagePopover() {
-  const [slippage, setSlippage] = useState<number | null>(null);
-  const [slippageInput, setSlippageInput] = useState<string>();
+  const [slippage, setSlippage] = useSlippage();
+  const [slippageInput, setSlippageInput] = useState<string>("");
 
   const handleSetInputSlippage = () => {
-    let newSlippage = Number(slippageInput) >= 60 ? "60" : slippageInput;
-    newSlippage = Number(newSlippage) === 0 ? "0.01" : newSlippage;
-    setSlippage(Number(newSlippage));
-    setSlippageInput(newSlippage);
+    const value = setSlippage(slippageInput as string);
+    setSlippageInput(value);
   };
 
   const handleSlippageInputChange = (
