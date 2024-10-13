@@ -20,6 +20,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { IoWarningOutline } from "react-icons/io5";
+import { useSlippage } from "@/context/PoolSlippageContext";
 
 function RightSide() {
   const carouselContents = [
@@ -83,6 +84,7 @@ function RightSide() {
 
 export default function DepositTabContent() {
   const [isBalancedProportion, setIsBalancedProportion] = useState(true);
+  const [slippage] = useSlippage();
   return (
     <TabsContent
       value="deposit"
@@ -166,12 +168,16 @@ export default function DepositTabContent() {
 
         <RightSide />
       </section>
-      <div className="flex items-center gap-x-2 mt-10">
-        <IoWarningOutline fontSize={23} className="text-yellow-500" />
-        <p className="text-sm text-card-foreground">
-          You may receive 23% less with this percentage of slippage tolerance.
-        </p>
-      </div>
+
+      {slippage && slippage >= 5 && (
+        <div className="flex items-center gap-x-2 mt-10">
+          <IoWarningOutline fontSize={23} className="text-yellow-500" />
+          <p className="text-sm text-card-foreground">
+            You may receive {slippage}% less with this percentage of slippage
+            tolerance.
+          </p>
+        </div>
+      )}
     </TabsContent>
   );
 }
