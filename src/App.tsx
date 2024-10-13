@@ -4,6 +4,7 @@ import { Outlet, useOutletContext } from "react-router-dom";
 import { AVAILABLE_NETWORKS } from "@/constants";
 import type { AppContextType, NetworkType } from "@/types/index";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { PoolSlippageProvider } from "./context/PoolSlippageContext";
 
 export default function App() {
   const [selectedNetwork, setSelectedNetwork] = useState<NetworkType>(
@@ -20,7 +21,10 @@ export default function App() {
       <div className="bg-page">
         <TooltipProvider>
           <NavBars appContext={outletContext} />
-          <Outlet context={outletContext satisfies AppContextType} />
+
+          <PoolSlippageProvider>
+            <Outlet context={outletContext satisfies AppContextType} />
+          </PoolSlippageProvider>
         </TooltipProvider>
       </div>
     </>

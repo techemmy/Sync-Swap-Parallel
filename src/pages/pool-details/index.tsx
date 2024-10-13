@@ -8,14 +8,13 @@ import { useState } from "react";
 import DepositTabContent from "./DepositTabContent";
 import WithdrawTabContent from "./WithdrawTabContent";
 import StakeTabContent from "./StakeTabContent";
-import { PoolSlippageProvider } from "@/context/PoolSlippageContext";
 
 export default function PoolDetails() {
   const [tab, setTab] = useState("overview");
 
   const onTabChange = (tab: string) => setTab(tab);
   return (
-    <PoolSlippageProvider>
+    <>
       <main className="relative overflow-auto pt-28 pb-20 min-h-screen max-w-[1120px] mx-auto py-4 px-2">
         <Link
           to="/pools"
@@ -75,6 +74,6 @@ export default function PoolDetails() {
         </Tabs>
       </main>
       <Footer />
-    </PoolSlippageProvider>
+    </>
   );
 }
