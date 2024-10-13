@@ -16,7 +16,7 @@ interface Props {
 
 function BalanceCard({ children, title, icon: Icon }: Props) {
   return (
-    <Card className="w-full relative bg-white/75 border-transparent px-7 py-5 rounded-2xl shadow overflow-clip space-y-2">
+    <Card className="w-full relative bg-card/75 border-transparent px-7 py-5 rounded-2xl shadow overflow-clip space-y-2">
       <p className="text-sm text-card-foreground flex gap-x-1 items-center">
         <span className="font-medium">{title}</span>
       </p>
