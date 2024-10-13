@@ -82,7 +82,7 @@ function RightSide() {
 }
 
 export default function DepositTabContent() {
-  const [isBalancedProportion, setIsBalancedProportion] = useState(false);
+  const [isBalancedProportion, setIsBalancedProportion] = useState(true);
   return (
     <TabsContent
       value="deposit"
