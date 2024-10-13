@@ -43,7 +43,7 @@ function RightSide() {
     },
   ];
   return (
-    <section className="w-[35%] flex flex-col gap-4">
+    <section className="w-full md:w-[35%] flex flex-col gap-4">
       <CarouselCard contents={carouselContents} />
 
       <Card className="shadow-thin">
@@ -100,8 +100,8 @@ export default function DepositTabContent() {
         </p>
       </section>
 
-      <section className="flex justify-center gap-12 mt-10 items-start">
-        <Card className="w-[65%] shadow-thin">
+      <section className="flex flex-col md:flex-row justify-center gap-12 mt-10 items-start">
+        <Card className="w-full md:w-[65%] shadow-thin">
           <CardContent>
             <section className="flex justify-between group">
               <h3 className="text-primary-foreground">Amount to deposit</h3>

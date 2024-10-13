@@ -28,10 +28,10 @@ export default function PoolDetails() {
           defaultValue="overview"
           value={tab}
           onValueChange={onTabChange}
-          className="flex items-start gap-8 relative z-10"
+          className="flex flex-col md:flex-row items-start gap-8 relative z-10"
           orientation="vertical"
         >
-          <TabsList className="flex bg-transparent md:flex-col md:items-start space-y-2 md:w-[15%]">
+          <TabsList className="flex flex-wrap md:flex-nowrap *:w-max *:md:w-full bg-transparent md:flex-col md:items-start md:space-y-2 md:w-[15%]">
             <TabsTrigger
               className="text-card-foreground flex justify-start rounded-xl border-none data-[state=active]:bg-card data-[state=active]:shadow-thin data-[state=active]:text-primary w-full text-left"
               value="overview"
@@ -63,7 +63,7 @@ export default function PoolDetails() {
               Stake
             </TabsTrigger>
           </TabsList>
-          <div className="w-[85%]">
+          <div className="w-full md:w-[85%]">
             <OverviewTabContent />
             <MyPositionTabContent
               changeTabToDeposit={() => onTabChange("deposit")}

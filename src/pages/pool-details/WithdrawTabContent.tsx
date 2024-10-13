@@ -35,7 +35,7 @@ function RightSide() {
     },
   ];
   return (
-    <section className="w-[35%] flex flex-col gap-4">
+    <section className="w-full md:w-[35%] flex flex-col gap-4">
       <CarouselCard contents={carouselContents} />
 
       <Card className="shadow-thin">
@@ -120,8 +120,8 @@ export default function WithdrawTabContent() {
         </p>
       </section>
 
-      <section className="flex justify-center gap-12 mt-10 items-start">
-        <div className="w-[65%] space-y-4">
+      <section className="flex flex-col md:flex-row justify-center gap-12 mt-10 items-start">
+        <div className="w-full md:w-[65%] space-y-4">
           <section className="flex justify-between group">
             <h3 className="text-card-foreground text-sm">Amount to withdraw</h3>
             <SlippagePopover />

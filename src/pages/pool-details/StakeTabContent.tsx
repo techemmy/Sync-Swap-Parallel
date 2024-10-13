@@ -83,7 +83,7 @@ function StakeCard() {
 
 function StakeContent() {
   return (
-    <Tabs defaultValue="stake" className="w-[65%]">
+    <Tabs defaultValue="stake" className="w-full md:w-[65%]">
       <section className="flex justify-between items-center flex-wrap md:flex-nowrap gap-y-2">
         <section className="flex flex-col gap-y-2 md:flex-row gap-x-4">
           <TabsList className="rounded-3xl bg-card text-primary shadow-sm">
@@ -146,10 +146,10 @@ export default function StakeTabContent() {
         </p>
       </section>
 
-      <div className="flex gap-10">
+      <div className="flex flex-col md:flex-row justify-center gap-12 mt-10 items-start">
         <StakeContent />
 
-        <section className="max-w-[340px] w-full flex flex-col gap-5">
+        <section className="w-full md:w-[35%] w-full flex flex-col gap-5">
           <Card className="shadow-thin">
             <CardContent className="space-y-10">
               <div className="space-y-3">
