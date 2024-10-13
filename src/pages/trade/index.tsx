@@ -19,13 +19,19 @@ import { AVAILABLE_NETWORKS } from "@/constants";
 import LineaVoyageSurgeCard from "./components/LineaVoyageSurgeCard";
 import AnimatedGradientCircles from "@/components/AnimatedGradientCircles";
 import SlippageWarning from "@/components/SlippageWarning";
+import CustomHelloText from "./components/CustomHelloText";
+import { HiSparkles } from "react-icons/hi2";
+import NavbarSettingsDialog from "@/components/NavbarSettings/NavbarSettingsDialog";
+import useDataTheme from "@/hooks/useDataTheme";
 
 export default function Trade() {
   const { selectedNetwork } = useApp();
+  const [activeTheme, handleSetTheme] = useDataTheme();
+  const themeManager = { activeTheme, handleSetTheme };
   return (
     <>
-      <main className="pt-32">
-        <section className="relative z-[1] mx-auto max-w-[470px] grid gap-y-1 p-2">
+      <main className="pt-32 flex gap-3 justify-center items-start">
+        <section className="relative z-[1] max-w-[470px] grid gap-y-1 p-2">
           <ActionButtons />
           <section className="grid gap-y-1 relative">
             <Card className="grid gap-y-4 mt-2 border-0 shadow rounded-3xl bg-card/70 px-5 py-4">
@@ -134,7 +140,7 @@ export default function Trade() {
             </Card>
           </section>
 
-          <AnimatedGradientCircles />
+          {/*<AnimatedGradientCircles />*/}
 
           <GettingStartedCard />
 
@@ -147,6 +153,34 @@ export default function Trade() {
             <LineaVoyageSurgeCard />
           )}
         </section>
+
+        <Card className="mt-16 max-w-[300px] min-h-[100px] shadow-thin">
+          <CardContent className="grid gap-5">
+            <div className="animate-fade-in flex flex-col gap-2 mx-1.5 my-2 items-end">
+              <CustomHelloText />
+              <p className="text-sm">Input amount to start swapping</p>
+            </div>
+
+            <div className="grid gap-3 p-5 bg-primary/[0.05] rounded-2xl">
+              <HiSparkles fontSize={23} />
+              <p className="text-[13px]">
+                New gadget to help you review price and swap details
+              </p>
+
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button
+                    variant="outline"
+                    className="w-full border-primary/[0.5]"
+                  >
+                    Toggle in Settings
+                  </Button>
+                </DialogTrigger>
+                <NavbarSettingsDialog themeManager={themeManager} />
+              </Dialog>
+            </div>
+          </CardContent>
+        </Card>
       </main>
 
       <Footer />

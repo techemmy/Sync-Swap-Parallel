@@ -14,6 +14,9 @@ interface Props {
   handleCloseSettings: () => void;
 }
 
+// TODO: remove all themeManager props in other components and useDataTheme
+// here directly
+// FIX: resolve all issues with theme management, handleCloseSettings
 export default function NavbarSettings({
   className = "",
   themeManager,
