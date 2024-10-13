@@ -16,7 +16,7 @@ export default function PoolDetails() {
   const onTabChange = (tab: string) => setTab(tab);
   return (
     <PoolSlippageProvider>
-      <main className="relative overflow-auto pt-28 pb-20 min-h-screen max-w-screen-lg mx-auto py-4 px-1">
+      <main className="relative overflow-auto pt-28 pb-20 min-h-screen max-w-[1120px] mx-auto py-4 px-2">
         <Link
           to="/pools"
           className="mb-6 text-primary text-sm flex gap-x-2 items-center"
@@ -63,13 +63,15 @@ export default function PoolDetails() {
               Stake
             </TabsTrigger>
           </TabsList>
-          <OverviewTabContent />
-          <MyPositionTabContent
-            changeTabToDeposit={() => onTabChange("deposit")}
-          />
-          <DepositTabContent />
-          <WithdrawTabContent />
-          <StakeTabContent />
+          <div className="w-[85%]">
+            <OverviewTabContent />
+            <MyPositionTabContent
+              changeTabToDeposit={() => onTabChange("deposit")}
+            />
+            <DepositTabContent />
+            <WithdrawTabContent />
+            <StakeTabContent />
+          </div>
         </Tabs>
       </main>
       <Footer />
