@@ -15,9 +15,8 @@ import {
 } from "@/components/ui/tooltip";
 import ConnectWalletDialogButton from "@/components/ConnectWalletDialogButton";
 import { Switch } from "@/components/ui/switch";
-import { IoWarningOutline } from "react-icons/io5";
-import { useSlippage } from "@/context/PoolSlippageContext";
 import AnimatedGradientCircles from "@/components/AnimatedGradientCircles";
+import SlippageWarning from "@/components/SlippageWarning";
 
 function RightSide() {
   const carouselContents = [
@@ -105,7 +104,6 @@ function TokenToWithdraw({
 }
 
 export default function WithdrawTabContent() {
-  const [slippage] = useSlippage();
   return (
     <TabsContent
       value="withdraw"
@@ -251,15 +249,7 @@ export default function WithdrawTabContent() {
         <RightSide />
       </section>
 
-      {slippage && slippage >= 5 && (
-        <div className="flex items-center gap-x-2 mt-10">
-          <IoWarningOutline fontSize={23} className="text-yellow-500" />
-          <p className="text-sm text-card-foreground">
-            You may receive {slippage}% less with this percentage of slippage
-            tolerance.
-          </p>
-        </div>
-      )}
+      <SlippageWarning className="mt-10" />
 
       <AnimatedGradientCircles />
     </TabsContent>

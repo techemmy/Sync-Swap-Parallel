@@ -19,9 +19,8 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { IoWarningOutline } from "react-icons/io5";
-import { useSlippage } from "@/context/PoolSlippageContext";
 import AnimatedGradientCircles from "@/components/AnimatedGradientCircles";
+import SlippageWarning from "@/components/SlippageWarning";
 
 function RightSide() {
   const carouselContents = [
@@ -85,7 +84,6 @@ function RightSide() {
 
 export default function DepositTabContent() {
   const [isBalancedProportion, setIsBalancedProportion] = useState(true);
-  const [slippage] = useSlippage();
   return (
     <TabsContent
       value="deposit"
@@ -170,16 +168,7 @@ export default function DepositTabContent() {
         <RightSide />
       </section>
 
-      {slippage && slippage >= 5 && (
-        <div className="flex items-center gap-x-2 mt-10">
-          <IoWarningOutline fontSize={23} className="text-yellow-500" />
-          <p className="text-sm text-card-foreground">
-            You may receive {slippage}% less with this percentage of slippage
-            tolerance.
-          </p>
-        </div>
-      )}
-
+      <SlippageWarning className="mt-10" />
       <AnimatedGradientCircles />
     </TabsContent>
   );
