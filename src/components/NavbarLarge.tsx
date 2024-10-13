@@ -26,7 +26,7 @@ import {
 } from "react-icons/md";
 import { HiSparkles } from "react-icons/hi";
 import { AVAILABLE_NETWORKS } from "@/constants";
-import type { AppContextType, IThemeManager } from "@/types/index";
+import type { AppContextType } from "@/types/index";
 import SelectNetworkNavContent from "@/components/SelectNetwork/SelectNetworkNavContent";
 import NavbarSettings from "./NavbarSettings";
 import { useState } from "react";
@@ -38,7 +38,6 @@ import { FaEthereum } from "react-icons/fa";
 
 interface Props {
   appContext: AppContextType;
-  themeManager: IThemeManager;
 }
 
 export default function NavbarLarge({ appContext, ...props }: Props) {

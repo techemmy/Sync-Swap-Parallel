@@ -6,16 +6,14 @@ import { MdKeyboardArrowRight, MdLanguage } from "react-icons/md";
 import { IoMdSettings } from "react-icons/io";
 import { ThemesEnum } from "@/enums";
 import DefaultSettingsCard from "./DefaultSettingsCard";
+import useDataTheme from "@/hooks/useDataTheme";
 
 interface Props {
   setSettingsView: ISetSettingsView;
-  activeTheme: ThemesEnum;
 }
 
-export default function DefaultSettingsView({
-  setSettingsView,
-  activeTheme,
-}: Props) {
+export default function DefaultSettingsView({ setSettingsView }: Props) {
+  const [activeTheme] = useDataTheme();
   const theme = Object.entries(ThemesEnum).find(
     (theme) => theme[1] === activeTheme,
   );

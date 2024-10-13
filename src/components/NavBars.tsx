@@ -2,11 +2,9 @@ import NavbarLarge from "@/components/NavbarLarge";
 import NavbarSmall from "@/components/NavbarSmall";
 import NavbarSidebar from "@/components/NavbarSidebar";
 import { useState } from "react";
-import useDataTheme from "@/hooks/useDataTheme";
 
 export default function NavBars(props: any) {
   const [toggledSidebar, setToggledSidebar] = useState(false);
-  const [activeTheme, handleSetTheme] = useDataTheme();
 
   return (
     <>
@@ -15,12 +13,8 @@ export default function NavBars(props: any) {
           {...props}
           hamburgerToggled={toggledSidebar}
           handleHamburgerClicked={setToggledSidebar}
-          themeManager={{ activeTheme, handleSetTheme }}
         />
-        <NavbarLarge
-          {...props}
-          themeManager={{ activeTheme, handleSetTheme }}
-        />
+        <NavbarLarge {...props} />
       </div>
       <div
         onClick={() => setToggledSidebar(false)}

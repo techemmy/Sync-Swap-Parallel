@@ -1,20 +1,15 @@
 import { MdOutlineArrowBack } from "react-icons/md";
 import type { ISetSettingsView } from "@/types/Navbar";
 import { ThemesEnum } from "@/enums";
-import type { IThemeManager } from "@/types";
+import useDataTheme from "@/hooks/useDataTheme";
 
 interface Props {
-  themeManager: IThemeManager;
   setSettingsView: ISetSettingsView;
   gridColumns: number;
 }
 
-export default function ThemeView({
-  setSettingsView,
-  themeManager,
-  gridColumns = 2,
-}: Props) {
-  const { activeTheme, handleSetTheme } = themeManager;
+export default function ThemeView({ setSettingsView, gridColumns = 2 }: Props) {
+  const [activeTheme, handleSetTheme] = useDataTheme();
   return (
     <>
       <article className="flex justify-between mt-2 items-center">

@@ -11,7 +11,7 @@ import { PiCaretUpBold } from "react-icons/pi";
 import { TbMenu2 } from "react-icons/tb";
 import ConnectWalletDialog from "@/components/ConnectWalletDialog";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
-import { AppContextType, IThemeManager } from "@/types";
+import { AppContextType } from "@/types";
 import SelectNetworkNavDialog from "@/components/SelectNetwork/SelectNetworkNavDialog";
 import NavbarSettingsDialog from "./NavbarSettings/NavbarSettingsDialog";
 
@@ -19,14 +19,12 @@ interface NavbarSmall {
   hamburgerToggled: boolean;
   handleHamburgerClicked: (value: boolean) => void;
   appContext: AppContextType;
-  themeManager: IThemeManager;
 }
 
 export default function NavbarSmall({
   hamburgerToggled,
   handleHamburgerClicked,
   appContext,
-  themeManager,
 }: NavbarSmall) {
   const { selectedNetwork, setSelectedNetwork } = appContext;
   return (
@@ -145,10 +143,7 @@ export default function NavbarSmall({
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               </DialogTrigger>
-              <NavbarSettingsDialog
-                className="max-w-md p-0"
-                themeManager={themeManager}
-              />
+              <NavbarSettingsDialog className="max-w-md p-0" />
             </Dialog>
           </NavigationMenuList>
         </NavigationMenu>

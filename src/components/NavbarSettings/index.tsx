@@ -5,21 +5,15 @@ import LanguageView from "@/components/NavbarSettings/SettingsViews/LanguageView
 import DefaultSettingsView from "@/components/NavbarSettings/SettingsViews/DefaultSettingsView";
 import type { ISetSettingsView } from "@/types/Navbar";
 import { SettingsOptionsEnum } from "@/enums";
-import type { IThemeManager } from "@/types";
 
 interface Props {
   className?: string;
-  themeManager: IThemeManager;
   gridColumns?: number;
-  handleCloseSettings: () => void;
+  handleCloseSettings?: () => void;
 }
 
-// TODO: remove all themeManager props in other components and useDataTheme
-// here directly
-// FIX: resolve all issues with theme management, handleCloseSettings
 export default function NavbarSettings({
   className = "",
-  themeManager,
   gridColumns = 2,
   handleCloseSettings,
 }: Props) {
@@ -29,6 +23,7 @@ export default function NavbarSettings({
   const settingsDropdownRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    if (!handleCloseSettings) return;
     const dropdownElement = settingsDropdownRef?.current;
     const clickHandler = function (event: MouseEvent) {
       if (
@@ -56,14 +51,10 @@ export default function NavbarSettings({
       className={`min-w-[370px] rounded-3xl shadow-md bg-card p-4 pl-5 ${className}`}
     >
       {settingsView === SettingsOptionsEnum.default && (
-        <DefaultSettingsView
-          activeTheme={themeManager.activeTheme}
-          setSettingsView={setSettingsViewDispatch}
-        />
+        <DefaultSettingsView setSettingsView={setSettingsViewDispatch} />
       )}
       {settingsView === SettingsOptionsEnum.theme && (
         <ThemeView
-          themeManager={themeManager}
           setSettingsView={setSettingsViewDispatch}
           gridColumns={gridColumns}
         />

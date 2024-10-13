@@ -5,18 +5,13 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import NavbarSettings from ".";
-import { IThemeManager } from "@/types";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 interface Props {
   className?: string;
-  themeManager: IThemeManager;
 }
 
-export default function NavbarSettingsDialog({
-  themeManager,
-  className,
-}: Props) {
+export default function NavbarSettingsDialog({ className }: Props) {
   return (
     <DialogContent className={className}>
       <VisuallyHidden>
@@ -25,11 +20,7 @@ export default function NavbarSettingsDialog({
           <DialogDescription>Navbar settings dialog/popup</DialogDescription>
         </DialogHeader>
       </VisuallyHidden>
-      <NavbarSettings
-        gridColumns={3}
-        themeManager={themeManager}
-        className="shadow-none"
-      />
+      <NavbarSettings gridColumns={3} className="shadow-none" />
     </DialogContent>
   );
 }

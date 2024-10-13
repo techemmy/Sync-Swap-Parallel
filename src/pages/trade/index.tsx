@@ -22,12 +22,9 @@ import SlippageWarning from "@/components/SlippageWarning";
 import CustomHelloText from "./components/CustomHelloText";
 import { HiSparkles } from "react-icons/hi2";
 import NavbarSettingsDialog from "@/components/NavbarSettings/NavbarSettingsDialog";
-import useDataTheme from "@/hooks/useDataTheme";
 
 export default function Trade() {
   const { selectedNetwork } = useApp();
-  const [activeTheme, handleSetTheme] = useDataTheme();
-  const themeManager = { activeTheme, handleSetTheme };
   return (
     <>
       <main className="pt-32 flex gap-3 justify-center items-start">
@@ -176,7 +173,7 @@ export default function Trade() {
                     Toggle in Settings
                   </Button>
                 </DialogTrigger>
-                <NavbarSettingsDialog themeManager={themeManager} />
+                <NavbarSettingsDialog />
               </Dialog>
             </div>
           </CardContent>

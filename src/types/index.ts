@@ -1,10 +1,5 @@
-import { ThemesEnum } from "@/enums";
 import React, { SetStateAction } from "react";
 
-export interface IThemeManager {
-  activeTheme: ThemesEnum;
-  handleSetTheme: (theme: ThemesEnum) => void;
-}
 export interface NetworkType {
   name: string;
   logoUrl: string;
