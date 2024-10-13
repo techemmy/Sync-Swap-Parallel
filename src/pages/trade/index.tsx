@@ -18,6 +18,7 @@ import { useApp } from "@/App";
 import { AVAILABLE_NETWORKS } from "@/constants";
 import LineaVoyageSurgeCard from "./components/LineaVoyageSurgeCard";
 import AnimatedGradientCircles from "@/components/AnimatedGradientCircles";
+import SlippageWarning from "@/components/SlippageWarning";
 
 export default function Trade() {
   const { selectedNetwork } = useApp();
@@ -136,6 +137,8 @@ export default function Trade() {
           <AnimatedGradientCircles />
 
           <GettingStartedCard />
+
+          <SlippageWarning className="mt-4" />
 
           {selectedNetwork === AVAILABLE_NETWORKS.zkSync && (
             <ClaimZkTokenAirdropCard />
