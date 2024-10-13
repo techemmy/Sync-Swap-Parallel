@@ -28,31 +28,16 @@ export default function StakeCard() {
 
         <Slider defaultValue={[0]} max={100} step={1} />
 
-        <section className="my-1 flex flex-row justify-between w-full gap-x-2">
-          <Badge
-            variant="outline"
-            className="w-full active:bg-primary/[0.2] border-primary/[0.5] hover:border-primary hover:bg-primary/[0.04] text-sm py-1"
-          >
-            25%
-          </Badge>
-          <Badge
-            variant="outline"
-            className="w-full active:bg-primary/[0.2] border-primary/[0.5] hover:border-primary hover:bg-primary/[0.04] text-sm py-1"
-          >
-            50%
-          </Badge>
-          <Badge
-            variant="outline"
-            className="w-full active:bg-primary/[0.2] border-primary/[0.5] hover:border-primary hover:bg-primary/[0.04] text-sm py-1"
-          >
-            75%
-          </Badge>
-          <Badge
-            variant="outline"
-            className="w-full active:bg-primary/[0.2] border-primary/[0.5] hover:border-primary hover:bg-primary/[0.04] text-sm py-1"
-          >
-            Max
-          </Badge>
+        <section className="my-1 flex flex-row justify-between w-full gap-x-2 *:w-full *:border-primary/[0.5] *:text-sm *:py-1">
+          {[25, 50, 75, "Max"].map((percent) => (
+            <Badge
+              key={percent}
+              variant="outline"
+              className="active:bg-primary/[0.2] hover:border-primary hover:bg-primary/[0.04]"
+            >
+              {percent}
+            </Badge>
+          ))}
         </section>
 
         <ConnectWalletDialogButton variant="outline" />
