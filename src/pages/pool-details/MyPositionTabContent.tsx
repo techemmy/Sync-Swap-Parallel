@@ -1,3 +1,4 @@
+import AnimatedGradientCircles from "@/components/AnimatedGradientCircles";
 import { Button } from "@/components/ui/button";
 import { TabsContent } from "@/components/ui/tabs";
 import { FaBoxArchive } from "react-icons/fa6";
@@ -11,7 +12,7 @@ export default function MyPositionTabContent({
   return (
     <TabsContent
       value="my-position"
-      className="w-full mt-0 transition-all animate-fade-in"
+      className="relative w-full mt-0 transition-all animate-fade-in"
     >
       <section className="flex gap-x-4 items-center">
         <FaBoxArchive className="text-primary" fontSize={23} />
@@ -36,6 +37,8 @@ export default function MyPositionTabContent({
           Deposit now
         </Button>
       </section>
+
+      <AnimatedGradientCircles />
     </TabsContent>
   );
 }

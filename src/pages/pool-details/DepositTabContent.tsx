@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/tooltip";
 import { IoWarningOutline } from "react-icons/io5";
 import { useSlippage } from "@/context/PoolSlippageContext";
+import AnimatedGradientCircles from "@/components/AnimatedGradientCircles";
 
 function RightSide() {
   const carouselContents = [
@@ -88,7 +89,7 @@ export default function DepositTabContent() {
   return (
     <TabsContent
       value="deposit"
-      className="w-full mt-0 transition-all animate-fade-in"
+      className="relative w-full mt-0 transition-all animate-fade-in"
     >
       <section className="grid gap-2 items-center">
         <h2 className="text-primary-foreground text-3xl font-medium">
@@ -178,6 +179,8 @@ export default function DepositTabContent() {
           </p>
         </div>
       )}
+
+      <AnimatedGradientCircles />
     </TabsContent>
   );
 }

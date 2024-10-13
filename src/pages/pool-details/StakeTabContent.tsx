@@ -12,6 +12,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import AnimatedGradientCircles from "@/components/AnimatedGradientCircles";
 
 function InlineInfo({
   className = "",
@@ -136,7 +137,7 @@ export default function StakeTabContent() {
   return (
     <TabsContent
       value="stake"
-      className="w-full mt-0 transition-all animate-fade-in"
+      className="relative w-full mt-0 transition-all animate-fade-in"
     >
       <section className="grid gap-2 items-center mb-10">
         <h2 className="text-primary-foreground text-3xl font-medium">Stake</h2>
@@ -198,6 +199,7 @@ export default function StakeTabContent() {
           />
         </section>
       </div>
+      <AnimatedGradientCircles />
     </TabsContent>
   );
 }
