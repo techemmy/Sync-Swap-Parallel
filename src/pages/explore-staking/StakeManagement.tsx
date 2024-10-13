@@ -19,7 +19,7 @@ function InfoLinkCard({
   link: string;
 }) {
   return (
-    <Link to={link}>
+    <Link to={link} className="transition-transform active:scale-90">
       <Card className="shadow-thin">
         <CardContent className="flex justify-between items-center pb-1">
           <div className="flex gap-x-2 items-center">
