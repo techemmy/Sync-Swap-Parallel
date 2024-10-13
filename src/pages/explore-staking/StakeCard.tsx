@@ -29,13 +29,13 @@ export default function StakeCard() {
         <Slider defaultValue={[0]} max={100} step={1} />
 
         <section className="my-1 flex flex-row justify-between w-full gap-x-2 *:w-full *:border-primary/[0.5] *:text-sm *:py-1">
-          {[25, 50, 75, "Max"].map((percent) => (
+          {[25, 50, 75, 100].map((percent) => (
             <Badge
               key={percent}
               variant="outline"
               className="active:bg-primary/[0.2] hover:border-primary hover:bg-primary/[0.04]"
             >
-              {percent}
+              {percent === 100 ? "Max" : `${percent}%`}
             </Badge>
           ))}
         </section>
