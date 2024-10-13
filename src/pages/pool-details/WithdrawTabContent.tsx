@@ -68,7 +68,7 @@ function TokenToWithdraw({
         <p className="text-card-foreground text-sm">Expected to receive</p>
         <Tooltip>
           <TooltipTrigger>
-            <MdOutlineInfo className="transition-colors text-card-foreground hover:text-primary/[0.7]" />
+            <MdOutlineInfo />
           </TooltipTrigger>
           <TooltipContent>
             The amount of tokens you are expected to receive.
@@ -193,7 +193,7 @@ export default function WithdrawTabContent() {
                       <p>Slippage</p>
                       <Tooltip>
                         <TooltipTrigger>
-                          <MdOutlineInfo className="transition-colors text-card-foreground hover:text-primary/[0.7]" />
+                          <MdOutlineInfo />
                         </TooltipTrigger>
                         <TooltipContent>
                           Unbalanced withdrawals may cause slight slippage due
@@ -216,7 +216,7 @@ export default function WithdrawTabContent() {
                       </label>
                       <Tooltip>
                         <TooltipTrigger>
-                          <MdOutlineInfo className="transition-colors text-card-foreground hover:text-primary/[0.7]" />
+                          <MdOutlineInfo />
                         </TooltipTrigger>
                         <TooltipContent>
                           Unbalanced withdrawals may cause slight slippage due
