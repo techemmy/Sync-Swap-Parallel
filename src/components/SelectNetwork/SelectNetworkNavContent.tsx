@@ -6,18 +6,16 @@ import {
 import { AVAILABLE_NETWORKS } from "@/constants";
 import { Link } from "react-router-dom";
 import { MdArrowOutward, MdKeyboardArrowDown } from "react-icons/md";
-import { AppContextType, NetworkType } from "@/types";
+import { NetworkType } from "@/types";
 import NetworkItem from "./NetworkItem";
+import { useActiveNetwork } from "@/context/ActiveNetworkContext";
 
-interface Props extends AppContextType {
+interface Props {
   className?: string;
 }
 
-export default function SelectNetworkNavContent({
-  selectedNetwork,
-  setSelectedNetwork,
-  className,
-}: Props) {
+export default function SelectNetworkNavContent({ className }: Props) {
+  const [activeNetwork, setActiveNetwork] = useActiveNetwork();
   return (
     <ul
       className={`bg-card grid w-[230px] p-3 px-4 rounded-2xl shadow ${className} `}
@@ -29,8 +27,8 @@ export default function SelectNetworkNavContent({
           <NetworkItem
             key={network.name}
             network={network}
-            selectedNetwork={selectedNetwork}
-            setSelectedNetwork={setSelectedNetwork}
+            activeNetwork={activeNetwork}
+            setActiveNetwork={setActiveNetwork}
           />
         );
       })}

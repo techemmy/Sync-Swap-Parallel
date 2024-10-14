@@ -3,18 +3,17 @@ import NavbarSmall from "@/components/NavbarSmall";
 import NavbarSidebar from "@/components/NavbarSidebar";
 import { useState } from "react";
 
-export default function NavBars(props: any) {
+export default function NavBars() {
   const [toggledSidebar, setToggledSidebar] = useState(false);
 
   return (
     <>
       <div className="z-30 fixed">
         <NavbarSmall
-          {...props}
           hamburgerToggled={toggledSidebar}
           handleHamburgerClicked={setToggledSidebar}
         />
-        <NavbarLarge {...props} />
+        <NavbarLarge />
       </div>
       <div
         onClick={() => setToggledSidebar(false)}

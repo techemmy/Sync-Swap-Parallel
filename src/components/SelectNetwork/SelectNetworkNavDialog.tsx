@@ -1,24 +1,21 @@
 import {
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
 import { AVAILABLE_NETWORKS } from "@/constants";
 import NetworkItem from "./NetworkItem";
-import { AppContextType, NetworkType } from "@/types";
+import { NetworkType } from "@/types";
 import { Link } from "react-router-dom";
 import { MdArrowOutward } from "react-icons/md";
+import { useActiveNetwork } from "@/context/ActiveNetworkContext";
 
-interface Props extends AppContextType {
+interface Props {
   className?: string;
 }
 
-export default function SelectNetworkNavDialog({
-  selectedNetwork,
-  setSelectedNetwork,
-  className,
-}: Props) {
+export default function SelectNetworkNavDialog({ className }: Props) {
+  const [activeNetwork, setActiveNetwork] = useActiveNetwork();
   return (
     <DialogContent
       className={`flex flex-col bg-card p-0 sm:max-w-md border-0 gap-2 rounded-2xl ${className}`}
@@ -35,8 +32,8 @@ export default function SelectNetworkNavDialog({
               <NetworkItem
                 key={network.name}
                 network={network}
-                selectedNetwork={selectedNetwork}
-                setSelectedNetwork={setSelectedNetwork}
+                activeNetwork={activeNetwork}
+                setActiveNetwork={setActiveNetwork}
                 className="my-2"
               />
             );

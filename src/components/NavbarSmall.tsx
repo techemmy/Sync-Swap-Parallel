@@ -11,22 +11,20 @@ import { PiCaretUpBold } from "react-icons/pi";
 import { TbMenu2 } from "react-icons/tb";
 import ConnectWalletDialog from "@/components/ConnectWalletDialog";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
-import { AppContextType } from "@/types";
 import SelectNetworkNavDialog from "@/components/SelectNetwork/SelectNetworkNavDialog";
 import NavbarSettingsDialog from "./NavbarSettings/NavbarSettingsDialog";
+import { useActiveNetwork } from "@/context/ActiveNetworkContext";
 
 interface NavbarSmall {
   hamburgerToggled: boolean;
   handleHamburgerClicked: (value: boolean) => void;
-  appContext: AppContextType;
 }
 
 export default function NavbarSmall({
   hamburgerToggled,
   handleHamburgerClicked,
-  appContext,
 }: NavbarSmall) {
-  const { selectedNetwork, setSelectedNetwork } = appContext;
+  const [activeNetwork] = useActiveNetwork();
   return (
     <nav className="lg:hidden">
       <Link to="/intro" className="fixed m-3">
@@ -122,17 +120,14 @@ export default function NavbarSmall({
                   <NavigationMenuTrigger className="bg-transparent">
                     <img
                       className="w-5"
-                      src={selectedNetwork.logoUrl}
-                      alt={`${selectedNetwork.name} logo`}
+                      src={activeNetwork.logoUrl}
+                      alt={`${activeNetwork.name} logo`}
                     />
                   </NavigationMenuTrigger>
                 </DialogTrigger>
               </NavigationMenuItem>
 
-              <SelectNetworkNavDialog
-                selectedNetwork={selectedNetwork}
-                setSelectedNetwork={setSelectedNetwork}
-              />
+              <SelectNetworkNavDialog />
             </Dialog>
 
             <Dialog>

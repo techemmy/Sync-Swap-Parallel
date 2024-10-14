@@ -26,7 +26,6 @@ import {
 } from "react-icons/md";
 import { HiSparkles } from "react-icons/hi";
 import { AVAILABLE_NETWORKS } from "@/constants";
-import type { AppContextType } from "@/types/index";
 import SelectNetworkNavContent from "@/components/SelectNetwork/SelectNetworkNavContent";
 import NavbarSettings from "./NavbarSettings";
 import { useState } from "react";
@@ -35,13 +34,10 @@ import ConnectWalletDialog from "@/components/ConnectWalletDialog";
 import { ListItem, ListItemsContainer } from "@/components/NavDropdown";
 import { PiCodesandboxLogoBold } from "react-icons/pi";
 import { FaEthereum } from "react-icons/fa";
+import { useActiveNetwork } from "@/context/ActiveNetworkContext";
 
-interface Props {
-  appContext: AppContextType;
-}
-
-export default function NavbarLarge({ appContext, ...props }: Props) {
-  const { selectedNetwork, setSelectedNetwork } = appContext;
+export default function NavbarLarge() {
+  const [activeNetwork] = useActiveNetwork();
   const [settingsIsVisible, setSettingsIsVisible] = useState(false);
 
   return (
@@ -125,7 +121,7 @@ export default function NavbarLarge({ appContext, ...props }: Props) {
             </NavigationMenuContent>
           </NavigationMenuItem>
 
-          {selectedNetwork === AVAILABLE_NETWORKS.zkSync && (
+          {activeNetwork === AVAILABLE_NETWORKS.zkSync && (
             <NavigationMenuItem>
               <NavLink
                 to="/rewards"
@@ -244,15 +240,12 @@ export default function NavbarLarge({ appContext, ...props }: Props) {
             <NavigationMenuTrigger className="bg-transparent">
               <img
                 className="w-5"
-                src={selectedNetwork.logoUrl}
-                alt={`${selectedNetwork.name} logo`}
+                src={activeNetwork.logoUrl}
+                alt={`${activeNetwork.name} logo`}
               />
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <SelectNetworkNavContent
-                selectedNetwork={selectedNetwork}
-                setSelectedNetwork={setSelectedNetwork}
-              />
+              <SelectNetworkNavContent />
             </NavigationMenuContent>
           </NavigationMenuItem>
 
@@ -279,7 +272,6 @@ export default function NavbarLarge({ appContext, ...props }: Props) {
             {settingsIsVisible && (
               <NavbarSettings
                 className="animate-fade-in absolute top-14 right-0"
-                {...props}
                 handleCloseSettings={() => setSettingsIsVisible(false)}
               />
             )}

@@ -6,15 +6,15 @@ interface Props extends AppContextType {
   className?: string;
 }
 export default function NetworkItem({
-  selectedNetwork,
+  activeNetwork,
   network,
-  setSelectedNetwork,
+  setActiveNetwork,
   className = "",
 }: Props) {
   return (
     <li
       key={network.name}
-      onClick={() => setSelectedNetwork(network)}
+      onClick={() => setActiveNetwork(network)}
       className={`h-9 text-[14px] transition-transform active:scale-90 duration-300 cursor-pointer flex items-center justify-between w-full block select-none rounded-lg p-2 leading-none transition-colors hover:bg-accent focus:bg-accent ${className}`}
     >
       <div className="flex gap-x-3 items-center">
@@ -25,7 +25,7 @@ export default function NetworkItem({
         />
         <p className="text-primary-foreground">{network.name}</p>
       </div>
-      {selectedNetwork.name === network.name && (
+      {activeNetwork.name === network.name && (
         <MdCheckCircleOutline size={20} className="text-primary" />
       )}
     </li>

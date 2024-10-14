@@ -6,8 +6,8 @@ export interface NetworkType {
 }
 
 export interface AppContextType {
-  selectedNetwork: NetworkType;
-  setSelectedNetwork: React.Dispatch<SetStateAction<NetworkType>>;
+  activeNetwork: NetworkType;
+  setActiveNetwork: React.Dispatch<SetStateAction<NetworkType>>;
 }
 
 export interface IPoolType {

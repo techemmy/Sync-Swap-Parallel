@@ -1,36 +1,23 @@
 import NavBars from "@/components/NavBars";
-import { useState } from "react";
-import { Outlet, useOutletContext } from "react-router-dom";
-import { AVAILABLE_NETWORKS } from "@/constants";
-import type { AppContextType, NetworkType } from "@/types/index";
+import { Outlet } from "react-router-dom";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { PoolSlippageProvider } from "./context/PoolSlippageContext";
+import { ActiveNetworkProvider } from "./context/ActiveNetworkContext";
 
 export default function App() {
-  const [selectedNetwork, setSelectedNetwork] = useState<NetworkType>(
-    Object.values(AVAILABLE_NETWORKS)[0],
-  );
-
-  const outletContext = {
-    selectedNetwork,
-    setSelectedNetwork,
-  };
-
   return (
     <>
       <div className="bg-page">
         <TooltipProvider>
-          <NavBars appContext={outletContext} />
+          <ActiveNetworkProvider>
+            <NavBars />
 
-          <PoolSlippageProvider>
-            <Outlet context={outletContext satisfies AppContextType} />
-          </PoolSlippageProvider>
+            <PoolSlippageProvider>
+              <Outlet />
+            </PoolSlippageProvider>
+          </ActiveNetworkProvider>
         </TooltipProvider>
       </div>
     </>
   );
-}
-
-export function useApp() {
-  return useOutletContext<AppContextType>();
 }
