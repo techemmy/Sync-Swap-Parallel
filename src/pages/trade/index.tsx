@@ -14,7 +14,6 @@ import ClaimZkTokenAirdropCard from "./components/ClaimZkTokenAirdropCard";
 import Top4Tokens from "./components/Top4Tokens";
 import ActionButtons from "./components/ActionButtons";
 import SelectTokenDialog from "@/components/SelectTokenDialog";
-import { useApp } from "@/App";
 import { AVAILABLE_NETWORKS } from "@/constants";
 import LineaVoyageSurgeCard from "./components/LineaVoyageSurgeCard";
 import AnimatedGradientCircles from "@/components/AnimatedGradientCircles";
@@ -22,13 +21,17 @@ import SlippageWarning from "@/components/SlippageWarning";
 import CustomHelloText from "./components/CustomHelloText";
 import { HiSparkles } from "react-icons/hi2";
 import NavbarSettingsDialog from "@/components/NavbarSettings/NavbarSettingsDialog";
+import { useActiveNetwork } from "@/context/ActiveNetworkContext";
 
 export default function Trade() {
-  const { selectedNetwork } = useApp();
+  const [activeNetwork] = useActiveNetwork();
   return (
     <>
-      <main className="pt-32 flex gap-3 justify-center items-start">
-        <section className="relative z-[1] max-w-[470px] grid gap-y-1 p-2">
+      <main className="relative pt-32 flex gap-3 justify-center items-start">
+        <div className="relative z-10">
+          <AnimatedGradientCircles />
+        </div>
+        <section className="z-20 min-w-[355px] w-[480px] grid gap-y-1 p-2">
           <ActionButtons />
           <section className="grid gap-y-1 relative">
             <Card className="grid gap-y-4 mt-2 border-0 shadow rounded-3xl bg-card/70 px-5 py-4">
@@ -137,21 +140,19 @@ export default function Trade() {
             </Card>
           </section>
 
-          {/*<AnimatedGradientCircles />*/}
-
           <GettingStartedCard />
 
           <SlippageWarning className="mt-4" />
 
-          {selectedNetwork === AVAILABLE_NETWORKS.zkSync && (
+          {activeNetwork === AVAILABLE_NETWORKS.zkSync && (
             <ClaimZkTokenAirdropCard />
           )}
-          {selectedNetwork === AVAILABLE_NETWORKS.Linea && (
+          {activeNetwork === AVAILABLE_NETWORKS.Linea && (
             <LineaVoyageSurgeCard />
           )}
         </section>
 
-        <Card className="mt-16 max-w-[300px] min-h-[100px] shadow-thin">
+        <Card className="z-20 mt-16 max-w-[300px] min-h-[100px] shadow-thin">
           <CardContent className="grid gap-5">
             <div className="animate-fade-in flex flex-col gap-2 mx-1.5 my-2 items-end">
               <CustomHelloText />
