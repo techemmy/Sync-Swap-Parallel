@@ -1,7 +1,7 @@
 import { MdOutlineArrowBack } from "react-icons/md";
 import type { ISetSettingsView } from "@/types/Navbar";
 import { ThemesEnum } from "@/enums";
-import useDataTheme from "@/hooks/useDataTheme";
+import { useDataTheme } from "@/context/ThemeContext";
 
 interface Props {
   setSettingsView: ISetSettingsView;

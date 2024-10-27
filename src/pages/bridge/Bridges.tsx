@@ -1,9 +1,9 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import useDataTheme from "@/hooks/useDataTheme";
 import React from "react";
 import { Link } from "react-router-dom";
 import { ThemesEnum } from "@/enums";
+import { useDataTheme } from "@/context/ThemeContext";
 
 interface BridgeCardProps {
   link: string;

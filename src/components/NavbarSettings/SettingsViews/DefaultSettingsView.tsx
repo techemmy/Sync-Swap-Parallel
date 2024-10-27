@@ -6,7 +6,7 @@ import { MdKeyboardArrowRight, MdLanguage } from "react-icons/md";
 import { IoMdSettings } from "react-icons/io";
 import { ThemesEnum } from "@/enums";
 import DefaultSettingsCard from "./DefaultSettingsCard";
-import useDataTheme from "@/hooks/useDataTheme";
+import { useDataTheme } from "@/context/ThemeContext";
 
 interface Props {
   setSettingsView: ISetSettingsView;
