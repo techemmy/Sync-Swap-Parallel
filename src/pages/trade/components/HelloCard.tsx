@@ -26,7 +26,7 @@ export default function HelloCard() {
                 Toggle in Settings
               </Button>
             </DialogTrigger>
-            <NavbarSettingsDialog />
+            <NavbarSettingsDialog className="p-0" />
           </Dialog>
         </div>
       </CardContent>
