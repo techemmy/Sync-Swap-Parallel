@@ -3,8 +3,8 @@ import AdvancedView from "@/components/NavbarSettings/SettingsViews/AdvancedView
 import ThemeView from "@/components/NavbarSettings/SettingsViews/ThemeView";
 import LanguageView from "@/components/NavbarSettings/SettingsViews/LanguageView";
 import DefaultSettingsView from "@/components/NavbarSettings/SettingsViews/DefaultSettingsView";
-import type { ISetSettingsView } from "@/types/Navbar";
 import { SettingsOptionsEnum } from "@/enums";
+import { ISetSettingsView } from "@/types";
 
 interface Props {
   className?: string;

@@ -29,3 +29,10 @@ export interface IPoolData {
   liquidity: string;
   APR: string;
 }
+
+export interface ISetSettingsView {
+  setDefault: () => void;
+  setThemeAsView: () => void;
+  setLanguageAsView: () => void;
+  setAdvancedAsView: () => void;
+}

@@ -1,4 +1,3 @@
-import type { ISetSettingsView } from "@/types/Navbar";
 import ResourceLinks from "@/components/NavbarSettings/ResourceLinks";
 import Socials from "@/components/NavbarSettings/Socials";
 import { FaMoon } from "react-icons/fa";
@@ -7,6 +6,7 @@ import { IoMdSettings } from "react-icons/io";
 import { ThemesEnum } from "@/enums";
 import DefaultSettingsCard from "./DefaultSettingsCard";
 import { useDataTheme } from "@/context/ThemeContext";
+import { ISetSettingsView } from "@/types";
 
 interface Props {
   setSettingsView: ISetSettingsView;

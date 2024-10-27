@@ -1,5 +1,5 @@
+import { ISetSettingsView } from "@/types";
 import { MdOutlineArrowBack } from "react-icons/md";
-import type { ISetSettingsView } from "@/types/Navbar";
 
 interface Props {
   setSettingsView: ISetSettingsView;
