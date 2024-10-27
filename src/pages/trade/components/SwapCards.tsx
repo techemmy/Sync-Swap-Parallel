@@ -13,7 +13,7 @@ import Top4Tokens from "./Top4Tokens";
 
 export default function SwapCards() {
   return (
-    <section className="grid gap-y-1 relative">
+    <section className="grid gap-y-1 relative px-1">
       <Card className="grid gap-y-4 mt-2 border-0 shadow rounded-3xl bg-card/70 px-5 py-4">
         <CardHeader className="flex flex-row justify-between items-center p-0">
           <p className="text-sm font-medium text-primary">From</p>

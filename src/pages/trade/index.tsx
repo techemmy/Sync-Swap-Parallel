@@ -10,24 +10,28 @@ import { useActiveNetwork } from "@/context/ActiveNetworkContext";
 import HelloCard from "./components/HelloCard";
 import SwapCards from "./components/SwapCards";
 import { useState } from "react";
+import TradeChart from "./components/TradeChart";
 
 export default function Trade() {
   const [activeNetwork] = useActiveNetwork();
-  const [isShowingTradeChart, setIsShowingTradeChart] = useState(false);
+  const [isShowingTradeChart, setIsShowingTradeChart] = useState(true);
 
-  const handleShowChart = () => {};
+  const handleShowChart = () => setIsShowingTradeChart(!isShowingTradeChart);
 
   return (
     <>
-      <main className="relative pt-32 flex gap-3 justify-center items-start">
-        <div className="relative z-10">
-          <AnimatedGradientCircles />
-        </div>
+      <main className="relative pt-32 flex gap-7 justify-center items-start">
+        {isShowingTradeChart && <TradeChart />}
 
-        <section className="z-20 min-w-[355px] w-[480px] grid gap-y-1 p-2">
-          <ActionButtons onShowChart={handleShowChart} />
+        <section className="relative z-10 min-w-[355px] w-[480px] grid gap-y-1 p-2">
+          <AnimatedGradientCircles />
+          <ActionButtons
+            tradeChartIsActive={isShowingTradeChart}
+            onShowChart={handleShowChart}
+          />
 
           <SwapCards />
+
           <GettingStartedCard />
 
           {activeNetwork === AVAILABLE_NETWORKS.zkSync && (

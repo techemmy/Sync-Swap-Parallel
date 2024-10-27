@@ -4,15 +4,20 @@ import { FiSettings } from "react-icons/fi";
 import { GrPowerReset } from "react-icons/gr";
 
 interface Props {
+  tradeChartIsActive: boolean;
   onShowChart: () => void;
 }
 
-export default function ActionButtons({ onShowChart }: Props) {
+export default function ActionButtons({
+  onShowChart,
+  tradeChartIsActive = false,
+}: Props) {
+  const candleStickOpacity = tradeChartIsActive ? "opacity-100" : "opacity-50 ";
   return (
     <div className="flex justify-between items-center">
       <Button
         onClick={onShowChart}
-        className="group w-9 h-9 px-1 bg-transparent text-primary opacity-50 hover:bg-gray-300/65 rounded-md"
+        className={`group w-9 h-9 px-1 bg-transparent text-primary hover:bg-gray-300/65 rounded-md ${candleStickOpacity}`}
       >
         <MdCandlestickChart
           className="group-active:transition-transform active:scale-90"
