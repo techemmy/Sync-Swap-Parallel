@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { MdLanguage, MdSwapCalls } from "react-icons/md";
 import { useState } from "react";
-import { chartDatapoints } from "@/constants";
+import { chartDatapoints, TOKENS } from "@/constants";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { ChartDuration } from "@/enums";
 import LineChartSeries from "./LineSeriesChart";
@@ -121,7 +121,60 @@ export default function TradeChartSection() {
             liquidity on ETH pools to earn trading fees and juicy rewards.
           </p>
 
-          <div className="grid gap-2">ok</div>
+          <div className="flex flex-wrap gap-2 w-3/4">
+            <Link to="https://ethereum.org/">
+              <Badge
+                className="w-max bg-accent border border-2 py-2 px-3 flex"
+                variant="outline"
+              >
+                <img className="border-[50%] w-5 h-5" src={TOKENS[0].logo} />
+                <img className="border-[50%] w-5 h-5" src={TOKENS[1].logo} />
+
+                <span className="text-sm ml-1 text-primary-foreground font-medium">
+                  ETH - USDC.e
+                </span>
+              </Badge>
+            </Link>
+            <Link to="https://ethereum.org/">
+              <Badge
+                className="w-max bg-accent border border-2 py-2 px-3 flex"
+                variant="outline"
+              >
+                <img className="border-[50%] w-5 h-5" src={TOKENS[0].logo} />
+                <img className="border-[50%] w-5 h-5" src={TOKENS[1].logo} />
+
+                <span className="text-sm ml-1 text-primary-foreground font-medium">
+                  ETH - USDC.e
+                </span>
+              </Badge>
+            </Link>
+            <Link to="https://ethereum.org/">
+              <Badge
+                className="w-max bg-accent border border-2 py-2 px-3 flex"
+                variant="outline"
+              >
+                <img className="border-[50%] w-5 h-5" src={TOKENS[0].logo} />
+                <img className="border-[50%] w-5 h-5" src={TOKENS[1].logo} />
+
+                <span className="text-sm ml-1 text-primary-foreground font-medium">
+                  ETH - USDC.e
+                </span>
+              </Badge>
+            </Link>
+            <Link to="https://ethereum.org/">
+              <Badge
+                className="w-max bg-accent border border-2 py-2 px-3 flex"
+                variant="outline"
+              >
+                <img className="border-[50%] w-5 h-5" src={TOKENS[0].logo} />
+                <img className="border-[50%] w-5 h-5" src={TOKENS[1].logo} />
+
+                <span className="text-sm ml-1 text-primary-foreground font-medium">
+                  ETH - USDC.e
+                </span>
+              </Badge>
+            </Link>
+          </div>
         </CardContent>
       </Card>
     </section>
