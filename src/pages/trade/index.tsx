@@ -14,7 +14,7 @@ import TradeChart from "./components/TradeChart";
 
 export default function Trade() {
   const [activeNetwork] = useActiveNetwork();
-  const [isShowingTradeChart, setIsShowingTradeChart] = useState(true);
+  const [isShowingTradeChart, setIsShowingTradeChart] = useState(false);
 
   const handleShowChart = () => setIsShowingTradeChart(!isShowingTradeChart);
 
@@ -44,7 +44,8 @@ export default function Trade() {
           <SlippageWarning className="mt-4" />
         </section>
 
-        {!isShowingTradeChart && <HelloCard />}
+        {!isShowingTradeChart &&
+          activeNetwork === AVAILABLE_NETWORKS.zkSync && <HelloCard />}
       </main>
 
       <Footer />
