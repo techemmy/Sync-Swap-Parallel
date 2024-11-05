@@ -1,6 +1,6 @@
 import { AreaData } from "lightweight-charts";
 
-export const AVAILABLE_NETWORKS = {
+const AVAILABLE_NETWORKS = {
   zkSync: {
     name: "zkSync",
     logoUrl: {
@@ -18,7 +18,7 @@ export const AVAILABLE_NETWORKS = {
   },
 };
 
-export const TOKENS = [
+const TOKENS = [
   {
     name: "ETH",
     amount: 1,
@@ -596,10 +596,84 @@ const ONE_YEAR_CHART_DATAPOINTS = [
   { time: 1681171200, value: 2499.25 },
 ] as unknown as AreaData[];
 
-export const chartDatapoints = {
+const chartDatapoints = {
   "1H": ONE_HOUR_CHART_DATAPOINTS,
   "1D": ONE_DAY_CHART_DATAPOINTS,
   "1W": ONE_WEEK_CHART_DATAPOINTS,
   "1M": ONE_MONTH_CHART_DATAPOINTS,
   "1Y": ONE_YEAR_CHART_DATAPOINTS,
 };
+
+const SPONSORS = [
+  {
+    name: "Zk Sync",
+    light: "/images/zksync_full_white.png",
+    dark: "/images/zksync_full_black.png",
+  },
+  {
+    name: "Scroll",
+    light: "/images/logos/scroll_full.svg",
+    dark: "/images/logos/scroll_full.svg",
+    height: 36,
+  },
+  {
+    name: "Linea",
+    light: "/images/logos/linea_full_white.svg",
+    dark: "/images/logos/linea_full_black.svg",
+    height: 64,
+  },
+  {
+    name: "Holdstation",
+    light: "/images/logos/holdstation.png",
+    dark: "/images/logos/holdstation_light.png",
+    height: 36,
+  },
+  {
+    name: "Lido",
+    light: "/images/logos/lido_white.png",
+    dark: "/images/logos/lido_blue.png",
+    height: 28,
+  },
+  {
+    name: "Wallet Connect",
+    light: "/images/logos/walletconnect.svg",
+    dark: "/images/logos/walletconnect.svg",
+  },
+  {
+    name: "Kelp",
+    light: "/images/logos/kelp.svg",
+    dark: "/images/logos/kelp.svg",
+    height: 30,
+  },
+  {
+    name: "Galxe",
+    light: "/images/logos/galxe-dark.svg",
+    dark: "/images/logos/galxe-light.svg",
+    height: 22,
+  },
+  {
+    name: "CVI",
+    light: "/images/logos/cvi_dark.svg",
+    dark: "/images/logos/cvi_light.svg",
+    height: 20,
+  },
+  {
+    name: "Gravita",
+    light: "/images/logos/gravita_dark.png",
+    dark: "/images/logos/gravita_light.png",
+  },
+  {
+    name: "Axelar",
+    light: "/images/logos/axelar_dark.svg",
+    dark: "/images/logos/axelar_light.svg",
+    height: 23,
+  },
+  {
+    name: "Interport",
+    light: "/images/logos/interport_dark.png",
+    dark: "/images/logos/interport.png",
+    height: 23,
+  },
+];
+
+export { AVAILABLE_NETWORKS, TOKENS, chartDatapoints, SPONSORS };
