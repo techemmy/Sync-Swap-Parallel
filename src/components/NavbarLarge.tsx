@@ -35,10 +35,12 @@ import { ListItem, ListItemsContainer } from "@/components/NavDropdown";
 import { PiCodesandboxLogoBold } from "react-icons/pi";
 import { FaEthereum } from "react-icons/fa";
 import { useActiveNetwork } from "@/context/ActiveNetworkContext";
+import useImageTheme from "@/hooks/useImageTheme";
 
 export default function NavbarLarge() {
   const [activeNetwork] = useActiveNetwork();
   const [settingsIsVisible, setSettingsIsVisible] = useState(false);
+  const logoTheme = useImageTheme();
 
   return (
     <nav className="hidden lg:flex fixed left-0 right-0 justify-between mx-12 my-2 bg-card/85 px-4 rounded-3xl shadow-md">
@@ -240,7 +242,7 @@ export default function NavbarLarge() {
             <NavigationMenuTrigger className="bg-transparent">
               <img
                 className="w-5"
-                src={activeNetwork.logoUrl}
+                src={activeNetwork.logoUrl[logoTheme]}
                 alt={`${activeNetwork.name} logo`}
               />
             </NavigationMenuTrigger>

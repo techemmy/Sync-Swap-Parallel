@@ -2,7 +2,7 @@ import React, { SetStateAction } from "react";
 
 export interface NetworkType {
   name: string;
-  logoUrl: string;
+  logoUrl: { light: string; dark: string };
 }
 
 export interface AppContextType {

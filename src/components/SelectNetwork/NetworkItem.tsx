@@ -1,3 +1,4 @@
+import useImageTheme from "@/hooks/useImageTheme";
 import { AppContextType, NetworkType } from "@/types";
 import { MdCheckCircleOutline } from "react-icons/md";
 
@@ -11,6 +12,7 @@ export default function NetworkItem({
   setActiveNetwork,
   className = "",
 }: Props) {
+  const logoTheme = useImageTheme();
   return (
     <li
       key={network.name}
@@ -20,7 +22,7 @@ export default function NetworkItem({
       <div className="flex gap-x-3 items-center">
         <img
           className="w-5"
-          src={network.logoUrl}
+          src={network.logoUrl[logoTheme]}
           alt={`${network.name} logo`}
         />
         <p className="text-primary-foreground">{network.name}</p>

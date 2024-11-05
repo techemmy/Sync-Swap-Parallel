@@ -3,15 +3,18 @@ import { AreaData } from "lightweight-charts";
 export const AVAILABLE_NETWORKS = {
   zkSync: {
     name: "zkSync",
-    logoUrl: "/images/zksync_black.png",
+    logoUrl: {
+      dark: "/images/zksync_black.png",
+      light: "/images/zksync_white.png",
+    },
   },
   Linea: {
     name: "Linea",
-    logoUrl: "/images/linea.png",
+    logoUrl: { light: "/images/linea.png", dark: "/images/linea.png" },
   },
   Scroll: {
     name: "Scroll",
-    logoUrl: "/images/scroll.svg",
+    logoUrl: { light: "/images/scroll.svg", dark: "/images/scroll.svg" },
   },
 };
 

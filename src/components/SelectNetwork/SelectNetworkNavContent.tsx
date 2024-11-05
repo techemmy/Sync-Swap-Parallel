@@ -9,6 +9,7 @@ import { MdArrowOutward, MdKeyboardArrowDown } from "react-icons/md";
 import { NetworkType } from "@/types";
 import NetworkItem from "./NetworkItem";
 import { useActiveNetwork } from "@/context/ActiveNetworkContext";
+import useImageTheme from "@/hooks/useImageTheme";
 
 interface Props {
   className?: string;
@@ -16,6 +17,7 @@ interface Props {
 
 export default function SelectNetworkNavContent({ className }: Props) {
   const [activeNetwork, setActiveNetwork] = useActiveNetwork();
+  const logoTheme = useImageTheme();
   return (
     <ul
       className={`bg-card grid w-[230px] p-3 px-4 rounded-2xl shadow ${className} `}
@@ -68,7 +70,7 @@ export default function SelectNetworkNavContent({ className }: Props) {
             <div className="flex gap-x-2 items-center">
               <img
                 className="w-5"
-                src="/images/zksync_black.png"
+                src={AVAILABLE_NETWORKS.zkSync.logoUrl[logoTheme]}
                 alt="Zksync black logo"
               />
               <p className="text-medium">zkSync Sepolia</p>
@@ -76,7 +78,11 @@ export default function SelectNetworkNavContent({ className }: Props) {
           </li>
           <li className="cursor-pointer flex items-center justify-between w-full block select-none rounded-lg p-2 leading-none">
             <div className="flex gap-x-3 items-center">
-              <img className="w-5" src="/images/linea.png" alt="Linea logo" />
+              <img
+                className="w-5"
+                src={AVAILABLE_NETWORKS.Linea.logoUrl[logoTheme]}
+                alt="Linea logo"
+              />
               <p className="text-medium">Linea Goerli</p>
             </div>
           </li>
