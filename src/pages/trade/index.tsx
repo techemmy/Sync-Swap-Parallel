@@ -14,7 +14,7 @@ import TradeChartSection from "./components/TradeChartSection";
 
 export default function Trade() {
   const [activeNetwork] = useActiveNetwork();
-  const [isShowingTradeChart, setIsShowingTradeChart] = useState(true);
+  const [isShowingTradeChart, setIsShowingTradeChart] = useState(false);
 
   const handleShowChart = () => setIsShowingTradeChart(!isShowingTradeChart);
 

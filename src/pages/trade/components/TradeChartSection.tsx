@@ -3,7 +3,7 @@ import { MdLanguage, MdSwapCalls } from "react-icons/md";
 import { useState } from "react";
 import { chartDatapoints, TOKENS } from "@/constants";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { ChartDuration } from "@/enums";
+import { ChartDuration } from "@/types";
 import LineChartSeries from "./LineSeriesChart";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";

@@ -17,5 +17,3 @@ export enum SettingsOptionsEnum {
   langugage = "language",
   advanced = "advanced",
 }
-
-export type ChartDuration = "1H" | "1D" | "1W" | "1M" | "1Y";

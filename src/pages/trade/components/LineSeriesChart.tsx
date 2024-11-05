@@ -1,4 +1,4 @@
-import { ChartDuration } from "@/enums";
+import { ChartDuration } from "@/types";
 import {
   AreaData,
   createChart,
