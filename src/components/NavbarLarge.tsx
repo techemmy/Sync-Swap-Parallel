@@ -162,7 +162,7 @@ export default function NavbarLarge() {
           <NavigationMenuItem>
             <NavigationMenuTrigger className="bg-transparent">
               <img
-                className="w-5"
+                className="w-6"
                 src={activeNetwork.logoUrl[logoTheme]}
                 alt={`${activeNetwork.name} logo`}
               />
