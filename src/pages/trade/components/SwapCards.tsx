@@ -77,7 +77,7 @@ export default function SwapCards() {
         </CardFooter>
       </Card>
 
-      <div className="absolute z-1 inset-y-1/2 inset-x-1/2 left-[46%] grid justify-center items-center shadow-md transition-transform hover:rotate-180 border-4 border-white text-primary bg-accent rounded-full cursor-pointer w-9 h-9">
+      <div className="absolute z-1 inset-y-1/2 inset-x-1/2 left-[46%] grid justify-center items-center shadow-md transition-transform hover:rotate-180 border-4 border-card text-primary bg-accent rounded-full cursor-pointer w-9 h-9">
         <FaArrowDown size={12} />
       </div>
 

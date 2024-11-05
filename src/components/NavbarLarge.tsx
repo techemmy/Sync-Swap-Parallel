@@ -78,7 +78,7 @@ export default function NavbarLarge() {
             >
               <MdSwapCalls
                 size={25}
-                className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md"
+                className="hidden group-[.text-primary]:block text-primary p-1 bg-accent rounded-md"
               />
               <span>Trade</span>
             </NavLink>
