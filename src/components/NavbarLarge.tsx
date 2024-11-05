@@ -36,6 +36,7 @@ import { PiCodesandboxLogoBold } from "react-icons/pi";
 import { FaEthereum } from "react-icons/fa";
 import { useActiveNetwork } from "@/context/ActiveNetworkContext";
 import useImageTheme from "@/hooks/useImageTheme";
+import NavLinkWithIcon from "./NavLinkWithIcon";
 
 export default function NavbarLarge() {
   const [activeNetwork] = useActiveNetwork();
@@ -53,54 +54,15 @@ export default function NavbarLarge() {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavLink
-              to="/home"
-              className={({ isActive }) => {
-                const base =
-                  "group inline-flex gap-x-1 items-center justify-center py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-card-foreground hover:text-primary px-3 text-sm font-medium rounded-full";
-                return (isActive ? "text-primary " : "").concat(base);
-              }}
-            >
-              <TiHome
-                size={25}
-                className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md"
-              />
-              <span>Home</span>
-            </NavLink>
+            <NavLinkWithIcon to="/home" title="Home" Icon={TiHome} />
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavLink
-              to="/swap"
-              className={({ isActive }) => {
-                const base =
-                  "group inline-flex gap-x-1 items-center justify-center py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-card-foreground hover:text-primary px-3 text-sm font-medium rounded-full";
-                return (isActive ? "text-primary " : "").concat(base);
-              }}
-            >
-              <MdSwapCalls
-                size={25}
-                className="hidden group-[.text-primary]:block text-primary p-1 bg-accent rounded-md"
-              />
-              <span>Trade</span>
-            </NavLink>
+            <NavLinkWithIcon to="/swap" title="Trade" Icon={MdSwapCalls} />
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavLink
-              to="/pool"
-              className={({ isActive }) => {
-                return (isActive ? "text-primary " : "").concat("group");
-              }}
-            >
-              <NavigationMenuTrigger className="bg-transparent hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent data-[state=open]:bg-accent mx-1 w-max h-10 text-card-foreground hover:text-primary px-3 text-sm font-medium rounded-full">
-                <MdWaves
-                  size={25}
-                  className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md"
-                />
-                Pool
-              </NavigationMenuTrigger>
-            </NavLink>
+            <NavLinkWithIcon to="/pool" title="Pool" Icon={MdWaves} />
             <NavigationMenuContent>
               <ListItemsContainer>
                 <ListItem href="/pools" title="Pools" logo={MdToll}>
@@ -125,20 +87,11 @@ export default function NavbarLarge() {
 
           {activeNetwork === AVAILABLE_NETWORKS.zkSync && (
             <NavigationMenuItem>
-              <NavLink
+              <NavLinkWithIcon
                 to="/rewards"
-                className={({ isActive }) => {
-                  return (isActive ? "text-primary " : "").concat("group");
-                }}
-              >
-                <NavigationMenuTrigger className="bg-transparent hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent data-[state=open]:bg-accent mx-1 w-max h-10 text-card-foreground hover:text-primary px-3 text-sm font-medium rounded-full">
-                  <HiSparkles
-                    size={25}
-                    className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md"
-                  />
-                  Explore
-                </NavigationMenuTrigger>
-              </NavLink>
+                title="Explore"
+                Icon={HiSparkles}
+              />
 
               <NavigationMenuContent>
                 <ListItemsContainer>
@@ -172,55 +125,23 @@ export default function NavbarLarge() {
           )}
 
           <NavigationMenuItem>
-            <NavLink
+            <NavLinkWithIcon
               to="/launch"
-              className={({ isActive }) => {
-                const base =
-                  "group inline-flex gap-x-1 items-center justify-center py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-card-foreground hover:text-primary px-3 text-sm font-medium rounded-full";
-                return (isActive ? "text-primary " : "").concat(base);
-              }}
-            >
-              <MdRocketLaunch
-                size={25}
-                className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md"
-              />
-              <span>Launch</span>
-            </NavLink>
+              title="Launch"
+              Icon={MdRocketLaunch}
+            />
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavLink
+            <NavLinkWithIcon
               to="/dashboard"
-              className={({ isActive }) => {
-                const base =
-                  "group inline-flex gap-x-1 items-center justify-center py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent/50 data-[state=open]:bg-accent/50 mx-1 w-max h-10 text-card-foreground hover:text-primary px-3 text-sm font-medium rounded-full";
-                return (isActive ? "text-primary " : "").concat(base);
-              }}
-            >
-              <MdDataUsage
-                size={25}
-                className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md"
-              />
-              <span>Portfolio</span>
-            </NavLink>
+              title="Portfolio"
+              Icon={MdDataUsage}
+            />
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavLink
-              to="/bridge"
-              className={({ isActive }) => {
-                return (isActive ? "text-primary " : "").concat("group");
-              }}
-            >
-              <NavigationMenuTrigger className="bg-transparent hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent data-[state=open]:bg-accent mx-1 w-max h-10 text-card-foreground hover:text-primary px-3 text-sm font-medium rounded-full">
-                <MdLayers
-                  size={25}
-                  className="hidden group-[.text-primary]:block text-primary p-1 bg-gray-100 rounded-md"
-                />
-                Bridge
-              </NavigationMenuTrigger>
-            </NavLink>
-
+            <NavLinkWithIcon to="/bridge" title="Bridge" Icon={MdLayers} />
             <NavigationMenuContent>
               <ListItemsContainer>
                 <ListItem href="/move" title="Move" logo={MdElectricBolt}>
