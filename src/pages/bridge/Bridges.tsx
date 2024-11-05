@@ -2,8 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import React from "react";
 import { Link } from "react-router-dom";
-import { ThemesEnum } from "@/enums";
-import { useDataTheme } from "@/context/ThemeContext";
+import useImageTheme from "@/hooks/useImageTheme";
 
 interface BridgeCardProps {
   link: string;
@@ -57,9 +56,7 @@ function BridgeCard({
 }
 
 export default function Bridges() {
-  // FIX: use a React Context for managing theme so that bridge logos can
-  // update automatically when theme changes
-  const [theme] = useDataTheme();
+  const logoTheme = useImageTheme();
   return (
     <section>
       <h3 className="text-primary-foreground font-medium text-center mb-4">
@@ -67,9 +64,10 @@ export default function Bridges() {
       </h3>
       <div className="grid grid-cols-bridges gap-x-4 gap-y-5">
         {Array.from({ length: 17 }).map((_, index) => {
-          const logo = theme.includes(ThemesEnum.Light)
-            ? "/images/logos/Owlto_Light.png"
-            : "/images/logos/Owlto_Dark.png";
+          const logo =
+            logoTheme === "dark"
+              ? "/images/logos/Owlto_Light.png"
+              : "/images/logos/Owlto_Dark.png";
 
           return (
             <BridgeCard
