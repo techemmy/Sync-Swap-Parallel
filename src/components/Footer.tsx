@@ -16,7 +16,7 @@ export default function Footer({ className = "" }: { className?: string }) {
     >
       <img
         src={footerLogo[logoTheme]}
-        height={36}
+        style={{ height: "36px" }}
         alt="Sync swap logo"
         className=" hidden md:block"
       />
