@@ -70,8 +70,8 @@
     --card: 255, 255, 255;
     --card-foreground: 111, 113, 131;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0, 0, 0, 0.5;
+    --popover-foreground: 255, 255, 255;
 
     --primary: 81, 85, 166;
     --primary-foreground: 6, 8, 40;
