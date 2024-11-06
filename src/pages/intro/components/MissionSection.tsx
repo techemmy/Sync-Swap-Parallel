@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function MissionSection() {
   return (
-    <section className="my-20 text-center flex flex-col gap-y-6 relative">
+    <section className="relative my-20 md:mb-52 text-center flex flex-col gap-y-6">
       <h2 className="text-[40px] font-Public font-medium">
         An Aligned Mission
       </h2>
@@ -28,7 +28,7 @@ export default function MissionSection() {
       </Button>
 
       <img
-        className="absolute top-40 left-0 md:max-w-full md:top-24 z-[-1]"
+        className="absolute top-40 left-0 md:max-w-full md:top-24 z-0"
         src="/images/curve.png"
         alt="Curve"
       />

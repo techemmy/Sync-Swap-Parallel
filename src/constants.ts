@@ -614,7 +614,7 @@ const SPONSORS = [
     name: "Scroll",
     light: "/images/logos/scroll_full.svg",
     dark: "/images/logos/scroll_full.svg",
-    height: 36,
+    height: 28,
   },
   {
     name: "Linea",

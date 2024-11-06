@@ -10,13 +10,13 @@ export default function Footer({ className = "" }: { className?: string }) {
   return (
     <footer
       className={cn(
-        "md:px-32 pt-10 py-28 md:pb-32 grid grid-cols-2 md:grid-cols-5 gap-8 text-center md:text-left",
+        "md:px-[12%] pt-10 py-28 md:pb-32 grid grid-cols-2 md:grid-cols-[repeat(5,minmax(0px,1fr))] gap-8 text-center md:text-left",
         className,
       )}
     >
       <img
         src={footerLogo[logoTheme]}
-        style={{ height: "36px" }}
+        height="36px"
         alt="Sync swap logo"
         className=" hidden md:block"
       />

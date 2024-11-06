@@ -5,12 +5,12 @@ import useImageTheme from "@/hooks/useImageTheme";
 export default function BuiltWithTheBestSection() {
   const logoTheme = useImageTheme();
   return (
-    <section className="mb-64 mt-10 grid gap-y-20">
+    <section className="mb-52 mt-10 grid gap-y-20">
       <article className="text-center">
         <h2 className="text-[40px] font-Public font-medium">
           Built with the Best
         </h2>
-        <p className="text-card-foreground mt-2">
+        <p className="text-card-foreground mt-2 font-medium">
           Thanks to our partners and the best builders in Web3 industry
         </p>
       </article>
