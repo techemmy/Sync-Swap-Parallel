@@ -26,7 +26,7 @@ export const ListItem = React.forwardRef<React.ElementRef<"a">, ListItemProps>(
           {...props}
         >
           {
-            <Logo className="flex justify-center items-center w-10 h-10 bg-navIcon/10 p-2 text-navIcon-foreground rounded-md" />
+            <Logo className="flex justify-center items-center w-10 h-10 bg-secondary/10 p-2 text-secondary-foreground rounded-md" />
           }
           <article className="grid gap-y-2">
             <div className="text-sm text-primary-foreground font-medium leading-none">

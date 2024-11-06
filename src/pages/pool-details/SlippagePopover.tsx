@@ -32,7 +32,7 @@ export default function SlippagePopover() {
   };
   return (
     <Popover>
-      <PopoverTrigger className="text-primary flex items-center gap-x-2 bg-navIcon/[0.05] py-1 pr-2 rounded-xl">
+      <PopoverTrigger className="text-primary flex items-center gap-x-2 bg-secondary/[0.05] py-1 pr-2 rounded-xl">
         <FiSettings
           className="font-bold group-active:transition-transform group-active:scale-90 group-hover:rotate-180 duration-500"
           size={20}

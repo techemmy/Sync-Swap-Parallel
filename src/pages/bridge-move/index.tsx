@@ -65,7 +65,7 @@ export default function BridgeMove() {
           <p className="text-card-foreground text-sm">
             Securely and easily move assets between Ethereum and zkSync Era.
           </p>
-          <div className="py-2 px-4 rounded-3xl flex gap-x-2 items-center bg-gradient-to-r from-navIcon/[0.1] to-transparent w-max text-primary">
+          <div className="py-2 px-4 rounded-3xl flex gap-x-2 items-center bg-gradient-to-r from-secondary/[0.1] to-transparent w-max text-primary">
             <FaCheck />
             <p className="text-sm">Powered by zkSync Era Official Bridge</p>
             <Tooltip>

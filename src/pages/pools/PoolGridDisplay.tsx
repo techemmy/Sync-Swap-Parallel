@@ -12,7 +12,7 @@ function PoolCard({ pool }: { pool: IPoolData }) {
   const { id, firstToken, secondToken, poolType, APR, liquidity } = pool;
   return (
     <Card className="font-medium border-transparent shadow rounded-2xl">
-      <CardHeader className="space-y-0 relative flex flex-row items-center justify-between rounded-t-2xl items-center px-3 pb-12 bg-navIcon/[0.08]">
+      <CardHeader className="space-y-0 relative flex flex-row items-center justify-between rounded-t-2xl items-center px-3 pb-12 bg-secondary/[0.08]">
         <h3 className="text-sm text-primary flex gap-x-1 items-center">
           {poolType.icon}
           <span>{poolType.title}</span>

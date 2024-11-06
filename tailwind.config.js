@@ -44,10 +44,6 @@ export default {
       colors: {
         carouselBtn: "rgba(var(--carousel-btn))",
         stakingSponsor: "rgb(240, 58, 68)",
-        navIcon: {
-          DEFAULT: "rgba(78, 81, 183)",
-          foreground: "rgb(81, 85, 166)",
-        },
         border: "rgba(var(--border))",
         input: "hsl(var(--input))",
         ring: "rgb(var(--ring))",
@@ -59,8 +55,8 @@ export default {
           foreground: "rgba(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "rgba(var(--secondary))",
+          foreground: "rgba(var(--secondary-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",

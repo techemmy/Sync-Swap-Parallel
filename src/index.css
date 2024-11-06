@@ -76,8 +76,8 @@
     --primary: 81, 85, 166;
     --primary-foreground: 6, 8, 40;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 78, 81, 183;
+    --secondary-foreground: 81, 85, 166;
 
     --muted: 219, 219, 219;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -88,7 +88,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 229, 229, 229;
+    --border: var(--primary), 0.5;
+
     --input: 81, 85, 166;
     --ring: 81, 85, 166, 0.5;
 
@@ -159,7 +160,7 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 170, 179, 255, 0.5;
+    --border: var(--primary), 0.5;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
 
@@ -177,6 +178,31 @@
 
   body[data-theme="link"] {
     --background: var(--theme-background-link);
+
+    --card: 255, 255, 255;
+    --card-foreground: 115, 115, 115;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 42, 70, 176;
+    --primary-foreground: 0, 0, 0;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 243, 245, 251;
+    --accent-foreground: var(--primary);
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: var(--primary), 0.5;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
 
     .theme-portfolio {
       background-image: linear-gradient(
