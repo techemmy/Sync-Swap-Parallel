@@ -10,7 +10,6 @@ import Logo from "@/components/Logo";
 import { IoWalletOutline } from "react-icons/io5";
 import { BsThreeDots } from "react-icons/bs";
 import { TiHome } from "react-icons/ti";
-import { NavLink } from "react-router-dom";
 import {
   MdCardGiftcard,
   MdCurrencyExchange,
@@ -54,15 +53,20 @@ export default function NavbarLarge() {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavLinkWithIcon to="/home" title="Home" Icon={TiHome} />
+            <NavLinkWithIcon to="/home" title="Home" icon={TiHome} />
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavLinkWithIcon to="/swap" title="Trade" Icon={MdSwapCalls} />
+            <NavLinkWithIcon to="/swap" title="Trade" icon={MdSwapCalls} />
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavLinkWithIcon to="/pool" title="Pool" Icon={MdWaves} />
+            <NavLinkWithIcon
+              isMenuTrigger={true}
+              to="/pool"
+              title="Pool"
+              icon={MdWaves}
+            />
             <NavigationMenuContent>
               <ListItemsContainer>
                 <ListItem href="/pools" title="Pools" logo={MdToll}>
@@ -89,8 +93,9 @@ export default function NavbarLarge() {
             <NavigationMenuItem>
               <NavLinkWithIcon
                 to="/rewards"
+                isMenuTrigger={true}
                 title="Explore"
-                Icon={HiSparkles}
+                icon={HiSparkles}
               />
 
               <NavigationMenuContent>
@@ -128,7 +133,7 @@ export default function NavbarLarge() {
             <NavLinkWithIcon
               to="/launch"
               title="Launch"
-              Icon={MdRocketLaunch}
+              icon={MdRocketLaunch}
             />
           </NavigationMenuItem>
 
@@ -136,12 +141,17 @@ export default function NavbarLarge() {
             <NavLinkWithIcon
               to="/dashboard"
               title="Portfolio"
-              Icon={MdDataUsage}
+              icon={MdDataUsage}
             />
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavLinkWithIcon to="/bridge" title="Bridge" Icon={MdLayers} />
+            <NavLinkWithIcon
+              to="/bridge"
+              isMenuTrigger={true}
+              title="Bridge"
+              icon={MdLayers}
+            />
             <NavigationMenuContent>
               <ListItemsContainer>
                 <ListItem href="/move" title="Move" logo={MdElectricBolt}>

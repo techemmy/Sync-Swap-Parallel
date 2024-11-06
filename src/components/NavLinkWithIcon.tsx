@@ -1,12 +1,12 @@
 import { IconType } from "react-icons/lib";
 import { NavLink, NavLinkProps } from "react-router-dom";
+import { NavigationMenuTrigger } from "@/components/ui/navigation-menu";
 
 interface Props extends NavLinkProps {
-  title: string;
-  Icon: IconType;
+  children: React.ReactNode;
 }
 
-export default function NavLinkWithIcon({ to, Icon, title, ...props }: Props) {
+function NavLinkStructure({ to, children, ...props }: Props) {
   return (
     <NavLink
       to={to}
@@ -17,11 +17,46 @@ export default function NavLinkWithIcon({ to, Icon, title, ...props }: Props) {
       }}
       {...props}
     >
+      {children}
+    </NavLink>
+  );
+}
+
+interface NavLinkWithIconProps extends NavLinkProps {
+  title: string;
+  icon: IconType;
+  isMenuTrigger?: boolean;
+  props?: NavLinkProps;
+}
+
+export default function NavLinkWithIcon({
+  to,
+  icon: Icon,
+  title,
+  isMenuTrigger = false,
+  ...props
+}: NavLinkWithIconProps) {
+  if (isMenuTrigger) {
+    return (
+      <NavLinkStructure to={to} {...props}>
+        <NavigationMenuTrigger className="bg-transparent hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent data-[state=open]:bg-accent px-0 w-max h-10 text-card-foreground hover:text-primary text-sm font-medium rounded-full">
+          <Icon
+            size={25}
+            className="hidden group-[.text-primary]:block text-primary p-1 bg-accent rounded-md"
+          />
+          <span>{title}</span>
+        </NavigationMenuTrigger>
+      </NavLinkStructure>
+    );
+  }
+
+  return (
+    <NavLinkStructure to={to} {...props}>
       <Icon
         size={25}
         className="hidden group-[.text-primary]:block text-primary p-1 bg-accent rounded-md"
       />
       <span>{title}</span>
-    </NavLink>
+    </NavLinkStructure>
   );
 }
