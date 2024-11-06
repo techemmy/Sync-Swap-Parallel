@@ -14,6 +14,7 @@ import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import SelectNetworkNavDialog from "@/components/SelectNetwork/SelectNetworkNavDialog";
 import NavbarSettingsDialog from "./NavbarSettings/NavbarSettingsDialog";
 import { useActiveNetwork } from "@/context/ActiveNetworkContext";
+import useImageTheme from "@/hooks/useImageTheme";
 
 interface NavbarSmall {
   hamburgerToggled: boolean;
@@ -25,6 +26,7 @@ export default function NavbarSmall({
   handleHamburgerClicked,
 }: NavbarSmall) {
   const [activeNetwork] = useActiveNetwork();
+  const logoTheme = useImageTheme();
   return (
     <nav className="lg:hidden">
       <Link to="/intro" className="fixed m-3">
@@ -120,7 +122,7 @@ export default function NavbarSmall({
                   <NavigationMenuTrigger className="bg-transparent">
                     <img
                       className="w-5"
-                      src={activeNetwork.logoUrl}
+                      src={activeNetwork.logoUrl[logoTheme]}
                       alt={`${activeNetwork.name} logo`}
                     />
                   </NavigationMenuTrigger>
