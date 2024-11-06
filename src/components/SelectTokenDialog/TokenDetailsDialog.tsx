@@ -58,7 +58,15 @@ export default function TokenDetailsDialog({ name, symbol, logoSrc }: Props) {
           </CardDescription>
           <CardTitle className="text-xl font-medium mt-2 text-primary-foreground flex gap-x-2 items-center">
             $1
-            <MdOutlineInfo size={15} />
+            <Tooltip>
+              <TooltipTrigger>
+                <MdOutlineInfo size={15} />
+              </TooltipTrigger>
+              <TooltipContent>
+                The price is derived from available liquidity and is for
+                reference only.
+              </TooltipContent>
+            </Tooltip>
           </CardTitle>
         </Card>
 
@@ -68,7 +76,15 @@ export default function TokenDetailsDialog({ name, symbol, logoSrc }: Props) {
           </CardDescription>
           <CardTitle className="text-xl font-medium mt-2 text-primary-foreground flex gap-x-2 items-center">
             0 USDC.e
-            <MdOutlineInfo size={15} />
+            <Tooltip>
+              <TooltipTrigger>
+                <MdOutlineInfo size={15} />
+              </TooltipTrigger>
+              <TooltipContent>
+                The price is derived from available liquidity and is for
+                reference only.
+              </TooltipContent>
+            </Tooltip>
           </CardTitle>
         </Card>
       </section>
@@ -102,7 +118,12 @@ export default function TokenDetailsDialog({ name, symbol, logoSrc }: Props) {
         <li className="flex justify-between">
           <span className="flex gap-x-1 items-center">
             L2 Total Supply
-            <MdOutlineInfo className="text-primary" />
+            <Tooltip>
+              <TooltipTrigger>
+                <MdOutlineInfo className="text-primary" />
+              </TooltipTrigger>
+              <TooltipContent>L2 total supply price</TooltipContent>
+            </Tooltip>
           </span>
 
           <Tooltip>
@@ -118,7 +139,12 @@ export default function TokenDetailsDialog({ name, symbol, logoSrc }: Props) {
         <li className="flex justify-between">
           <span className="flex gap-x-1 items-center">
             L2 FDV
-            <MdOutlineInfo className="text-primary" />
+            <Tooltip>
+              <TooltipTrigger>
+                <MdOutlineInfo className="text-primary" />
+              </TooltipTrigger>
+              <TooltipContent>L2 FDV price</TooltipContent>
+            </Tooltip>
           </span>
           <span>$55.9M</span>
         </li>
