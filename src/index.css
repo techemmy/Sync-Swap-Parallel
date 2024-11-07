@@ -34,7 +34,7 @@
       rgba(83, 187, 88, 0.05) 48.19%,
       rgba(136, 213, 34, 0.02) 100%
     );
-    --theme-background-bitcon: radial-gradient(
+    --theme-background-bitcoin: radial-gradient(
       153.32% 100% at 47.26% 0,
       rgba(225, 129, 11, 0.12) 0,
       rgba(211, 122, 20, 0.07) 48.19%,
@@ -267,6 +267,27 @@
 
   body[data-theme="bitcoin"] {
     --background: var(--theme-background-bitcoin);
+
+    --card: 255, 255, 255;
+    --card-foreground: 115, 115, 115;
+
+    --primary: 224, 111, 0;
+    --primary-foreground: 0, 0, 0;
+
+    --secondary: 209, 124, 23;
+    --secondary-foreground: var(--primary);
+
+    --muted: 219, 219, 219;
+
+    --accent: 255, 248, 231;
+    --accent-foreground: var(--primary);
+
+    --button-hover: 146, 86, 16;
+    --carousel-btn: 238, 173, 96;
+
+    --border: var(--primary), 0.5;
+    --input: var(--secondary);
+    --ring: var(--secondary), 0.5;
 
     .theme-portfolio {
       background-image: linear-gradient(
