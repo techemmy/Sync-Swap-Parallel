@@ -7,7 +7,7 @@ export default function BuiltWithTheBestSection() {
   return (
     <section className="mb-52 mt-10 grid gap-y-20">
       <article className="text-center">
-        <h2 className="text-[40px] font-Public font-medium">
+        <h2 className="text-primary-foreground text-[40px] font-Public font-medium">
           Built with the Best
         </h2>
         <p className="text-card-foreground mt-2 font-medium">

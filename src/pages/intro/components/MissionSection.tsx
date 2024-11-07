@@ -5,17 +5,17 @@ import { Link } from "react-router-dom";
 export default function MissionSection() {
   return (
     <section className="relative my-20 md:mb-52 text-center flex flex-col gap-y-6">
-      <h2 className="text-[40px] font-Public font-medium">
+      <h2 className="z-10 text-primary-foreground text-[40px] font-Public font-medium">
         An Aligned Mission
       </h2>
-      <p className="mx-auto text-lg text-card-foreground max-w-[750px] font-medium">
+      <p className="z-10 mx-auto text-lg text-card-foreground max-w-[750px] font-medium">
         SyncSwap aligns with the mission of zkSync to accelerate the mass
         adoption of crypto for personal sovereignty.
       </p>
 
       <Button
         variant="outline"
-        className="rounded-[20px] text-md px-20"
+        className="rounded-[20px] text-md px-20 z-10"
         asChild
       >
         <Link

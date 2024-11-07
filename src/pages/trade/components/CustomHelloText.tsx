@@ -5,7 +5,7 @@ export default function CustomHelloText() {
       xmlns="http://www.w3.org/2000/svg"
       height="30"
       viewBox="0 0 1577.7 517.7"
-      className="fill-secondary-foreground"
+      className="fill-primary"
     >
       <g>
         <path

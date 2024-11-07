@@ -45,7 +45,7 @@ const ToggleGroupItem = React.forwardRef<
           variant: context.variant || variant,
           size: context.size || size,
         }),
-        "data-[state=on]:text-primary data-[state=on]:bg-card/70 hover:bg-accent",
+        "data-[state=on]:text-primary data-[state=on]:bg-card/70 hover:bg-card-foreground/[0.04] hover:text-card-foreground",
         className,
       )}
       {...props}
