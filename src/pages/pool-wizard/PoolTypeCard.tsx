@@ -29,7 +29,7 @@ export default function PoolTypeCard({
   return (
     <Card
       onClick={onClick}
-      className={`transition-all mt-3 shadow-md rounded-lg border-0 cursor-pointer hover:opacity-75 border border-transparent bg-card/45 pl-5 pr-2 py-2 ${isActive && "border-primary"}`}
+      className={`transition-all mt-3 shadow-md rounded-lg border-0 cursor-pointer hover:opacity-75 border border-transparent bg-card pl-5 pr-2 py-2 ${isActive && "border-primary/[0.7]"}`}
     >
       <CardHeader className="flex justify-between flex-row items-center text-primary p-0 pb-2">
         <div className="flex gap-x-3 items-center">
@@ -42,7 +42,7 @@ export default function PoolTypeCard({
         <MdKeyboardArrowRight fontSize={20} />
       </CardHeader>
       <CardContent className="p-0">
-        <CardDescription className="text-sm text-card-foreground">
+        <CardDescription className="text-[13px] text-card-foreground">
           {description}
         </CardDescription>
       </CardContent>

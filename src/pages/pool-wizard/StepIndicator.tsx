@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 export default function StepIndicator({
   step = 1,
   text,
@@ -7,10 +9,14 @@ export default function StepIndicator({
 }) {
   return (
     <div className="flex gap-x-2 items-center text-sm">
-      <span className="flex justify-center items-center bg-primary text-white w-6 h-6 p-1 rounded-full">
+      <Button
+        className="flex bg-secondary justify-center items-center w-6 h-6 p-1 rounded-full"
+      >
         {step}
-      </span>
-      <p className="font-medium">{text ? text : step}</p>
+      </Button>
+      <p className="font-medium text-primary-foreground">
+        {text ? text : step}
+      </p>
     </div>
   );
 }

@@ -19,7 +19,7 @@ export default function Pool() {
     <main className="relative overflow-hidden pt-28 max-w-screen-lg mx-auto h-screen space-y-14 p-4">
       <article className="flex justify-between gap-y-5 flex-col md:flex-row">
         <section>
-          <h1 className="text-3xl font-medium font-Public mb-1">
+          <h1 className="text-primary-foreground text-3xl font-medium font-Public mb-1">
             My Positions
           </h1>
           <p className="text-sm text-card-foreground">

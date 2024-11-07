@@ -43,7 +43,7 @@ export default function PoolWizard() {
           </Link>
 
           <section>
-            <h1 className="text-2xl font-semibold font-Public mb-1">
+            <h1 className="text-primary-foreground text-2xl font-semibold font-Public mb-1">
               🧙 Pool Wizard
             </h1>
             <p className="text-sm text-card-foreground">
