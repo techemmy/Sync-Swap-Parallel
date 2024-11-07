@@ -95,6 +95,7 @@ export default function Home() {
         >
           <div className="flex justify-center items-center w-10 h-10 bg-secondary/10 p-2 text-secondary-foreground rounded-md">
             <svg
+              className="fill-primary"
               width="20"
               height="20"
               viewBox="0 0 24 24"
