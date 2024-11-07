@@ -19,7 +19,7 @@ export default function DefaultSettingsView({ setSettingsView }: Props) {
   );
   return (
     <>
-      <h2 className="font-medium">Settings</h2>
+      <h2 className="font-medium text-primary-foreground">Settings</h2>
       <div className="grid w-full gap-3 grid-cols-2 mt-4">
         <DefaultSettingsCard
           text={(theme && theme[0]) || activeTheme}

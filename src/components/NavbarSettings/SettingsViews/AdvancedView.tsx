@@ -18,9 +18,11 @@ export default function AdvancedView({
         <MdOutlineArrowBack
           onClick={setSettingsView.setDefault}
           fontSize={40}
-          className="p-3 bg-accent cursor-pointer rounded-full active:scale-75 transition-transform"
+          className="p-3 text-primary bg-accent cursor-pointer rounded-full active:scale-75 transition-transform"
         />
-        <h3 className="font-medium text-sm mr-2">Advanced</h3>
+        <h3 className="font-medium text-sm mr-2 text-primary-foreground">
+          Advanced
+        </h3>
       </article>
       <ul className="grid w-full gap-y-4 grid-cols-1 mt-4 p-2">
         <li className="flex items-center justify-between text-sm font-medium text-card-foreground">

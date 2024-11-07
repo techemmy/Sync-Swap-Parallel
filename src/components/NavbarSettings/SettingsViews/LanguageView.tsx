@@ -34,9 +34,11 @@ export default function LanguageView({
         <MdOutlineArrowBack
           onClick={setSettingsView.setDefault}
           fontSize={40}
-          className="p-3 bg-accent cursor-pointer rounded-full active:scale-75 transition-transform"
+          className="text-primary p-3 bg-accent cursor-pointer rounded-full active:scale-75 transition-transform"
         />
-        <h3 className="font-medium text-sm mr-2">Language</h3>
+        <h3 className="font-medium text-sm mr-2 text-primary-foreground">
+          Language
+        </h3>
       </article>
       <ul className={`grid w-full gap-3 grid-cols-${gridColumns} mt-4`}>
         {languages.map((lang) => (
