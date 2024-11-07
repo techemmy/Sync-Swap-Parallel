@@ -20,7 +20,7 @@ function PoolCard({ pool }: { pool: IPoolData }) {
   return (
     <Card
       onClick={() => setIsOpen(!isOpen)}
-      className="rounded-2xl animate-fade-in border-transparent cursor-pointer bg-white/70 hover:bg-white transition-all active:bg-primary/[0.04]"
+      className="rounded-2xl animate-fade-in border-transparent cursor-pointer bg-card/70 hover:bg-card transition-all active:bg-primary/[0.04]"
     >
       <CardContent className="hidden px-4 py-3 md:grid grid-cols-[1.65fr_1.15fr_0.9fr_0.7fr_1.1fr] items-center text-sm font-medium text-primary-foreground">
         <section className="flex gap-x-1">

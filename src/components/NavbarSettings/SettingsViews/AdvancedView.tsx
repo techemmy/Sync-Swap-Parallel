@@ -23,15 +23,15 @@ export default function AdvancedView({
         <h3 className="font-medium text-sm mr-2">Advanced</h3>
       </article>
       <ul className="grid w-full gap-y-4 grid-cols-1 mt-4 p-2">
-        <li className="flex items-center justify-between text-sm font-medium text-gray-500">
+        <li className="flex items-center justify-between text-sm font-medium text-card-foreground">
           <label htmlFor="swap-gadget">Swap Gadget</label>
           <Switch className="shadow-md" id="swap-gadget" defaultChecked />
         </li>
-        <li className="flex items-center justify-between text-sm font-medium text-gray-500">
+        <li className="flex items-center justify-between text-sm font-medium text-card-foreground">
           <label htmlFor="light-effects">Light Effects</label>
           <Switch className="shadow-md" id="light-effects" defaultChecked />
         </li>
-        <li className="flex items-center justify-between text-sm font-medium text-gray-500">
+        <li className="flex items-center justify-between text-sm font-medium text-card-foreground">
           <label
             htmlFor="gasless-unlocking"
             className="flex items-center gap-x-1"
@@ -48,7 +48,7 @@ export default function AdvancedView({
           </label>
           <Switch className="shadow-md" id="gasless-unlocking" defaultChecked />
         </li>
-        <li className="flex items-center justify-between text-sm font-medium text-gray-500">
+        <li className="flex items-center justify-between text-sm font-medium text-card-foreground">
           <label
             htmlFor="limited-unlocking"
             className="flex items-center gap-x-1"
@@ -65,7 +65,7 @@ export default function AdvancedView({
           </label>
           <Switch className="shadow-md" id="limited-unlocking" />
         </li>
-        <li className="flex items-center justify-between text-sm font-medium text-gray-500">
+        <li className="flex items-center justify-between text-sm font-medium text-card-foreground">
           <label
             htmlFor="direct-route-only"
             className="flex items-center gap-x-1"

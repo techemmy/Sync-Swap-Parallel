@@ -15,7 +15,7 @@ export default function HelloCard() {
         </div>
 
         <div className="grid gap-3 p-5 bg-primary/[0.05] rounded-2xl">
-          <HiSparkles fontSize={23} />
+          <HiSparkles className="text-primary" fontSize={23} />
           <p className="text-[13px]">
             New gadget to help you review price and swap details
           </p>

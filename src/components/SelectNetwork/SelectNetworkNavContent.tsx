@@ -22,7 +22,9 @@ export default function SelectNetworkNavContent({ className }: Props) {
     <ul
       className={`bg-card grid w-[230px] p-3 px-4 rounded-2xl shadow ${className} `}
     >
-      <p className="text-gray-500 font-medium text-sm mb-2">Select a network</p>
+      <p className="text-card-foreground font-medium text-sm mb-2">
+        Select a network
+      </p>
 
       {Object.values(AVAILABLE_NETWORKS).map((network: NetworkType) => {
         return (
@@ -63,7 +65,7 @@ export default function SelectNetworkNavContent({ className }: Props) {
       <Collapsible>
         <CollapsibleTrigger className="w-full flex items-center gap-x-1 p-2 my-2 transition-colors hover:bg-accent">
           <MdKeyboardArrowDown />
-          <p className="text-gray-500 font-medium text-sm">Testnet</p>
+          <p className="text-card-foreground font-medium text-sm">Testnet</p>
         </CollapsibleTrigger>
         <CollapsibleContent>
           <li className="cursor-pointer flex items-center justify-between w-full block select-none rounded-lg p-2 leading-none">

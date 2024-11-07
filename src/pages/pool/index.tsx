@@ -33,7 +33,7 @@ export default function Pool() {
               <DropdownMenuTrigger className="h-fit outline-none" asChild>
                 <Button
                   variant="outline"
-                  className="active:scale-90 transition-transform"
+                  className="transition-colors active:scale-90 border-secondary/50 text-secondary-foreground hover:bg-secondary/[0.04] hover:border-secondary"
                 >
                   More
                   <MdKeyboardArrowDown fontSize={20} />
@@ -61,7 +61,7 @@ export default function Pool() {
             <ImportPositionDialog />
           </Dialog>
           <Link to="wizard">
-            <Button className="rounded-xl boxShadow active:scale-90 transition-all">
+            <Button className="transition-all bg-secondary rounded-xl shadow-thin active:scale-90 hover:shadow-lg">
               <MdAdd fontSize={20} />
               New Position
             </Button>
