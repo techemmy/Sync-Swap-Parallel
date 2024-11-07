@@ -340,6 +340,27 @@
   body[data-theme="white"] {
     --background: var(--theme-background-white);
 
+    --card: 255, 255, 255;
+    --card-foreground: 115, 115, 115;
+
+    --primary: 64, 64, 64;
+    --primary-foreground: 0, 0, 0;
+
+    --secondary: 36, 36, 36;
+    --secondary-foreground: var(--primary);
+
+    --muted: 219, 219, 219;
+
+    --accent: 242, 242, 242;
+    --accent-foreground: var(--primary);
+
+    --button-hover: 25, 25, 25;
+    --carousel-btn: 87, 87, 87;
+
+    --border: var(--primary), 0.5;
+    --input: var(--secondary);
+    --ring: var(--secondary), 0.5;
+
     .theme-portfolio {
       background-image: linear-gradient(-45deg, #ddd, silver, #cacaca, #727272);
       animation: portfolio-gradient 20s ease infinite;
