@@ -304,6 +304,27 @@
   body[data-theme="sakura"] {
     --background: var(--theme-background-sakura);
 
+    --card: 255, 255, 255;
+    --card-foreground: 129, 91, 105;
+
+    --primary: 214, 47, 108;
+    --primary-foreground: 58, 0, 16;
+
+    --secondary: 227, 84, 125;
+    --secondary-foreground: var(--primary);
+
+    --muted: 219, 219, 219;
+
+    --accent: 255, 244, 250;
+    --accent-foreground: var(--primary);
+
+    --button-hover: 158, 58, 87;
+    --carousel-btn: 241, 172, 192;
+
+    --border: var(--primary), 0.5;
+    --input: var(--secondary);
+    --ring: var(--secondary), 0.5;
+
     .theme-portfolio {
       background-image: linear-gradient(
         -45deg,
