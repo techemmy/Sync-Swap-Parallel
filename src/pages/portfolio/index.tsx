@@ -12,7 +12,7 @@ export default function Portfolio() {
   return (
     <>
       <main className="relative overflow-hidden pt-20 max-w-screen-lg mx-auto h-[90vh] space-y-14 p-4">
-        <Card className="mt-3 shadow-md rounded-3xl border-0 bg-white/75 max-w-[930px] mx-auto">
+        <Card className="mt-3 shadow-md rounded-3xl border-0 bg-card/75 max-w-[930px] mx-auto">
           <CardContent className="py-20 px-10 flex flex-col justify-between items-center gap-y-5">
             <Logo className="w-12 h-12" />
 

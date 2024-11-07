@@ -32,7 +32,7 @@ export default function ActionButtons({
     <div className="flex justify-between items-center">
       <Button
         onClick={onShowChart}
-        className={`group w-9 h-9 px-1 bg-transparent text-primary hover:bg-gray-300/65 rounded-md ${candleStickOpacity}`}
+        className={`group w-9 h-9 px-1 bg-transparent text-primary hover:bg-primary/[0.04] rounded-md ${candleStickOpacity}`}
       >
         <MdCandlestickChart
           className="group-active:transition-transform active:scale-90"
@@ -43,7 +43,7 @@ export default function ActionButtons({
       <div className="flex items-center gap-x-1">
         <Button
           onClick={() => setIsRefreshingBalance(true)}
-          className={`${isRefreshingBalance === true ? "animate-spin" : "hover:bg-gray-300/65"} group w-9 h-9 px-1 bg-transparent text-primary rounded-md`}
+          className={`${isRefreshingBalance === true ? "animate-spin" : "hover:bg-primary/[0.04]"} group w-9 h-9 px-1 bg-transparent text-primary rounded-md`}
           style={{
             animationDuration: "800ms",
           }}
@@ -56,7 +56,7 @@ export default function ActionButtons({
 
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="group w-8 h-8 px-1 bg-transparent text-primary hover:bg-gray-300/65 rounded-md">
+            <Button className="group w-8 h-8 px-1 bg-transparent text-primary hover:bg-primary/[0.04] rounded-md">
               <FiSettings
                 className="font-bold group-active:transition-transform group-active:scale-90 group-hover:rotate-180 duration-500"
                 size={25}

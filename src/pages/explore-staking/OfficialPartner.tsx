@@ -69,7 +69,7 @@ export default function OfficialPartner() {
       </p>
 
       <img
-        className="shadow rounded-3xl border-[15px] border-white/[.85] max-w-[90vw]"
+        className="shadow rounded-3xl border-[15px] border-card/85 max-w-[90vw]"
         src="/images/trala_banner.png"
         width="800"
       />

@@ -20,7 +20,7 @@ export default function EarningsSummaryCard({
   info,
 }: Props) {
   return (
-    <Card className="relative bg-white/75 border-transparent px-5 py-3 rounded-2xl shadow overflow-clip space-y-2">
+    <Card className="relative bg-card/75 border-transparent px-5 py-3 rounded-2xl shadow overflow-clip space-y-2">
       <p className="text-primary-foreground text-lg font-medium">
         {amount != null ? `$${amount}` : "-"}
       </p>
