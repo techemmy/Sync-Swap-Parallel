@@ -215,6 +215,7 @@
     --primary-foreground: 255, 255, 255;
 
     --secondary: 42, 110, 0;
+    --secondary-foreground: var(--primary);
 
     --muted: 80, 92, 78;
 
@@ -236,6 +237,27 @@
 
   body[data-theme="green"] {
     --background: var(--theme-background-green);
+
+    --card: 255, 255, 255;
+    --card-foreground: 115, 115, 115;
+
+    --primary: 27, 107, 49;
+    --primary-foreground: 0, 0, 0;
+
+    --secondary: 0, 145, 4;
+    --secondary-foreground: var(--primary);
+
+    --muted: 219, 219, 219;
+
+    --accent: 239, 249, 236;
+    --accent-foreground: var(--primary);
+
+    --button-hover: 0, 101, 2;
+    --carousel-btn: 0, 247, 7;
+
+    --border: var(--primary), 0.5;
+    --input: var(--secondary);
+    --ring: var(--secondary), 0.5;
 
     .theme-portfolio {
       background-image: linear-gradient(-45deg, #daecd3, #92d38c, #c7e9c7);
