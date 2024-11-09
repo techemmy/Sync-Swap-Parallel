@@ -1,8 +1,9 @@
-export default function Logo({ className = "" }: { className?: string }) {
-  className = className ? className : "w-7 h-7";
+import { cn } from "@/lib/utils";
+
+export default function Logo({ className }: { className?: string }) {
   return (
     <img
-      className={className}
+      className={cn("w-7 h-7", className)}
       src="/images/syncswap-logo.svg"
       alt="Sync Swap Logo"
     />

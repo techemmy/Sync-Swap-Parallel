@@ -45,8 +45,8 @@ export default function NavbarLarge() {
   return (
     <nav className="hidden lg:flex fixed left-0 right-0 justify-between mx-12 my-2 bg-card/85 px-4 rounded-3xl shadow-md">
       <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
+        <NavigationMenuList className="space-x-0">
+          <NavigationMenuItem className="mr-1">
             <NavigationMenuLink href="/intro">
               <Logo />
             </NavigationMenuLink>
