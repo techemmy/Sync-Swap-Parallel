@@ -13,10 +13,10 @@ import { PiPulseBold } from "react-icons/pi";
 export default function ConvertUSDC() {
   return (
     <section>
-      <h3 className="pl-2 text-2xl text-primary-foreground">Convert USDC</h3>
+      <h3 className="pl-7 text-2xl text-primary-foreground">Convert USDC</h3>
 
       <div className="flex justify-between mt-5 gap-4">
-        <article className="w-full sm:max-w-[480px] flex-1 space-y-5">
+        <article className="w-full sm:max-w-[480px] flex-1 space-y-5 ml-3">
           <Card className="shadow-thin">
             <CardContent className="py-4 text-card-foreground">
               <ul className="space-y-4">
@@ -65,7 +65,7 @@ export default function ConvertUSDC() {
             </CardContent>
           </Card>
 
-          <Card className="grid gap-y-4 mt-2 border-0 shadow rounded-3xl bg-card/70 px-5 py-4">
+          <Card className="grid gap-y-4 mt-2 border-0 shadow rounded-3xl bg-card px-5 py-4">
             <p className="text-sm font-medium text-card-foreground">
               Convert Amount
             </p>

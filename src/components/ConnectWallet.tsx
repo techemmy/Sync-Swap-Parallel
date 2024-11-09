@@ -12,7 +12,7 @@ export default function ConnectWallet({
 }) {
   return (
     <section className={cn("py-10 grid place-items-center", className)}>
-      <GoInbox size={45} className="text-primary" />
+      <GoInbox size={45} className="text-secondary" />
       <p className="text-card-foreground mt-2 mb-4">
         Connect wallet to see your positions
       </p>
