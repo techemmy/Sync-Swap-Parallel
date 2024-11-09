@@ -39,12 +39,12 @@ export default function NavLinkWithIcon({
   if (isMenuTrigger) {
     return (
       <NavLinkStructure to={to} {...props}>
-        <NavigationMenuTrigger className="bg-transparent p-0 hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent data-[state=open]:bg-accent w-max h-10 text-card-foreground hover:text-primary text-sm font-medium rounded-full">
+        <NavigationMenuTrigger className="bg-transparent p-0 hover:bg-accent focus:bg-transparent focus:text-accent-foreground focus:outline-none data-[isActive]:bg-accent data-[state=open]:bg-accent w-max h-10 text-card-foreground hover:text-primary text-sm font-medium rounded-full">
           <Icon
             size={25}
             className="hidden group-[.text-primary]:block text-primary p-1 bg-accent rounded-md"
           />
-          <span>{title}</span>
+          <span className="group-[.text-primary]:text-primary">{title}</span>
         </NavigationMenuTrigger>
       </NavLinkStructure>
     );
@@ -56,7 +56,7 @@ export default function NavLinkWithIcon({
         size={25}
         className="hidden group-[.text-primary]:block text-primary p-1 bg-accent rounded-md"
       />
-      <span>{title}</span>
+      <span className="group-[.text-primary]:text-primary">{title}</span>
     </NavLinkStructure>
   );
 }
