@@ -15,7 +15,9 @@ import ConnectWalletDialogButton from "@/components/ConnectWalletDialogButton";
 export default function ImportPositionDialog() {
   return (
     <DialogContent className="max-w-md">
-      <DialogTitle className="font-medium"> Import Position </DialogTitle>
+      <DialogTitle className="font-medium text-primary-foreground">
+        Import Position
+      </DialogTitle>
       <DialogDescription className="my-2">
         Select tokens the pool comprises to import.
       </DialogDescription>
