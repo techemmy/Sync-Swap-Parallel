@@ -36,6 +36,7 @@ import { FaEthereum } from "react-icons/fa";
 import { useActiveNetwork } from "@/context/ActiveNetworkContext";
 import useImageTheme from "@/hooks/useImageTheme";
 import NavLinkWithIcon from "./NavLinkWithIcon";
+import { NavLink } from "react-router-dom";
 
 export default function NavbarLarge() {
   const [activeNetwork] = useActiveNetwork();
@@ -47,9 +48,9 @@ export default function NavbarLarge() {
       <NavigationMenu>
         <NavigationMenuList className="space-x-0">
           <NavigationMenuItem className="mr-1">
-            <NavigationMenuLink href="/intro">
+            <NavLink to="/intro">
               <Logo />
-            </NavigationMenuLink>
+            </NavLink>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
