@@ -30,7 +30,12 @@ export default function PoolEarnings() {
           <h3 className="text-lg font-medium">My Positions</h3>
 
           <div className="flex items-center space-x-2">
-            <label htmlFor="claimable">Claimable</label>
+            <label
+              htmlFor="claimable"
+              className="text-sm text-card-foreground font-medium"
+            >
+              Claimable
+            </label>
             <Switch id="claimable" />
           </div>
         </section>

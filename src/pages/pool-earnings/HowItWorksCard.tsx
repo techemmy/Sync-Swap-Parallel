@@ -15,7 +15,9 @@ export default function HowItWorksCard({
         </h3>
 
         <article className="space-y-2">
-          <Badge variant="outline">Fees</Badge>
+          <Badge variant="outline" className="w-max">
+            Fees
+          </Badge>
           <p className="text-card-foreground text-sm">
             Your positions earn from trading fees and auto compounded. Saving
             gas and hassle to claim manually.
@@ -23,7 +25,9 @@ export default function HowItWorksCard({
         </article>
 
         <article className="space-y-2">
-          <Badge variant="outline">Rewards</Badge>
+          <Badge variant="outline" className="w-max">
+            Rewards
+          </Badge>
           <p className="text-card-foreground text-sm">
             Any additional rewards, such as staking rewards can be claimed here
             if available.
