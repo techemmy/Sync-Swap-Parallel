@@ -63,7 +63,7 @@ export default function ActionButtons({
               />
             </Button>
           </DialogTrigger>
-          <NavbarSettingsDialog className="p-0" />
+          <NavbarSettingsDialog />
         </Dialog>
       </div>
     </div>

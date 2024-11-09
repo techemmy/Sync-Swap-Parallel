@@ -5,6 +5,7 @@ import LanguageView from "@/components/NavbarSettings/SettingsViews/LanguageView
 import DefaultSettingsView from "@/components/NavbarSettings/SettingsViews/DefaultSettingsView";
 import { SettingsOptionsEnum } from "@/enums";
 import { ISetSettingsView } from "@/types";
+import { cn } from "@/lib/utils";
 
 interface Props {
   className?: string;
@@ -48,7 +49,10 @@ export default function NavbarSettings({
   return (
     <section
       ref={settingsDropdownRef}
-      className={`min-w-[370px] rounded-3xl shadow-md bg-card p-4 pl-5 ${className}`}
+      className={cn(
+        "min-w-[370px] rounded-3xl shadow-md bg-card p-4 pl-5",
+        className,
+      )}
     >
       {settingsView === SettingsOptionsEnum.default && (
         <DefaultSettingsView setSettingsView={setSettingsViewDispatch} />

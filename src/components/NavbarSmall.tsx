@@ -140,7 +140,7 @@ export default function NavbarSmall({
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               </DialogTrigger>
-              <NavbarSettingsDialog className="max-w-md p-0" />
+              <NavbarSettingsDialog className="max-w-md" />
             </Dialog>
           </NavigationMenuList>
         </NavigationMenu>
