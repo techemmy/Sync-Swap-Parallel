@@ -19,6 +19,7 @@ import React from "react";
 import NavbarSettingsDialog from "@/components/NavbarSettings/NavbarSettingsDialog";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { FaEthereum } from "react-icons/fa6";
 
 function HomeLink({
   name,
@@ -88,6 +89,8 @@ export default function Home() {
           icon={MdCurrencyExchange}
           name="USDC Conversion"
         />
+
+        <HomeLink to="/staking" icon={FaEthereum} name="Stake" />
 
         <HomeLink to="/launch" icon={MdRocketLaunch} name="Launch" />
 
