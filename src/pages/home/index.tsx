@@ -16,6 +16,9 @@ import {
 } from "react-icons/md";
 import { IconType } from "react-icons/lib";
 import React from "react";
+import NavbarSettingsDialog from "@/components/NavbarSettings/NavbarSettingsDialog";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 function HomeLink({
   name,
@@ -52,15 +55,15 @@ export default function Home() {
     <main className="h-screen bg-[length:400%_400%] theme-portfolio pt-20">
       <section className="flex flex-col flex-wrap content-start gap-x-1 gap-y-1 ml-16 text-center max-h-[80vh] h-[700px] min-h-[200px]">
         <HomeLink to="/swap" icon={MdSwapCalls} name="Swap" />
-        <HomeLink to="#" icon={MdDataUsage} name="Portfolio" />
-        <HomeLink to="#" name="Pool" icon={MdToll} />
-        <HomeLink to="#" name="Earnings" icon={MdStream} />
-        <HomeLink to="#" name="My Positions" icon={MdWaves} />
-        <HomeLink to="#" name="Pool Wizard" icon={MdScience} />
-        <HomeLink to="#" icon={MdCardGiftcard} name="Loyalty Program" />
+        <HomeLink to="/dashboard" icon={MdDataUsage} name="Portfolio" />
+        <HomeLink to="/pools" name="Pools" icon={MdToll} />
+        <HomeLink to="/pool/earnings" name="Earnings" icon={MdStream} />
+        <HomeLink to="/pool" name="My Positions" icon={MdWaves} />
+        <HomeLink to="/pool/wizard" name="Pool Wizard" icon={MdScience} />
+        <HomeLink to="/rewards" icon={MdCardGiftcard} name="Loyalty Program" />
 
         <HomeLink
-          to="#"
+          to="/wrapper"
           svg={
             <svg
               className="fill-primary"
@@ -80,14 +83,28 @@ export default function Home() {
           name="404 Wrapper"
         />
 
-        <HomeLink to="#" icon={MdCurrencyExchange} name="USDC Conversion" />
+        <HomeLink
+          to="/usdc-conversion"
+          icon={MdCurrencyExchange}
+          name="USDC Conversion"
+        />
 
-        <HomeLink to="#" icon={MdRocketLaunch} name="Launch" />
+        <HomeLink to="/launch" icon={MdRocketLaunch} name="Launch" />
 
-        <HomeLink to="#" icon={MdElectricBolt} name="Move" />
-        <HomeLink to="#" icon={MdLayers} name="Bridges" />
-        <HomeLink to="#" icon={MdSettings} name="Settings" />
-        <HomeLink to="#" icon={MdImportContacts} name="About" />
+        <HomeLink to="/move" icon={MdElectricBolt} name="Move" />
+        <HomeLink to="/bridge" icon={MdLayers} name="Bridges" />
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button className="bg-transparent flex flex-col justify-center items-center w-24 h-24 hover:bg-card/25 p-1 rounded-lg active:scale-90 transition-transform cursor-pointer">
+              <MdSettings className="flex justify-center items-center w-10 h-10 bg-secondary/10 p-2 text-secondary-foreground rounded-md" />
+              <p className="h-[28px] mt-2 font-medium text-[0.825rem] text-white text-shadow">
+                Settings
+              </p>
+            </Button>
+          </DialogTrigger>
+          <NavbarSettingsDialog />
+        </Dialog>
+        <HomeLink to="/intro" icon={MdImportContacts} name="About" />
       </section>
     </main>
   );
