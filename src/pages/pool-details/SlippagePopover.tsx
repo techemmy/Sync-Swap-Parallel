@@ -19,6 +19,7 @@ export default function SlippagePopover() {
   const [slippageInput, setSlippageInput] = useState<string>("");
 
   const handleSetInputSlippage = () => {
+    if (!slippageInput) return;
     const value = setSlippage(slippageInput as string);
     setSlippageInput(value);
   };
@@ -65,7 +66,7 @@ export default function SlippagePopover() {
 
         <div className="grid gap-y-3 grid-cols-3 mt-7 *:text-primary *:border-transparent *:transition-transform *:w-24 *:text-sm">
           <Button
-            onClick={() => setSlippage(null)}
+            onClick={() => setSlippage("")}
             variant="outline"
             className="hover:bg-accent hover:border-transparent active:scale-90 focus:border-primary"
           >
@@ -75,7 +76,7 @@ export default function SlippagePopover() {
           {[0.1, 0.5, 1, 3].map((number) => (
             <Button
               key={number}
-              onClick={() => setSlippage(number)}
+              onClick={() => setSlippage(number.toString())}
               variant="outline"
               className="hover:bg-accent hover:border-transparent active:scale-90 focus:border-primary"
             >
@@ -87,7 +88,7 @@ export default function SlippagePopover() {
             onBlur={handleSetInputSlippage}
             value={slippageInput}
             onChange={handleSlippageInputChange}
-            className="w-full h-full text-center outline-none border focus:border-primary rounded-2xl"
+            className="w-full h-full text-center outline-none border focus:border-primary rounded-2xl bg-input"
             placeholder="Custom"
           />
         </div>
