@@ -7,7 +7,7 @@ import CustomHelloText from "./CustomHelloText";
 
 export default function HelloCard() {
   return (
-    <Card className="bg-card/70 z-20 mt-16 max-w-[300px] min-h-[100px] shadow-thin">
+    <Card className="hidden md:block bg-card/70 z-20 mt-16 max-w-[300px] min-h-[100px] shadow-thin">
       <CardContent className="grid gap-5">
         <div className="animate-fade-in flex flex-col gap-2 mx-1.5 my-2 items-end">
           <CustomHelloText />
