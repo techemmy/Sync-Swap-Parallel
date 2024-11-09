@@ -140,13 +140,15 @@ export default function PoolWizard() {
                     />
                   ))}
                 </div>
-                <Button
-                  variant="outline"
-                  className="transition-transform flex gap-x-3 px-14 py-5 rounded-3xl mx-auto mt-10 active:scale-90"
-                >
-                  <span>Enter Pool</span>
-                  <FaArrowRight />
-                </Button>
+                <Link to="/pool/0x22309240af09j234">
+                  <Button
+                    variant="outline"
+                    className="transition-transform flex gap-x-3 px-14 py-5 rounded-3xl mx-auto mt-10 active:scale-90"
+                  >
+                    <span>Enter Pool</span>
+                    <FaArrowRight />
+                  </Button>
+                </Link>
               </section>
             </section>
 
