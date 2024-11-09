@@ -14,7 +14,9 @@ interface Props {
 
 export default function NavbarSettingsDialog({ className }: Props) {
   return (
-    <DialogContent className={cn("w-[460px] p-0 sm:rounded-2xl", className)}>
+    <DialogContent
+      className={cn("w-[460px] p-0 rounded-2xl sm:rounded-2xl", className)}
+    >
       <VisuallyHidden>
         <DialogHeader>
           <DialogTitle>Navbar Settings</DialogTitle>
