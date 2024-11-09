@@ -37,7 +37,7 @@ function HomeLink({
   return (
     <Link
       to={to}
-      className="flex flex-col justify-center items-center w-24 h-24 hover:bg-card/25 p-1 rounded-lg active:scale-90 transition-transform"
+      className="flex flex-col justify-center items-center w-24 h-24 hover:bg-accent/25 p-1 rounded-lg active:scale-90 transition-transform"
     >
       {Svg ||
         (Icon && (
@@ -95,7 +95,7 @@ export default function Home() {
         <HomeLink to="/bridge" icon={MdLayers} name="Bridges" />
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="bg-transparent flex flex-col justify-center items-center w-24 h-24 hover:bg-card/25 p-1 rounded-lg active:scale-90 transition-transform cursor-pointer">
+            <Button className="bg-transparent flex flex-col justify-center items-center w-24 h-24 hover:bg-accent/25 p-1 rounded-lg active:scale-90 transition-transform cursor-pointer">
               <MdSettings className="flex justify-center items-center w-10 h-10 bg-secondary/10 p-2 text-secondary-foreground rounded-md" />
               <p className="h-[28px] mt-2 font-medium text-[0.825rem] text-white text-shadow">
                 Settings
