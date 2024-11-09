@@ -1,5 +1,9 @@
-import { DialogContent, DialogHeader } from "@/components/ui/dialog";
-import { DialogDescription, DialogTitle } from "@radix-ui/react-dialog";
+import {
+  DialogContent,
+  DialogHeader,
+  DialogDescription,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import Tokens from "@/assets/tokens.json";
 import TokenHighlight from "./TokenHighlight";
 import TokensHighlight from "./TokensHighlight";
@@ -37,7 +41,7 @@ export default function SelectTokenDialog() {
 
   return (
     <DialogContent className="flex flex-col bg-card p-0 sm:max-w-md border-0 h-[90vh] gap-2 sm:rounded-3xl overflow-y-hidden">
-      <DialogHeader className="bg-primary/[0.16] px-5 pt-5 border-0 text-primary-foreground">
+      <DialogHeader className="bg-primary/[0.16] px-5 pt-5 border-0">
         <DialogTitle className="font-medium flex items-center">
           Select a token
         </DialogTitle>
