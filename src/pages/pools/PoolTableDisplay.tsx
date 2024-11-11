@@ -196,7 +196,7 @@ export default function PoolTableDisplay({ pools }: { pools: IPoolData[] }) {
               defaultValue={pageSize.toString()}
               onValueChange={(value) => setPageSize(parseInt(value))}
             >
-              <SelectTrigger className="w-[100px] border-transparent">
+              <SelectTrigger className="w-[100px] border-transparent text-primary-foreground">
                 <SelectValue placeholder={pageSize} />
               </SelectTrigger>
               <SelectContent className="w-5 text-primary-foreground">
@@ -208,13 +208,13 @@ export default function PoolTableDisplay({ pools }: { pools: IPoolData[] }) {
           </p>
           <div
             onClick={goToPrevPage}
-            className="p-2 transition-colors hover:bg-primary/[0.04] active:bg-primary/40 rounded-md cursor-pointer"
+            className="p-2 text-primary-foreground transition-colors hover:bg-primary/[0.04] active:bg-primary/40 rounded-md cursor-pointer opacity-50"
           >
             <PiCaretLeftBold />
           </div>
           <div
             onClick={goToNextPage}
-            className="p-2 transition-colors hover:bg-primary/[0.04] active:bg-primary/40 rounded-md cursor-pointer"
+            className="p-2 text-primary-foreground transition-colors hover:bg-primary/[0.04] active:bg-primary/40 rounded-md cursor-pointer opacity-50"
           >
             <PiCaretRightBold className="cursor-pointer" />
           </div>
