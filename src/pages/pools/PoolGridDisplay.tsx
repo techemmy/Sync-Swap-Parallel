@@ -7,9 +7,15 @@ import {
 import { Button } from "@/components/ui/button";
 import { IPoolData } from "@/types";
 import { Link } from "react-router-dom";
+import useImageTheme from "@/hooks/useImageTheme";
 
 function PoolCard({ pool }: { pool: IPoolData }) {
   const { id, firstToken, secondToken, poolType, APR, liquidity } = pool;
+  const logoTheme = useImageTheme();
+  const lidoLogos = {
+    light: "/images/logos/lido_white.png",
+    dark: "/images/logos/lido_blue.png",
+  };
   return (
     <Card className="font-medium border-transparent shadow rounded-2xl">
       <CardHeader className="bg-secondary/[0.08] space-y-0 relative flex flex-row items-center justify-between rounded-t-2xl items-center px-3 pb-12">
@@ -20,7 +26,7 @@ function PoolCard({ pool }: { pool: IPoolData }) {
 
         {poolType.title === "Stable" && (
           <img
-            src="/images/logos/lido_blue.png"
+            src={lidoLogos[logoTheme]}
             alt="Lido Blue logo"
             className="w-16 m-0"
           />
