@@ -20,7 +20,7 @@ export default function Trade() {
 
   return (
     <>
-      <main className="relative pt-32 flex flex-col md:flex-row gap-7 justify-center items-center md:items-start">
+      <main className="relative pt-32 flex flex-col md:flex-row min-h-screen gap-7 justify-center items-center md:items-start">
         {isShowingTradeChart && <TradeChartSection />}
 
         <section className="relative z-10 min-w-[355px] max-w-[480px] w-full grid gap-y-1 p-2">
