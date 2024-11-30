@@ -25,6 +25,7 @@ import {
 } from "react-icons/md";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
+import { NavLink } from "react-router-dom";
 
 function NavMenuLinkItem({
   href,
@@ -35,12 +36,12 @@ function NavMenuLinkItem({
 }) {
   return (
     <NavigationMenuItem className="w-full">
-      <NavigationMenuLink
-        href={href}
+      <NavLink
+        to={href}
         className="font-medium w-full text-primary group gap-x-4 inline-flex items-center bg-background py-2 transition-colors hover:bg-accent focus:bg-accent focus:text-accent-foreground focus:outline-none data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 h-10 px-3 w-full"
       >
         {children}
-      </NavigationMenuLink>
+      </NavLink>
     </NavigationMenuItem>
   );
 }
