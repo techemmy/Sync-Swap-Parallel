@@ -1,12 +1,20 @@
-import type { ReactNode } from "react";
+import { forwardRef, type ReactNode } from "react";
 
 interface TokenItemsProps {
-  children: ReactNode;
+  children: ReactNode[];
 }
-export default function TokenItems({ children }: TokenItemsProps) {
-  return (
-    <div className="flex flex-col items-center space-y-2 px-3 pb-3 overflow-y-scroll">
-      {children}
-    </div>
-  );
-}
+
+const TokenItems = forwardRef<HTMLDivElement, TokenItemsProps>(
+  function TokenItems({ children }, ref) {
+    return (
+      <div
+        ref={ref}
+        className="flex flex-col items-center px-3 pb-3 overflow-y-auto h-[660px]"
+      >
+        {children}
+      </div>
+    );
+  },
+);
+
+export default TokenItems;

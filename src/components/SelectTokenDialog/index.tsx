@@ -1,3 +1,4 @@
+import React, { useRef, useEffect, useState } from "react";
 import {
   DialogContent,
   DialogHeader,
@@ -8,18 +9,27 @@ import Tokens from "@/assets/tokens.json";
 import TokenHighlight from "./TokenHighlight";
 import TokensHighlight from "./TokensHighlight";
 import TokenItems from "./TokenItems";
-import { useEffect, useState } from "react";
 import { MdSearch, MdToll } from "react-icons/md";
 import TokenItem from "./TokenItem";
+import { useVirtualizer } from "@tanstack/react-virtual";
 
+const tokens = Object.values(Tokens.data).map(({ name, symbol, logo }) => ({
+  name,
+  symbol,
+  logo,
+}));
 export default function SelectTokenDialog() {
-  const tokens = Object.values(Tokens.data).map(({ name, symbol, logo }) => ({
-    name,
-    symbol,
-    logo,
-  }));
-  const [filteredTokens, setFilteredTokens] = useState(tokens);
+  const [isOpen, setIsOpen] = useState(false);
+  const [filteredTokens, setFilteredTokens] = useState(() => tokens);
   const [searchTokenInput, setSearchTokenInput] = useState("");
+  const tokenItemsParentRef = useRef(null);
+
+  const tokenItemsRowVirtualizer = useVirtualizer({
+    count: isOpen ? filteredTokens.length : 0,
+    getScrollElement: () => tokenItemsParentRef.current,
+    estimateSize: () => 70,
+    overscan: 15,
+  });
 
   useEffect(() => {
     if (searchTokenInput.trim() === "") {
@@ -40,7 +50,10 @@ export default function SelectTokenDialog() {
   }, [searchTokenInput]);
 
   return (
-    <DialogContent className="flex flex-col bg-card p-0 sm:max-w-md border-0 h-[90vh] gap-2 sm:rounded-3xl overflow-y-hidden">
+    <DialogContent
+      onOpenAutoFocus={() => setIsOpen(true)}
+      className="flex flex-col bg-card p-0 sm:max-w-md border-0 h-[90vh] gap-2 sm:rounded-3xl overflow-y-hidden"
+    >
       <DialogHeader className="bg-primary/[0.16] px-5 pt-5 border-0">
         <DialogTitle className="font-medium flex items-center">
           Select a token
@@ -59,25 +72,50 @@ export default function SelectTokenDialog() {
               onChange={(e) => setSearchTokenInput(e.target.value)}
             />
           </div>
-          <TokensHighlight>
-            <TokenHighlight name="ETH" logoSrc={Tokens.data[1027].logo} />
-            <TokenHighlight name="ZK" logoSrc={Tokens.data[24091].logo} />
-            <TokenHighlight name="USDC.e" logoSrc={Tokens.data[111].logo} />
-            <TokenHighlight name="USDT" logoSrc={Tokens.data[825].logo} />
-            <TokenHighlight name="HOLD" logoSrc={Tokens.data[28510].logo} />
-          </TokensHighlight>
+          <React.Suspense fallback={<h1>Loading token highlights...</h1>}>
+            <TokensHighlight>
+              <TokenHighlight name="ETH" logoSrc={Tokens.data[1027].logo} />
+              <TokenHighlight name="ZK" logoSrc={Tokens.data[24091].logo} />
+              <TokenHighlight name="USDC.e" logoSrc={Tokens.data[111].logo} />
+              <TokenHighlight name="USDT" logoSrc={Tokens.data[825].logo} />
+              <TokenHighlight name="HOLD" logoSrc={Tokens.data[28510].logo} />
+            </TokensHighlight>
+          </React.Suspense>
         </div>
       </DialogHeader>
 
-      <TokenItems>
-        {filteredTokens.map((token) => (
-          <TokenItem
-            key={token.symbol + token.name}
-            name={token.name}
-            symbol={token.symbol}
-            logoSrc={token.logo}
-          />
-        ))}
+      <TokenItems ref={tokenItemsParentRef}>
+        <div
+          style={{
+            height: `${tokenItemsRowVirtualizer.getTotalSize()}px`,
+            width: "100%",
+            position: "relative",
+          }}
+        >
+          {tokenItemsRowVirtualizer.getVirtualItems().map((virtualItem) => {
+            const token = filteredTokens[virtualItem.index];
+            return (
+              <div
+                key={virtualItem.key}
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: `${virtualItem.size}px`,
+                  transform: `translateY(${virtualItem.start}px)`,
+                }}
+              >
+                <TokenItem
+                  key={token.symbol + token.name}
+                  name={token.name}
+                  symbol={token.symbol}
+                  logoSrc={token.logo}
+                />
+              </div>
+            );
+          })}
+        </div>
 
         {filteredTokens.length <= 0 && (
           <>

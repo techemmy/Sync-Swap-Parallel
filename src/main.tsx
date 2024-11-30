@@ -12,7 +12,6 @@ import Intro from "@/pages/intro";
 import Home from "@/pages/home";
 import Trade from "@/pages/trade";
 import Pool from "@/pages/pool";
-import Launch from "@/pages/launch";
 import Bridge from "@/pages/bridge";
 import Portfolio from "@/pages/portfolio";
 import PoolWizard from "@/pages/pool-wizard";
@@ -24,6 +23,7 @@ import ExploreUSDCConversion from "@/pages/explore-usdc-conversion";
 import ExploreStaking from "@/pages/explore-staking";
 import BridgeMove from "@/pages/bridge-move";
 import PoolDetails from "./pages/pool-details";
+import Launch from "@/pages/launch";
 
 const router = createBrowserRouter(
   createRoutesFromElements([

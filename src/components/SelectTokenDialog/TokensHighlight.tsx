@@ -1,9 +1,9 @@
-import type { ReactElement } from "react";
+import type { ReactNode } from "react";
 
 export default function TokensHighlight({
   children,
 }: {
-  children: ReactElement[];
+  children: ReactNode[];
 }) {
   return <ul className="flex flex-wrap justify-between mb-1">{children}</ul>;
 }

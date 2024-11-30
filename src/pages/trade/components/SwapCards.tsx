@@ -10,8 +10,11 @@ import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { FaArrowDown } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import Top4Tokens from "./Top4Tokens";
+import { useState } from "react";
 
 export default function SwapCards() {
+  const [firstTokenDialogIsOpen, setFirstTokenDialogIsOpen] = useState(false);
+  const [secondTokenDialogIsOpen, setSecondTokenDialogIsOpen] = useState(false);
   return (
     <section className="grid gap-y-1 relative px-1">
       <Card className="grid gap-y-4 mt-2 border-0 shadow rounded-3xl bg-card/70 px-5 py-4">
@@ -27,7 +30,10 @@ export default function SwapCards() {
               placeholder="0.0"
               className="text-primary-foreground bg-transparent w-0 flex-grow text-3xl outline-none"
             />
-            <Dialog>
+            <Dialog
+              open={firstTokenDialogIsOpen}
+              onOpenChange={setFirstTokenDialogIsOpen}
+            >
               <DialogTrigger asChild>
                 <Button
                   variant="outline"
@@ -42,7 +48,7 @@ export default function SwapCards() {
                 </Button>
               </DialogTrigger>
 
-              <SelectTokenDialog />
+              {firstTokenDialogIsOpen && <SelectTokenDialog />}
             </Dialog>
           </div>
         </CardContent>
@@ -94,7 +100,10 @@ export default function SwapCards() {
               placeholder="0.0"
               className="text-primary-foreground bg-transparent w-0 flex-grow text-3xl outline-none"
             />
-            <Dialog>
+            <Dialog
+              open={secondTokenDialogIsOpen}
+              onOpenChange={setSecondTokenDialogIsOpen}
+            >
               <DialogTrigger asChild>
                 <Button
                   variant="outline"
@@ -109,7 +118,7 @@ export default function SwapCards() {
                 </Button>
               </DialogTrigger>
 
-              <SelectTokenDialog />
+              {secondTokenDialogIsOpen && <SelectTokenDialog />}
             </Dialog>
           </div>
         </CardContent>
