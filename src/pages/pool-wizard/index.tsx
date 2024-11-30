@@ -30,6 +30,8 @@ const poolTypes = [
 export default function PoolWizard() {
   const [activePoolType, setActivePoolType] = useState(poolTypes[0].title);
   const [showPoolTypeDetail, setShowPoolTypeDetail] = useState(false);
+  const [firstTokenDialogIsOpen, setFirstTokenDialogIsOpen] = useState(false);
+  const [secondTokenDialogIsOpen, setSecondTokenDialogIsOpen] = useState(false);
 
   return (
     <>
@@ -78,9 +80,10 @@ export default function PoolWizard() {
                   more tokens to enable trades between them.
                 </p>
                 <div className="flex gap-x-3">
-                  {/* TODO: create a component for the select token btn and its dialog */}
-
-                  <Dialog>
+                  <Dialog
+                    open={firstTokenDialogIsOpen}
+                    onOpenChange={setFirstTokenDialogIsOpen}
+                  >
                     <DialogTrigger asChild>
                       <Button
                         variant="outline"
@@ -96,10 +99,13 @@ export default function PoolWizard() {
                         <PiCaretRightBold className="text-primary" width={30} />
                       </Button>
                     </DialogTrigger>
-                    <SelectTokenDialog />
+                    {firstTokenDialogIsOpen && <SelectTokenDialog />}
                   </Dialog>
 
-                  <Dialog>
+                  <Dialog
+                    open={secondTokenDialogIsOpen}
+                    onOpenChange={setSecondTokenDialogIsOpen}
+                  >
                     <DialogTrigger asChild>
                       <Button
                         variant="outline"
@@ -117,7 +123,7 @@ export default function PoolWizard() {
                         <PiCaretRightBold className="text-primary" width={30} />
                       </Button>
                     </DialogTrigger>
-                    <SelectTokenDialog />
+                    {secondTokenDialogIsOpen && <SelectTokenDialog />}
                   </Dialog>
                 </div>
               </section>

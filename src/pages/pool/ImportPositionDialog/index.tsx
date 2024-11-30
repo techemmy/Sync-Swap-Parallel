@@ -11,8 +11,11 @@ import {
 } from "@/components/ui/dialog";
 import { Link } from "react-router-dom";
 import ConnectWalletDialogButton from "@/components/ConnectWalletDialogButton";
+import { useState } from "react";
 
 export default function ImportPositionDialog() {
+  const [firstTokenDialogIsOpen, setFirstTokenDialogIsOpen] = useState(false);
+  const [secondTokenDialogIsOpen, setSecondTokenDialogIsOpen] = useState(false);
   return (
     <DialogContent className="max-w-md">
       <DialogTitle className="font-medium text-primary-foreground">
@@ -23,7 +26,10 @@ export default function ImportPositionDialog() {
       </DialogDescription>
 
       <div className="grid gap-y-4">
-        <Dialog>
+        <Dialog
+          open={firstTokenDialogIsOpen}
+          onOpenChange={setFirstTokenDialogIsOpen}
+        >
           <DialogTrigger asChild>
             <Button
               variant="outline"
@@ -39,7 +45,13 @@ export default function ImportPositionDialog() {
               <MdKeyboardArrowDown width={30} />
             </Button>
           </DialogTrigger>
+          {firstTokenDialogIsOpen && <SelectTokenDialog />}
+        </Dialog>
 
+        <Dialog
+          open={secondTokenDialogIsOpen}
+          onOpenChange={setSecondTokenDialogIsOpen}
+        >
           <DialogTrigger asChild>
             <Button
               variant="outline"
@@ -55,7 +67,7 @@ export default function ImportPositionDialog() {
               <MdKeyboardArrowDown width={30} />
             </Button>
           </DialogTrigger>
-          <SelectTokenDialog />
+          {secondTokenDialogIsOpen && <SelectTokenDialog />}
         </Dialog>
 
         <ConnectWalletDialogButton />

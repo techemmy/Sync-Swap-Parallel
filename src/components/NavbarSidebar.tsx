@@ -23,7 +23,7 @@ import {
   MdToll,
   MdWaves,
 } from "react-icons/md";
-import React from "react";
+import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 
 function NavMenuLinkItem({
@@ -46,6 +46,7 @@ function NavMenuLinkItem({
 }
 
 export default function NavbarSidebar({ visible }: { visible: boolean }) {
+  const [tokensDialogIsOpen, setTokensDialogIsOpen] = useState(false);
   return (
     <section
       className={cn(
@@ -115,7 +116,7 @@ export default function NavbarSidebar({ visible }: { visible: boolean }) {
         </NavigationMenuList>
       </NavigationMenu>
 
-      <Dialog>
+      <Dialog open={tokensDialogIsOpen} onOpenChange={setTokensDialogIsOpen}>
         <Tooltip>
           <TooltipTrigger asChild>
             <DialogTrigger asChild>
@@ -141,7 +142,7 @@ export default function NavbarSidebar({ visible }: { visible: boolean }) {
           </TooltipContent>
         </Tooltip>
 
-        <SelectTokenDialog />
+        {tokensDialogIsOpen && <SelectTokenDialog />}
       </Dialog>
     </section>
   );
