@@ -172,6 +172,7 @@ export default {
         "fade-in-out-20": "fade-in-out 14s linear infinite",
         "slide-in-from-right": "slide-in-from-right .25s linear",
         spin: "spin 8s linear infinite",
+        "custom-fast": "spin .8s infinite",
         typewriter: "typewriter 2s steps(11) forwards",
         caret:
           "typewriter 2s steps(11) forwards, blink 1s steps(11) infinite 2s",
