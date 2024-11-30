@@ -63,7 +63,9 @@ export default function PoolWizard() {
             </div>
           </section>
 
-          <div className={`grid ${showPoolTypeDetail && "grid-cols-2"}`}>
+          <div
+            className={`grid ${showPoolTypeDetail && "grid-cols-1 gap-5 md:gap-0 md:grid-cols-2"}`}
+          >
             <section className="w-full pt-3 px-6 space-y-4 max-w-[520px]">
               <section className="flex justify-between">
                 <h2 className="text-primary-foreground font-medium">Choose</h2>
