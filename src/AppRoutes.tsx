@@ -57,7 +57,7 @@ export default function AppRoutes() {
             <Route index element={<Trade />} />
             <Route path="/intro" element={<Intro />} />
             <Route path="/home" element={<Home />} />
-            <Route index path="/swap" element={<Trade />} />
+            <Route path="/swap" element={<Trade />} />
 
             <Route path="/pool" element={<Pool />} />
             <Route path="/pool/:poolId" element={<PoolDetails />} />
