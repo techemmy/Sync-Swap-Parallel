@@ -201,7 +201,7 @@ export default function WithdrawTabContent() {
                       </Tooltip>
                     </div>
 
-                    <p className="text-sm text-green-800">0%</p>
+                    <p className="text-sm text-primary">0%</p>
                   </article>
                 </TabsContent>
                 <TabsContent value="balanced">
