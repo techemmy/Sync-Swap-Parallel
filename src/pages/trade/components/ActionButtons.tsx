@@ -15,8 +15,8 @@ export default function ActionButtons({
   onShowChart,
   tradeChartIsActive = false,
 }: Props) {
-  const candleStickOpacity = tradeChartIsActive ? "opacity-100" : "opacity-50 ";
   const [isRefreshingBalance, setIsRefreshingBalance] = useState(false);
+  const candleStickOpacity = tradeChartIsActive ? "opacity-100" : "opacity-50";
 
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
@@ -43,7 +43,7 @@ export default function ActionButtons({
       <div className="flex items-center gap-x-1">
         <Button
           onClick={() => setIsRefreshingBalance(true)}
-          className={`${isRefreshingBalance === true ? "animate-spin" : "hover:bg-primary/[0.04]"} group w-9 h-9 px-1 bg-transparent text-primary rounded-md`}
+          className={`${isRefreshingBalance && "animate-spin"} group w-9 h-9 px-1 bg-transparent text-primary hover:bg-primary/[0.04] rounded-md`}
           style={{
             animationDuration: "800ms",
           }}
