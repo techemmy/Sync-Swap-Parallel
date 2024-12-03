@@ -53,15 +53,13 @@ export default function PoolWizard() {
             </p>
           </section>
 
-          <section className="pt-8 pb-10 grid">
-            <div className="flex justify-between items-center gap-x-3">
-              <StepIndicator step={1} text="Choose tokens" />
-              <div className="h-px rounded-md opacity-20 flex-1 min-w-10 max-w-full bg-card-foreground"></div>
-              <StepIndicator step={2} text="Choose type" />
-              <div className="h-px rounded-md opacity-20 flex-1 min-w-10 max-w-full bg-card-foreground"></div>
-              <StepIndicator step={3} text="Complete" />
-            </div>
-          </section>
+          <div className="flex justify-between items-center gap-x-3 pt-8 pb-10">
+            <StepIndicator step={1} text="Choose tokens" />
+            <div className="h-px rounded-md opacity-20 flex-1 min-w-10 max-w-full bg-card-foreground"></div>
+            <StepIndicator step={2} text="Choose type" />
+            <div className="h-px rounded-md opacity-20 flex-1 min-w-10 max-w-full bg-card-foreground"></div>
+            <StepIndicator step={3} text="Complete" />
+          </div>
 
           <div
             className={`grid ${showPoolTypeDetail && "grid-cols-1 gap-5 md:gap-0 md:grid-cols-2"}`}

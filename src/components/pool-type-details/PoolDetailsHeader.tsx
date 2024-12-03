@@ -11,7 +11,7 @@ import {
 export default function PoolDetailsHeader({ poolType }: { poolType: string }) {
   return (
     <>
-      <section className="flex justify-between text-primary items-center">
+      <section className="flex flex-col sm:flex-row justify-between text-primary sm:items-center gap-2">
         <div className="flex gap-x-2 items-center">
           <TbAlignBoxRightBottom size={25} />
           <h2 className="text-2xl text-primary-foreground font-semibold">

@@ -8,10 +8,8 @@ export default function StepIndicator({
   text: string;
 }) {
   return (
-    <div className="flex gap-x-2 items-center text-sm">
-      <Button
-        className="flex bg-secondary justify-center items-center w-6 h-6 p-1 rounded-full"
-      >
+    <div className="flex flex-col text-center sm:flex-row gap-x-2 items-center text-sm">
+      <Button className="flex bg-secondary justify-center items-center w-6 h-6 p-1 rounded-full">
         {step}
       </Button>
       <p className="font-medium text-primary-foreground">
