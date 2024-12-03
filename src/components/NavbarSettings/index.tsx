@@ -50,7 +50,7 @@ export default function NavbarSettings({
     <section
       ref={settingsDropdownRef}
       className={cn(
-        "min-w-[370px] rounded-3xl shadow-md bg-card p-4 pl-5",
+        "sm:min-w-[370px] rounded-3xl shadow-md bg-card p-4 pl-5",
         className,
       )}
     >
