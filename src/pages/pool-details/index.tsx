@@ -18,11 +18,12 @@ export default function PoolDetails() {
       <main className="relative overflow-clip pt-28 pb-20 min-h-screen max-w-[1120px] mx-auto py-4 px-2">
         <Link
           to="/pools"
-          className="mb-6 text-primary text-sm flex gap-x-2 items-center"
+          className="relative z-20 mb-6 text-primary text-sm flex gap-x-2 items-center"
         >
           <FaChevronLeft />
           <span>Pools</span>
         </Link>
+
         <Tabs
           defaultValue="overview"
           value={tab}
@@ -70,6 +71,8 @@ export default function PoolDetails() {
             <DepositTabContent />
             <WithdrawTabContent />
             <StakeTabContent />
+
+            {/* TODO: put all the animation gradients in each content in one place, here */}
           </div>
         </Tabs>
       </main>
