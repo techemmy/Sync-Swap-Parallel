@@ -4,11 +4,7 @@
 <br />
 <div align="center">
 
-  <a href="https://github.com/techemmy/Sync-Swap-Parallel">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-  <h3 align="center">Sync Swap Parallel</h3>
+  <h1 align="center">Sync Swap Parallel</h1>
 
   <p align="center">
     It is a parallel version of the Web3 Sync Swap Product
