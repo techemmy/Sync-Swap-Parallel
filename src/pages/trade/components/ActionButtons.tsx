@@ -5,6 +5,7 @@ import { GrPowerReset } from "react-icons/gr";
 import { useEffect, useState } from "react";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import NavbarSettingsDialog from "@/components/NavbarSettings/NavbarSettingsDialog";
+import { NavLink } from "react-router-dom";
 
 interface Props {
   tradeChartIsActive: boolean;
@@ -30,20 +31,44 @@ export default function ActionButtons({
 
   return (
     <div className="flex justify-between items-center">
-      <Button
-        onClick={onShowChart}
-        className={`group w-9 h-9 px-1 bg-transparent text-primary hover:bg-primary/[0.04] rounded-md ${candleStickOpacity}`}
-      >
-        <MdCandlestickChart
-          className="group-active:transition-transform active:scale-90"
-          size={23}
-        />
-      </Button>
+      <div className="flex items-center gap-x-1">
+        <Button
+          onClick={onShowChart}
+          className={`group w-9 h-9 px-1 bg-transparent text-primary hover:bg-primary/[0.04] rounded-md ${candleStickOpacity}`}
+        >
+          <MdCandlestickChart
+            className="group-active:transition-transform active:scale-90"
+            size={23}
+          />
+        </Button>
+        <NavLink
+          to="/swap"
+          className={({ isActive }) =>
+            `text-sm mx-2 ${
+              isActive ? "text-primary font-semibold" : "text-muted-foreground"
+            }`
+          }
+        >
+          Swap
+        </NavLink>
+        <NavLink
+          to="/limit"
+          className={({ isActive }) =>
+            `text-sm ${
+              isActive ? "text-primary font-semibold" : "text-muted-foreground"
+            }`
+          }
+        >
+          Limit
+        </NavLink>
+      </div>
 
       <div className="flex items-center gap-x-1">
         <Button
           onClick={() => setIsRefreshingBalance(true)}
-          className={`${isRefreshingBalance && "animate-spin"} group w-9 h-9 px-1 bg-transparent text-primary hover:bg-primary/[0.04] rounded-md`}
+          className={`${
+            isRefreshingBalance && "animate-spin"
+          } group w-9 h-9 px-1 bg-transparent text-primary hover:bg-primary/[0.04] rounded-md`}
           style={{
             animationDuration: "800ms",
           }}
