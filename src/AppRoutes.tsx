@@ -6,6 +6,7 @@ import FullPageLoader from "./components/FullPageLoader";
 const Intro = React.lazy(() => import("@/pages/intro"));
 const Home = React.lazy(() => import("@/pages/home"));
 const Trade = React.lazy(() => import("@/pages/trade"));
+const Limit = React.lazy(() => import("@/pages/limit"));
 const Pool = React.lazy(() => import("@/pages/pool"));
 const Bridge = React.lazy(() => import("@/pages/bridge"));
 const Portfolio = React.lazy(() => import("@/pages/portfolio"));
@@ -30,6 +31,7 @@ function preloadPages() {
   import("@/pages/intro");
   import("@/pages/home");
   import("@/pages/trade");
+  import("@/pages/limit");
   import("@/pages/pool");
   import("@/pages/bridge");
   import("@/pages/portfolio");
@@ -46,9 +48,11 @@ function preloadPages() {
 }
 
 export default function AppRoutes() {
+
   useEffect(() => {
     preloadPages();
   }, []);
+  
   return (
     <React.Suspense fallback={<FullPageLoader />}>
       <BrowserRouter>
@@ -58,6 +62,7 @@ export default function AppRoutes() {
             <Route path="/intro" element={<Intro />} />
             <Route path="/home" element={<Home />} />
             <Route path="/swap" element={<Trade />} />
+            <Route path="/limit" element={<Limit />} />
 
             <Route path="/pool" element={<Pool />} />
             <Route path="/pool/:poolId" element={<PoolDetails />} />
