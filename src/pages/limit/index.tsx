@@ -7,7 +7,7 @@ import { useState } from "react";
 import ActionButtons from "../trade/components/ActionButtons";
 import HelloCard from "../trade/components/HelloCard";
 import SwapCards from "./components/SwapCards";
-import TradeChartSection from "../trade/components/TradeChartSection";
+import TradeChartSection from "./components/TradeChartSection";
 
 export default function Limit() {
   const [activeNetwork] = useActiveNetwork();
