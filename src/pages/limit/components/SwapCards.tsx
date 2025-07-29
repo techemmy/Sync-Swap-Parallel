@@ -343,11 +343,11 @@ export default function SwapCards() {
             <span>USDC.e price</span>
             <PiCaretDownBold className="flex-shrink-0" />
           </p>
-          <p className="text-xs mb-2">0 USDC.e <span className="text-xs text-primary-foreground/80">~$0</span></p>
+          <p className="text-xs mb-2 text-primary-foreground">0 USDC.e <span className="text-xs text-primary-foreground/80">~$0</span></p>
         </CollapsibleTrigger>
         <CollapsibleContent className="w-full flex justify-between px-5">
           <p className="text-xs text-primary-foreground/80 mb-2 flex gap-x-1 items-center">USDC.e price</p>
-          <p className="text-xs mb-2">0 USDC.e <span className="text-xs text-primary-foreground/80">~$0</span></p>
+          <p className="text-xs mb-2 text-primary-foreground">0 USDC.e <span className="text-xs text-primary-foreground/80">~$0</span></p>
         </CollapsibleContent>
       </Collapsible>
     </section>
